@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Diana Theresa Aguirre & Christian-Levine-Gocu</title>
+<title>Diana Theresa Aguirre & Christian Levine Gocu</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Wedding website for Diana Theresa Aguirre and Christian Levine Gocu">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,262 +12,561 @@
 
 <style>
 :root{
---bg:#ffffff;
---sand:#f5f2ee;
---text:#1f1f1f;
---muted:#7b7b7b;
---accent:#c9b6a3;
---line:#e6e1dc;
---max:1200px;
+  --bg:#ffffff;
+  --sand:#f6f2ed;
+  --sand2:#fbf9f6;
+  --text:#1b1b1b;
+  --muted:#7a7a7a;
+  --muted2:#9a9a9a;
+  --line:#e7e1db;
+  --accent:#cbb7a6;
+  --max:1200px;
+
+  --h1:clamp(44px,6.4vw,78px);
+  --h2:clamp(30px,3.2vw,40px);
+  --k:12px;
+  --nav:12px;
+  --radius:6px;
 }
 
 *{box-sizing:border-box}
-
+html{scroll-behavior:smooth}
 body{
-margin:0;
-font-family:Inter,system-ui,sans-serif;
-background:var(--bg);
-color:var(--text);
-line-height:1.7;
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-.container{
-width:min(var(--max),calc(100% - 48px));
-margin:0 auto;
-}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--max),calc(100% - 56px));margin:0 auto}
 
-a{text-decoration:none;color:inherit}
+.skip{
+  position:absolute;left:-9999px;top:12px;
+  padding:10px 12px;background:#fff;border:1px solid var(--line);
+  border-radius:10px;z-index:999;
+}
+.skip:focus{left:12px}
 
 header{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-z-index:10;
+  position:absolute;
+  top:0;left:0;right:0;
+  z-index:20;
 }
-
 .nav{
-display:flex;
-justify-content:center;
-gap:30px;
-padding:24px 0;
-font-size:13px;
-letter-spacing:.12em;
-color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:34px;
+  padding:26px 0;
+  font-size:var(--nav);
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:#fff;
 }
+.nav a{opacity:.92}
+.nav a:hover{opacity:1}
 
 .hero{
-position:relative;
-height:92vh;
-background:url("assets/hero.jpg") center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
+  position:relative;
+  height:92vh;
+  min-height:560px;
+  background:#d8d2cc url("assets/hero.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
 }
-
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.25);
+.hero::before{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.28), rgba(0,0,0,.18) 35%, rgba(0,0,0,.22));
 }
-
-.hero-inner{
-position:relative;
-z-index:2;
-color:#fff;
+.heroInner{
+  position:relative;
+  z-index:2;
+  color:#fff;
+  padding:0 18px;
 }
-
-.hero h1{
-font-family:"Playfair Display",serif;
-font-size:clamp(44px,6vw,72px);
-font-weight:500;
-margin-bottom:10px;
+.heroTitle{
+  font-family:"Playfair Display",serif;
+  font-size:var(--h1);
+  font-weight:500;
+  letter-spacing:.01em;
+  line-height:1.05;
+  margin:0 0 10px;
 }
-
-.hero span{
-font-size:13px;
-letter-spacing:.2em;
-opacity:.9;
+.heroLabel{
+  font-size:var(--k);
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  opacity:.92;
 }
 
 .section{
-padding:110px 0;
+  padding:110px 0;
 }
-
+.sectionAlt{background:var(--sand2)}
 .center{text-align:center}
 
-h2{
-font-family:"Playfair Display",serif;
-font-size:36px;
-margin-bottom:14px;
-font-weight:500;
+.h2{
+  font-family:"Playfair Display",serif;
+  font-size:var(--h2);
+  font-weight:500;
+  margin:0 0 14px;
+  letter-spacing:.01em;
+  line-height:1.15;
+}
+.kicker{
+  font-size:var(--k);
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--muted2);
+  margin:0;
+}
+.copy{
+  margin:18px auto 0;
+  max-width:760px;
+  color:var(--muted);
+  font-size:14px;
 }
 
-.sub{
-color:var(--muted);
-font-size:14px;
-letter-spacing:.1em;
+.countRow{
+  display:flex;
+  justify-content:center;
+  gap:74px;
+  margin-top:54px;
+  flex-wrap:wrap;
 }
-
-.counts{
-display:flex;
-justify-content:center;
-gap:60px;
-margin-top:50px;
-}
-
 .count{
-text-align:center;
+  text-align:center;
+  min-width:82px;
 }
-
-.count strong{
-display:block;
-font-family:"Playfair Display",serif;
-font-size:38px;
+.countNum{
+  font-family:"Playfair Display",serif;
+  font-size:44px;
+  font-weight:500;
+  line-height:1;
+  letter-spacing:.02em;
+}
+.countLbl{
+  margin-top:10px;
+  font-size:12px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--muted2);
 }
 
 .split{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:80px;
-align-items:center;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:84px;
+  align-items:center;
 }
-
-.card{
-background:var(--sand);
-padding:70px;
+.panel{
+  background:var(--sand);
+  padding:74px 70px;
 }
-
-.card h3{
-font-family:"Playfair Display",serif;
-font-size:32px;
-margin-bottom:18px;
-font-weight:500;
+.panelTitle{
+  font-family:"Playfair Display",serif;
+  font-size:34px;
+  font-weight:500;
+  margin:0 0 16px;
 }
-
-.card p{
-color:var(--muted);
-font-size:14px;
+.panelText{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  max-width:52ch;
 }
-
-.button{
-display:inline-block;
-margin-top:26px;
-padding:12px 32px;
-border:1px solid var(--accent);
-font-size:12px;
-letter-spacing:.12em;
+.btn{
+  display:inline-block;
+  margin-top:28px;
+  padding:12px 34px;
+  border:1px solid var(--accent);
+  background:transparent;
+  font-size:12px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
 }
+.btn:hover{background:rgba(203,183,166,.10)}
 
 .image{
-height:520px;
-background-size:cover;
-background-position:center;
+  height:520px;
+  border-radius:var(--radius);
+  background:#ddd center/cover no-repeat;
+  overflow:hidden;
 }
+.image.one{background-image:url("assets/couple1.jpg")}
 
 .venue{
-background:#faf8f5;
+  background:var(--sand2);
+}
+.venueWrap{
+  max-width:840px;
+  margin:0 auto;
+}
+.venueText{
+  margin:26px auto 0;
+  max-width:760px;
+  color:var(--muted);
+  font-size:14px;
 }
 
 .gallery{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.g{
+  height:290px;
+  border-radius:var(--radius);
+  background:#ddd center/cover no-repeat;
+}
+.g.g1{background-image:url("assets/g1.jpg")}
+.g.g2{background-image:url("assets/g2.jpg")}
+.g.g3{background-image:url("assets/g3.jpg")}
+
+.detailsGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:46px;
+}
+.card{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:var(--radius);
+  padding:26px 26px 22px;
+}
+.card h3{
+  margin:0 0 10px;
+  font-family:"Playfair Display",serif;
+  font-weight:500;
+  font-size:18px;
+}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.meta{
+  margin-top:12px;
+  color:var(--muted2);
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
 }
 
-.gallery div{
-height:280px;
-background-size:cover;
-background-position:center;
+.faq{
+  max-width:820px;
+  margin:46px auto 0;
+}
+details{
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:14px 18px;
+  background:#fff;
+}
+details + details{margin-top:12px}
+summary{
+  cursor:pointer;
+  list-style:none;
+  font-size:14px;
+  letter-spacing:.02em;
+}
+summary::-webkit-details-marker{display:none}
+details p{
+  margin:12px 0 0;
+  color:var(--muted);
+  font-size:14px;
 }
 
-footer{
-padding:90px 0;
-text-align:center;
-font-size:13px;
-color:var(--muted);
-border-top:1px solid var(--line);
+.formWrap{
+  max-width:760px;
+  margin:46px auto 0;
+}
+form{display:grid;gap:14px}
+.fieldRow{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+input,select,textarea{
+  width:100%;
+  padding:14px 14px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  font:inherit;
+  font-size:14px;
+  background:#fff;
+  color:var(--text);
+}
+textarea{min-height:120px;resize:vertical}
+.submit{
+  justify-self:center;
+  padding:13px 38px;
+  border:1px solid var(--accent);
+  background:transparent;
+  font-size:12px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+.submit:hover{background:rgba(203,183,166,.10)}
+
+.footer{
+  padding:90px 0;
+  border-top:1px solid var(--line);
+  text-align:center;
+  color:var(--muted2);
+  font-size:13px;
 }
 
-@media(max-width:900px){
-.split{grid-template-columns:1fr}
-.hero{height:70vh}
+@media (max-width:980px){
+  .container{width:min(var(--max),calc(100% - 40px))}
+  .split{grid-template-columns:1fr;gap:22px}
+  .panel{padding:56px 34px}
+  .image{height:420px}
+  .detailsGrid{grid-template-columns:1fr;gap:14px}
+  .gallery{grid-template-columns:1fr;gap:14px}
+  .g{height:260px}
+  .fieldRow{grid-template-columns:1fr}
+  .nav{gap:18px}
+}
+
+@media (max-width:520px){
+  .hero{height:72vh;min-height:520px}
+  .nav{display:none}
 }
 </style>
 </head>
 
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <header>
-<nav class="nav">
-<a href="#">HOME</a>
-<a href="#">DETAILS</a>
-<a href="#">VENUE</a>
-<a href="#">STORY</a>
-<a href="#">RSVP</a>
-</nav>
+  <div class="container">
+    <nav class="nav" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#wedding">Wedding</a>
+      <a href="#invite">Invite</a>
+      <a href="#venue">Venue</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#rsvp">RSVP</a>
+    </nav>
+  </div>
 </header>
 
-<section class="hero">
-<div class="hero-inner">
-<h1>Diana & Christian</h1>
-<span>WEDDING INVITATION</span>
-</div>
-</section>
+<main id="main">
+  <section class="hero" id="home" aria-label="Hero">
+    <div class="heroInner">
+      <h1 class="heroTitle">Diana & Christian</h1>
+      <div class="heroLabel">Wedding Invitation</div>
+    </div>
+  </section>
 
-<section class="section center">
-<div class="container">
-<h2>Our Wedding</h2>
-<p class="sub">SAVE THE DATE</p>
+  <section class="section center" id="wedding">
+    <div class="container">
+      <h2 class="h2">Our Wedding</h2>
+      <p class="kicker">Save the date</p>
+      <p class="copy" id="dateLine">Saturday, June 20, 2026</p>
 
-<div class="counts">
-<div class="count"><strong>01</strong>Days</div>
-<div class="count"><strong>06</strong>Hours</div>
-<div class="count"><strong>45</strong>Minutes</div>
-<div class="count"><strong>10</strong>Seconds</div>
-</div>
-</div>
-</section>
+      <div class="countRow" aria-label="Countdown">
+        <div class="count">
+          <div class="countNum" id="cdDays">01</div>
+          <div class="countLbl">Days</div>
+        </div>
+        <div class="count">
+          <div class="countNum" id="cdHours">06</div>
+          <div class="countLbl">Hours</div>
+        </div>
+        <div class="count">
+          <div class="countNum" id="cdMins">45</div>
+          <div class="countLbl">Minutes</div>
+        </div>
+        <div class="count">
+          <div class="countNum" id="cdSecs">10</div>
+          <div class="countLbl">Seconds</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="section">
-<div class="container split">
-<div class="card">
-<h3>Join Us</h3>
-<p>
-We invite you to celebrate our wedding and share this meaningful moment with us.
-Details regarding the ceremony and reception are listed below.
-</p>
-<a class="button" href="#">READ MORE</a>
-</div>
-<div class="image" style="background-image:url('assets/couple1.jpg')"></div>
-</div>
-</section>
+  <section class="section" id="invite">
+    <div class="container split">
+      <div class="panel">
+        <h3 class="panelTitle">Join Us</h3>
+        <p class="panelText">
+          You are invited to celebrate with us. Ceremony and reception details are below.
+          Please RSVP by the date listed on your invitation.
+        </p>
+        <a class="btn" href="#details">Details</a>
+      </div>
+      <div class="image one" role="img" aria-label="Couple photo"></div>
+    </div>
+  </section>
 
-<section class="section venue center">
-<div class="container">
-<h2>Wedding Venue</h2>
-<p class="sub">LOCATION DETAILS</p>
-<p class="sub" style="max-width:700px;margin:30px auto;">
-Our ceremony will take place in a natural setting surrounded by open landscapes.
-Full venue details and directions will be shared closer to the date.
-</p>
-<a class="button" href="#">VIEW VENUE</a>
-</div>
-</section>
+  <section class="section sectionAlt center" id="details">
+    <div class="container">
+      <h2 class="h2">Details</h2>
+      <p class="kicker">Ceremony and reception</p>
 
-<section class="section">
-<div class="container gallery">
-<div style="background-image:url('assets/g1.jpg')"></div>
-<div style="background-image:url('assets/g2.jpg')"></div>
-<div style="background-image:url('assets/g3.jpg')"></div>
-</div>
-</section>
+      <div class="detailsGrid" role="list">
+        <div class="card" role="listitem">
+          <h3>Ceremony</h3>
+          <p>[Time] at [Venue Name]</p>
+          <div class="meta">Arrive 15 minutes early</div>
+        </div>
 
-<footer>
-With appreciation, Diana & Christian
-</footer>
+        <div class="card" role="listitem">
+          <h3>Reception</h3>
+          <p>Immediately following the ceremony</p>
+          <div class="meta">Dinner and dancing</div>
+        </div>
 
+        <div class="card" role="listitem">
+          <h3>Attire</h3>
+          <p>[Cocktail / Formal / Black tie optional]</p>
+          <div class="meta">Comfort matters</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section venue center" id="venue">
+    <div class="container venueWrap">
+      <h2 class="h2">Wedding Venue</h2>
+      <p class="kicker">Location</p>
+      <p class="venueText">
+        [Venue Name], [City, State]. Directions and parking notes will be posted here once finalized.
+      </p>
+      <a class="btn" href="#" id="mapLink">View venue</a>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="container center">
+      <h2 class="h2">Gallery</h2>
+      <p class="kicker">A few photos</p>
+
+      <div class="gallery" aria-label="Photo gallery">
+        <div class="g g1" role="img" aria-label="Gallery image 1"></div>
+        <div class="g g2" role="img" aria-label="Gallery image 2"></div>
+        <div class="g g3" role="img" aria-label="Gallery image 3"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section sectionAlt center" id="faq">
+    <div class="container">
+      <h2 class="h2">FAQ</h2>
+      <p class="kicker">Quick answers</p>
+
+      <div class="faq">
+        <details>
+          <summary>Can I bring a guest</summary>
+          <p>If your invitation includes a plus one, you are covered.</p>
+        </details>
+
+        <details>
+          <summary>Is this adults only</summary>
+          <p>Please follow what is listed on your invitation.</p>
+        </details>
+
+        <details>
+          <summary>What is the RSVP deadline</summary>
+          <p>The RSVP deadline is listed on the invitation.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section center" id="rsvp">
+    <div class="container">
+      <h2 class="h2">RSVP</h2>
+      <p class="kicker">Response requested</p>
+      <p class="copy">You can connect this to Formspree or swap it for a Google Form link.</p>
+
+      <div class="formWrap">
+        <!-- Replace action with your Formspree endpoint, example: https://formspree.io/f/abcdexyz -->
+        <form action="#" method="POST" id="rsvpForm">
+          <div class="fieldRow">
+            <input name="name" type="text" placeholder="Full name" required>
+            <input name="email" type="email" placeholder="Email" required>
+          </div>
+
+          <div class="fieldRow">
+            <select name="attending" required>
+              <option value="" selected disabled>Attending</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+
+            <select name="partySize">
+              <option value="" selected disabled>Guests</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+
+          <textarea name="notes" placeholder="Dietary restrictions or notes"></textarea>
+          <button class="submit" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    Diana Theresa Aguirre and Christian Levine Gocu
+  </footer>
+</main>
+
+<script>
+/*
+  Edit these values to match the real date and time.
+  Use local time for the event location.
+*/
+const EVENT = {
+  iso: "2026-06-20T16:00:00",
+  label: "Saturday, June 20, 2026",
+  mapUrl: "https://maps.google.com/?q=Wedding+Venue"
+};
+
+const el = (id) => document.getElementById(id);
+
+el("dateLine").textContent = EVENT.label;
+el("mapLink").setAttribute("href", EVENT.mapUrl);
+
+function pad(n){ return String(n).padStart(2, "0"); }
+
+function tick(){
+  const target = new Date(EVENT.iso).getTime();
+  const now = Date.now();
+  const diff = Math.max(0, target - now);
+
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const m = Math.floor((diff / (1000 * 60)) % 60);
+  const s = Math.floor((diff / 1000) % 60);
+
+  el("cdDays").textContent = pad(d);
+  el("cdHours").textContent = pad(h);
+  el("cdMins").textContent = pad(m);
+  el("cdSecs").textContent = pad(s);
+}
+tick();
+setInterval(tick, 1000);
+
+// Optional: prevent default if form action not set
+document.getElementById("rsvpForm").addEventListener("submit", (e) => {
+  const action = e.target.getAttribute("action");
+  if (!action || action === "#") {
+    e.preventDefault();
+    alert("Add your Formspree action URL to enable submissions.");
+  }
+});
+</script>
 </body>
 </html>
