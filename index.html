@@ -371,6 +371,16 @@ header.solid{
 }
 .cta:hover{background:rgba(199,184,166,.12);transform:translateY(-1px)}
 
+.cta.primary{
+  background:rgba(199,184,166,.18);
+  border-color:var(--accent2);
+}
+
+.cta.primary:hover{
+  background:rgba(199,184,166,.28);
+}
+
+  
 .photo{
   border-radius:var(--r);
   overflow:hidden;
@@ -932,10 +942,11 @@ textarea{min-height:120px;resize:vertical}
       </p>
 
       <div class="sectionActions">
-        <button class="cta" id="addCalendarBtn" type="button">Add to calendar</button>
+        <button class="cta primary" id="addCalendarBtn" type="button">Add to calendar</button>
         <a class="cta" href="#travel">Plan travel</a>
         <a class="cta" href="#gallery">View photos</a>
       </div>
+      
     </div>
   </section>
 
