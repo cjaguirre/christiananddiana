@@ -11,22 +11,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+  
 :root{
-  --bg:#fbfaf8;
+  --bg:#FFEBB2;
   --paper:#ffffff;
-  --sand:#f3efe9;
-  --sand2:#f8f6f2;
-  --text:#1c1c1c;
-  --muted:#777;
-  --muted2:#9a9a9a;
-  --line:#e6e0d9;
-  --accent:#c7b8a6;
-  --accent2:#b5a28d;
+  --sand:#F7F2E8;
+  --sand2:#EFE7DA;
+  --text:#2b1d14;
+  --muted:#7a6a5e;
+  --muted2:#9c8b7a;
+  --line:#e0d4c2;
+  --accent:#D14D65;
+  --accent2:#5C0029;
   --max:1200px;
-  --r:16px;
-  --shadow:0 18px 55px rgba(0,0,0,.08);
-  --shadow2:0 10px 30px rgba(0,0,0,.12);
+  --r:0px;
+  --shadow:0 14px 40px rgba(92,0,41,.10);
+  --shadow2:0 10px 30px rgba(92,0,41,.18);
 }
+
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -109,7 +111,11 @@ header.solid{
   border-radius:999px;
   transition:opacity .2s ease, background .2s ease;
 }
-.nav a:hover{opacity:1;background:rgba(199,184,166,.14)}
+.nav a:hover{
+  opacity:1;
+  background:rgba(209,77,101,.14)
+}
+
 .nav a.active{opacity:1;background:rgba(199,184,166,.20)}
 .navRight{
   display:flex;
@@ -179,8 +185,8 @@ header.solid{
 .heroOverlay{
   position:absolute;inset:0;
   background:
-    radial-gradient(circle at 30% 20%, rgba(0,0,0,.22), rgba(0,0,0,.08) 45%, rgba(0,0,0,.16) 100%),
-    linear-gradient(to bottom, rgba(0,0,0,.34), rgba(0,0,0,.12), rgba(0,0,0,.30));
+    radial-gradient(circle at center, rgba(255,255,255,.12), rgba(0,0,0,.22) 60%),
+    linear-gradient(to bottom, rgba(0,0,0,.30), rgba(0,0,0,.12), rgba(0,0,0,.30));
 }
 
 .heroInner{
@@ -195,18 +201,21 @@ header.solid{
 .heroTitle{
   font-family:"Playfair Display",serif;
   font-weight:500;
-  font-size:clamp(50px,6vw,86px);
-  letter-spacing:.02em;
-  line-height:1.02;
-  margin:0 0 12px;
+  font-size:clamp(46px,5.5vw,78px);
+  letter-spacing:.04em;
 }
+
+
   
 .heroLabel{
+  font-family:"Playfair Display",serif;
   font-size:12px;
-  letter-spacing:.28em;
+  letter-spacing:.32em;
   text-transform:uppercase;
   opacity:.92;
 }
+
+  
 .heroCtas{
   margin-top:26px;
   display:flex;
@@ -268,7 +277,9 @@ header.solid{
   opacity:.92;
 }
 
-.section{padding:80px 0}
+.section{padding:72px 0}
+#story{padding:56px 0}
+
 .sectionAlt{background:var(--sand2)}
 .h2{
   font-family:"Playfair Display",serif;
@@ -379,7 +390,11 @@ header.solid{
   color:var(--text);
   transition:background .2s ease, transform .2s ease;
 }
-.cta:hover{background:rgba(199,184,166,.12);transform:translateY(-1px)}
+  
+.cta:hover{
+  background:rgba(209,77,101,.14);
+  transform:translateY(-1px)
+}
 
 .cta.primary{
   background:rgba(199,184,166,.18);
@@ -490,19 +505,30 @@ header.solid{
 .storySplit{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:48px;
+  gap:32px;
   align-items:center;
-  margin-top:36px;
+  margin-top:28px;
+}
+
+  .storySplit > div{
+  max-width:520px;
+}
+
+.paperInset{
+  background:var(--sand);
+  border:1px solid var(--line);
+  padding:56px 48px;
 }
 
 
 .storyImage{
   border-radius:0;
   overflow:hidden;
-  box-shadow:none;
+  box-shadow:0 6px 18px rgba(92,0,41,.15);
   height:520px;
   background:#ddd;
 }
+
 
 .storyImage img{
   width:100%;
@@ -1012,7 +1038,7 @@ textarea{min-height:120px;resize:vertical}
     </div>
   </section>
 
-    <section class="section sectionAlt center" id="story">
+<section class="section sectionAlt center paperInset" id="story">
   <div class="container">
     <h2 class="h2">Our Story</h2>
     <p class="kicker">How it all started</p>
