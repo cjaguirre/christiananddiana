@@ -435,13 +435,17 @@ header.solid{
   margin-top:42px;
   align-items:stretch;
 }
+
+  
 .noteBox{
-  background:rgba(255,255,255,.7);
-  border:1px solid var(--line);
-  border-radius:var(--r);
-  padding:26px;
-  box-shadow:var(--shadow);
+  background:none;
+  border:none;
+  border-radius:0;
+  padding:0;
+  box-shadow:none;
 }
+
+  
 .noteBox h3{
   font-family:"Playfair Display",serif;
   font-weight:500;
@@ -482,9 +486,9 @@ header.solid{
 }
 
 .storyImage{
-  border-radius:var(--r);
+  border-radius:0;
   overflow:hidden;
-  box-shadow:var(--shadow);
+  box-shadow:none;
   height:520px;
   background:#ddd;
 }
@@ -504,7 +508,7 @@ header.solid{
 }
 
 .storyGrid .storyImage{
-  height:360px;
+  height:340px;
 }
 
 @media(max-width:980px){
@@ -996,34 +1000,29 @@ textarea{min-height:120px;resize:vertical}
     </div>
   </section>
 
-  <section class="section sectionAlt center" id="story">
+    <section class="section sectionAlt center" id="story">
   <div class="container">
     <h2 class="h2">Our Story</h2>
     <p class="kicker">How it all started</p>
     <p class="copy">
-      From everyday moments to one unforgettable question, this is how our story became forever.
+      From high school hallways to a mountaintop question, this is how their story became forever.
     </p>
 
     <!-- THE BEGINNING -->
     <div class="storySplit">
-      <div class="noteBox">
-        <h3>The beginning</h3>
-        <p>
-          A simple moment turned into something permanent. From the first conversations to the first trips,
-          everything began to feel like home. We kept choosing each other again and again.
-        </p>
-        <div class="badgeRow">
-          <div class="badge">First trip</div>
-          <div class="badge">Sunday walks</div>
-          <div class="badge">Family dinners</div>
-          <div class="badge">Home</div>
-        </div>
-      </div>
-
       <div class="storyImage">
         <img
-          src="assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg"
-          alt="The proposal moment on one knee">
+          src="assets/images/CD1_Throwback_HighSchool_Promposal-min.jpeg"
+          alt="High school promposal throwback">
+      </div>
+
+      <div>
+        <h3 class="panelTitle">The Beginning</h3>
+        <p class="panelText">
+          Diana and Christian first met while attending Fairfax High School between 2014 and 2016.
+          What began as a young connection grew through years of shared moments, family dinners,
+          and choosing each other again and again.
+        </p>
       </div>
     </div>
 
@@ -1031,51 +1030,49 @@ textarea{min-height:120px;resize:vertical}
 
     <!-- THE PROPOSAL -->
     <div class="storySplit">
-      <div class="storyImage">
-        <img
-          src="assets/images/CD1_Proposal_Action_The_Jump-min.jpg"
-          alt="Celebrating the proposal">
+      <div>
+        <h3 class="panelTitle">The Proposal</h3>
+        <p class="panelText">
+          In March 2025, during a trip to Switzerland, Christian asked Diana a question that changed everything.
+          Overlooking the mountains below, the moment was simple, emotional, and unforgettable.
+        </p>
       </div>
 
-      <div class="noteBox">
-        <h3>The proposal</h3>
-        <p>
-          A day that felt calm on the surface and unforgettable underneath.
-          The best surprise is the one you feel before you can explain it.
-          We said yes to forever.
-        </p>
-        <div class="badgeRow">
-          <div class="badge">Yes</div>
-          <div class="badge">Happy tears</div>
-          <div class="badge">Celebration</div>
-        </div>
+      <div class="storyImage">
+        <img
+          src="assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg"
+          alt="Proposal moment in Switzerland">
       </div>
     </div>
 
-    <!-- PROPOSAL PHOTO MOMENTS -->
+    <!-- ENGAGEMENT GALLERY -->
     <div class="storyGrid">
       <div class="storyImage">
-        <img
-          src="assets/images/CD1_Proposal_Celebration_Hug-min.jpg"
-          alt="Proposal celebration hug">
+        <img src="assets/images/CD1_Engagement_Fall_Trees_Walk-min.JPEG" alt="Engagement walk through fall trees">
       </div>
 
       <div class="storyImage">
-        <img
-          src="assets/images/CD1_Proposal_Celebration_Cheek_Kiss-min.jpg"
-          alt="Proposal cheek kiss">
+        <img src="assets/images/CD1_Engagement_Snow_Mountain_Wide-min.JPG" alt="Wide mountain engagement photo">
       </div>
 
       <div class="storyImage">
-        <img
-          src="assets/images/CD1_Throwback_HighSchool_Proposal-min.jpeg"
-          alt="High school throwback proposal photo">
+        <img src="assets/images/CD1_Engagement_Snow_Mountain_Kiss-min.JPG" alt="Mountain kiss engagement photo">
+      </div>
+
+      <div class="storyImage">
+        <img src="assets/images/CD1_Engagement_Gondola_Bride_Ring_Reveal-min.JPG" alt="Ring reveal in gondola">
+      </div>
+
+      <div class="storyImage">
+        <img src="assets/images/CD1_Engagement_Travel_Canal_Portrait-min.JPG" alt="Travel portrait by canal">
+      </div>
+
+      <div class="storyImage">
+        <img src="assets/images/CD1_Engagement_Travel_Night_Selfie-min.JPG" alt="Night travel selfie engagement">
       </div>
     </div>
-
   </div>
 </section>
-
 
   <section class="section" id="details">
     <div class="container split">
