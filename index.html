@@ -179,9 +179,10 @@ header.solid{
 .heroOverlay{
   position:absolute;inset:0;
   background:
-    radial-gradient(circle at 30% 20%, rgba(0,0,0,.18), rgba(0,0,0,.05) 45%, rgba(0,0,0,.12) 100%),
-    linear-gradient(to bottom, rgba(0,0,0,.30), rgba(0,0,0,.10), rgba(0,0,0,.26));
+    radial-gradient(circle at 30% 20%, rgba(0,0,0,.22), rgba(0,0,0,.08) 45%, rgba(0,0,0,.16) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,.34), rgba(0,0,0,.12), rgba(0,0,0,.30));
 }
+
 .heroInner{
   position:relative;
   z-index:2;
@@ -190,14 +191,16 @@ header.solid{
   text-align:center;
   padding:34px 0 40px;
 }
+  
 .heroTitle{
   font-family:"Playfair Display",serif;
   font-weight:500;
-  font-size:clamp(54px,6.6vw,92px);
+  font-size:clamp(50px,6vw,86px);
   letter-spacing:.02em;
   line-height:1.02;
   margin:0 0 12px;
 }
+  
 .heroLabel{
   font-size:12px;
   letter-spacing:.28em;
@@ -239,14 +242,16 @@ header.solid{
   grid-template-columns:1.2fr 1fr 1.2fr;
   gap:14px;
 }
+  
 .heroMeta{
-  border:1px solid rgba(255,255,255,.22);
-  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.07);
   border-radius:18px;
   padding:16px 16px;
   backdrop-filter:blur(10px);
-  box-shadow:0 18px 60px rgba(0,0,0,.18);
+  box-shadow:0 14px 40px rgba(0,0,0,.14);
 }
+
 .heroMeta h3{
   margin:0 0 6px;
   font-size:11px;
