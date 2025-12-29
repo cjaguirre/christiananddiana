@@ -171,10 +171,11 @@ header.solid{
 .heroBg{
   position:absolute;
   inset:0;
-  background:#d9d4cc url("assets/images/Beach_Portrait_Couple_Standing_By_Water-min.jpeg") center/cover no-repeat;
+  background:#d9d4cc url("assets/images/CD1_Wedding_Beach_Ocean_Kiss-min.jpeg") center/cover no-repeat;
   transform:scale(1.02);
   transition:opacity 1s ease;
 }
+
 .heroOverlay{
   position:absolute;inset:0;
   background:
@@ -1408,13 +1409,13 @@ const SETTINGS = {
 };
 
 const HERO_IMAGES = [
-  "assets/images/Beach_Portrait_Couple_Standing_By_Water-min.jpeg",
-  "assets/images/Beach_Portrait_Couple_On_Bench_Wide-min.jpeg",
-  "assets/images/Courthouse_Portrait_Couple_Embrace-min.JPG",
-  "assets/images/Courthouse_Evening_Portrait_Indoor_Tiles-min.JPG",
-  "assets/images/Courthouse_Candid_Walking_Hand_in_Hand-min.jpeg",
-  "assets/images/Courthouse_Candid_Climbing_Stairs_Together-min.jpeg",
-  "assets/images/Beach_Portrait_Couple_On_Bench_Close-min.JPG"
+  "assets/images/CD1_Wedding_Beach_Ocean_Kiss-min.jpeg",
+  "assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.jpeg",
+  "assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg",
+  "assets/images/CD1_Wedding_Beach_Dunes_Standing-min.jpeg",
+  "assets/images/CD1_Wedding_Beach_Sitting_Kiss-min.jpeg",
+  "assets/images/CD1_Beach_Ocean_Look_Back-min.jpeg",
+  "assets/images/CD1_Wedding_Beach_Sitting_Portrait-min.jpeg"
 ];
 
 function pad(n){ return String(n).padStart(2, "0"); }
@@ -1480,7 +1481,10 @@ function rotateHero(){
     heroBg.style.opacity = "1";
   }, 700);
 }
-setInterval(rotateHero, 7000);
+
+  setTimeout(() => {
+  setInterval(rotateHero, 7000);
+}, 6000);
 
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modalImg");
