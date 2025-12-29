@@ -920,6 +920,18 @@ textarea{min-height:120px;resize:vertical}
   .brand span{display:none}
   .pill{display:none}
 }
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:url("assets/images/grain.png");
+  opacity:.06;
+  z-index:9999;
+}
+
+  
 </style>
 </head>
 
