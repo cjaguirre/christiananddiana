@@ -204,6 +204,87 @@ input:focus, select:focus { border-bottom-color: var(--accent); }
 .modalBody img { width: 100%; max-height: 85vh; object-fit: contain; }
 .modalClose { position: absolute; top: -50px; right: 0; background: none; border: none; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; }
 
+
+  /* ===============================
+   Celebration section refinement
+   =============================== */
+
+.celebration {
+  padding-top: 160px;
+  padding-bottom: 150px;
+}
+
+/* limit width so it feels editorial */
+.celebrationInner {
+  max-width: 720px;
+}
+
+/* Kicker (THE CELEBRATION) */
+.celebrationKicker {
+  margin-bottom: 36px;
+  font-size: 9px;
+  letter-spacing: 0.55em;
+}
+
+/* Date */
+.celebrationDate {
+  margin-bottom: 0;
+}
+
+/* Location line */
+.celebrationLocation {
+  margin-top: 26px;
+  font-size: 17px;
+}
+
+/* Countdown spacing */
+.celebrationCount {
+  margin-top: 90px;
+  gap: 76px;
+}
+
+/* Countdown numbers */
+.celebrationNum {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+/* Countdown labels */
+.celebrationLbl {
+  margin-top: 14px;
+  font-size: 8px;
+  letter-spacing: 0.45em;
+  color: var(--muted2);
+}
+
+/* Divider (this was missing visually before) */
+.celebrationRule {
+  width: 200px;
+  height: 1px;
+  background: var(--line);
+  margin: 80px auto 48px;
+}
+
+/* Paragraph copy */
+.celebrationCopy {
+  max-width: 600px;
+  font-size: 13.5px;
+  line-height: 2;
+}
+
+/* Mobile tuning */
+@media (max-width: 700px) {
+  .celebration {
+    padding-top: 120px;
+    padding-bottom: 110px;
+  }
+
+  .celebrationCount {
+    gap: 34px;
+  }
+}
+
+  
 @media (max-width: 900px) {
   .nav { display: none; }
   .storySplit { grid-template-columns: 1fr; gap: 40px; text-align: center; }
