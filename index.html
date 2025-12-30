@@ -210,18 +210,18 @@ input:focus, select:focus { border-bottom-color: var(--accent); }
    =============================== */
 
 .celebration {
-  padding-top: 160px;
-  padding-bottom: 150px;
+  padding-top: 130px;
+  padding-bottom: 120px;
 }
 
-/* limit width so it feels editorial */
+/* editorial width */
 .celebrationInner {
-  max-width: 720px;
+  max-width: 680px;
 }
 
-/* Kicker (THE CELEBRATION) */
+/* THE CELEBRATION */
 .celebrationKicker {
-  margin-bottom: 36px;
+  margin-bottom: 22px;
   font-size: 9px;
   letter-spacing: 0.55em;
 }
@@ -231,56 +231,61 @@ input:focus, select:focus { border-bottom-color: var(--accent); }
   margin-bottom: 0;
 }
 
-/* Location line */
+/* Location */
 .celebrationLocation {
-  margin-top: 26px;
-  font-size: 17px;
+  margin-top: 18px;
+  font-size: 16px;
 }
 
-/* Countdown spacing */
+/* Countdown */
 .celebrationCount {
-  margin-top: 90px;
-  gap: 76px;
+  margin-top: 60px;
+  gap: 68px;
 }
 
-/* Countdown numbers */
+/* Numbers */
 .celebrationNum {
-  font-size: 40px;
+  font-size: 38px;
   font-weight: 400;
 }
 
-/* Countdown labels */
+/* Labels */
 .celebrationLbl {
-  margin-top: 14px;
+  margin-top: 12px;
   font-size: 8px;
   letter-spacing: 0.45em;
   color: var(--muted2);
 }
 
-/* Divider (this was missing visually before) */
+/* Divider */
 .celebrationRule {
-  width: 200px;
+  width: 220px;
   height: 1px;
   background: var(--line);
-  margin: 80px auto 48px;
+  margin: 52px auto 34px;
 }
 
-/* Paragraph copy */
+/* Closing text */
 .celebrationCopy {
-  max-width: 600px;
-  font-size: 13.5px;
-  line-height: 2;
+  max-width: 560px;
+  font-size: 13px;
+  line-height: 1.9;
 }
 
-/* Mobile tuning */
+/* Mobile */
 @media (max-width: 700px) {
   .celebration {
-    padding-top: 120px;
-    padding-bottom: 110px;
+    padding-top: 110px;
+    padding-bottom: 100px;
   }
 
   .celebrationCount {
-    gap: 34px;
+    margin-top: 46px;
+    gap: 30px;
+  }
+
+  .celebrationRule {
+    margin: 40px auto 26px;
   }
 }
 
