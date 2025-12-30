@@ -146,6 +146,53 @@ header.solid {
 .storyImage img { width: 100%; height: 100%; object-fit: cover; }
 .storyContent h3 { font-size: 28px; margin-bottom: 20px; color: var(--accent); }
 
+  /* Story enhancements */
+.storyDivider {
+  margin: 50px auto 10px;
+  width: 140px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+  opacity: 0.6;
+}
+
+.storyTimeline {
+  position: absolute;
+  top: 220px;
+  bottom: 160px;
+  left: 50%;
+  width: 1px;
+  background: rgba(140, 110, 90, 0.25);
+  transform: translateX(-50%);
+}
+
+.storyLabel {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted2);
+  margin-bottom: 6px;
+}
+
+.storyQuote {
+  max-width: 520px;
+  margin: 80px auto;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.7;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Framed photo treatment */
+.storyImage img {
+  padding: 6px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  border-radius: 4px;
+}
+
+
 /* Details & Blocks */
 .threeCol, .twoCol { display: grid; gap: 30px; margin-top: 60px; text-align: left; }
 .threeCol { grid-template-columns: repeat(3, 1fr); }
@@ -299,6 +346,9 @@ input:focus, select:focus { border-bottom-color: var(--accent); }
   .formWrap { padding: 40px 20px; }
   .countRow { gap: 20px; flex-wrap: wrap; }
 }
+
+  .storyTimeline { display: none; }
+
 </style>
 </head>
 
@@ -385,28 +435,51 @@ input:focus, select:focus { border-bottom-color: var(--accent); }
 </section>
 
 
-  <section class="section sectionAlt center" id="story">
-    <div class="container">
-      <span class="kicker">Our Journey</span>
-      <h2 class="h2">Our Story</h2>
-      
-      <div class="storySplit">
-        <div class="storyImage"><img src="assets/images/CD1_Throwback_HighSchool_Promposal-min.jpeg" alt="Prom"></div>
-        <div class="storyContent">
-          <h3>High School Sweethearts</h3>
-          <p class="copy" style="text-align: left;">Diana and Christian first met at Fairfax High School between 2014 and 2016. What began as a young connection grew through years of shared dreams, family dinners, and a commitment to always choosing one another.</p>
-        </div>
-      </div>
+ <section class="section sectionAlt center" id="story" style="position: relative;">
+  <div class="container">
+    <span class="kicker">Our Journey</span>
+    <h2 class="h2">Our Story</h2>
 
-      <div class="storySplit reverse">
-        <div class="storyImage"><img src="assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg" alt="Proposal"></div>
-        <div class="storyContent">
-          <h3>A Swiss Yes</h3>
-          <p class="copy" style="text-align: left;">In March 2025, during a trip to Switzerland, Christian asked Diana a question that changed everything. Overlooking the mountains below, the moment was simple, emotional, and unforgettable.</p>
-        </div>
+    <div class="storyDivider"></div>
+    <div class="storyTimeline"></div>
+
+    <div class="storySplit">
+      <div class="storyImage">
+        <img src="assets/images/CD1_Throwback_HighSchool_Promposal-min.jpeg" alt="Prom">
+      </div>
+      <div class="storyContent">
+        <div class="storyLabel">Our Beginning</div>
+        <h3>High School Sweethearts</h3>
+        <p class="copy" style="text-align: left;">
+          Diana and Christian first met at Fairfax High School between 2014 and 2016.
+          What began as a young connection grew through years of shared dreams, family
+          dinners, and a commitment to always choosing one another.
+        </p>
       </div>
     </div>
-  </section>
+
+    <p class="storyQuote">
+      Some stories take years to tell.
+    </p>
+
+    <div class="storySplit reverse">
+      <div class="storyImage">
+        <img src="assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg" alt="Proposal">
+      </div>
+      <div class="storyContent">
+        <div class="storyLabel">The Proposal</div>
+        <h3>A Swiss Yes</h3>
+        <p class="copy" style="text-align: left;">
+          In March 2025, during a trip to Switzerland, Christian asked Diana a question
+          that changed everything. Overlooking the mountains below, the moment was
+          simple, emotional, and unforgettable.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
   <section class="section center" id="details">
     <div class="container">
