@@ -252,6 +252,76 @@ input:focus, select:focus { border-bottom-color: var(--accent); }
 .modalClose { position: absolute; top: -50px; right: 0; background: none; border: none; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; }
 
 
+
+
+
+  /* Weather Channel Style Card */
+.weatherCard {
+  margin-top: 20px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.weatherHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
+}
+
+.weatherDate {
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  color: var(--text);
+}
+
+.weatherStatus {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted2);
+}
+
+.weatherMain {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.weatherTemp strong {
+  display: block;
+  font-size: 28px;
+  font-family: "Playfair Display", serif;
+  color: var(--text);
+}
+
+.weatherLabel {
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted2);
+}
+
+.weatherFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.weatherUpdated {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted2);
+}
+
   /* ===============================
    Celebration section refinement
    =============================== */
@@ -607,11 +677,50 @@ input:focus, select:focus { border-bottom-color: var(--accent); }
                           </div>
 
         
-        <div class="block">
-          <h3>Weather</h3>
-          <p>Antigua has spring-like weather. Evenings are mild, so a light jacket or wrap is perfect.</p>
-          <span class="smallMeta">Layer Friendly</span>
-        </div>
+  <div class="block weatherBlock">
+                                <h3>Weather</h3>
+                              
+                                <!-- Location -->
+                                <p class="smallMeta">Antigua, Guatemala</p>
+                              
+                                <!-- Forecast Card -->
+                                <div class="weatherCard">
+                              
+                                  <div class="weatherHeader">
+                                    <span class="weatherDate">Saturday, July 25</span>
+                                    <span class="weatherStatus">Wedding Day Forecast</span>
+                                  </div>
+                              
+                                  <div class="weatherMain">
+                                    <div class="weatherTemp">
+                                      <strong id="weatherHigh">--°</strong>
+                                      <span class="weatherLabel">High</span>
+                                    </div>
+                              
+                                    <div class="weatherTemp">
+                                      <strong id="weatherLow">--°</strong>
+                                      <span class="weatherLabel">Low</span>
+                                    </div>
+                              
+                                    <div class="weatherTemp">
+                                      <strong id="weatherRain">--%</strong>
+                                      <span class="weatherLabel">Rain</span>
+                                    </div>
+                                  </div>
+                              
+                                  <div class="weatherFooter">
+                                    <span id="weatherSummary">
+                                      Seasonal averages shown. Live forecast will appear closer to the date.
+                                    </span>
+                                    <span class="weatherUpdated" id="weatherUpdated">
+                                      Updated automatically
+                                    </span>
+                                  </div>
+                              
+                                </div>
+                              </div>
+
+
         
       </div>
 
@@ -774,6 +883,103 @@ document.querySelectorAll(".tile").forEach(t => {
 });
 document.getElementById("modalClose").onclick = () => modal.classList.remove("open");
 modal.onclick = (e) => { if(e.target === modal) modal.classList.remove("open"); };
+
+
+  <script>
+async function loadWeather() {
+  const eventDate = new Date("2026-07-25T16:00:00-06:00");
+  const today = new Date();
+  const daysOut = Math.ceil((eventDate - today) / (1000 * 60 * 60 * 24));
+
+  // Antigua, Guatemala coordinates
+  const lat = 14.5586;
+  const lon = -90.7332;
+
+  // Only load live forecast within 10 days
+  if (daysOut > 10) return;
+
+  try {
+    const res = await fetch(
+      `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=America/Guatemala`
+    );
+
+    const data = await res.json();
+    const dayIndex = data.daily.time.findIndex(d =>
+      d === eventDate.toISOString().split("T")[0]
+    );
+
+    if (dayIndex === -1) return;
+
+    const high = Math.round(data.daily.temperature_2m_max[dayIndex]);
+    const low = Math.round(data.daily.temperature_2m_min[dayIndex]);
+    const rain = data.daily.precipitation_probability_max[dayIndex];
+
+    document.getElementById("liveWeather").innerHTML =
+      `Forecasted high of ${high}°F and low of ${low}°F, with a ${rain}% chance of rain.`;
+  } catch (err) {
+    console.warn("Weather fetch failed");
+  }
+}
+
+loadWeather();
+
+
+
+  <script>
+async function loadWeather() {
+  const eventISO = "2026-07-25T16:00:00-06:00";
+  const eventDate = new Date(eventISO);
+  const today = new Date();
+  const daysOut = Math.ceil((eventDate - today) / (1000 * 60 * 60 * 24));
+
+  // Antigua coordinates
+  const lat = 14.5586;
+  const lon = -90.7332;
+
+  // Show seasonal averages until forecast window
+  if (daysOut > 10) {
+    document.getElementById("weatherHigh").textContent = "78°";
+    document.getElementById("weatherLow").textContent = "64°";
+    document.getElementById("weatherRain").textContent = "35%";
+    document.getElementById("weatherSummary").textContent =
+      "Seasonal July averages for Antigua. Evenings remain mild.";
+    return;
+  }
+
+  try {
+    const res = await fetch(
+      `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=America/Guatemala`
+    );
+    const data = await res.json();
+
+    const targetDate = eventDate.toISOString().split("T")[0];
+    const idx = data.daily.time.indexOf(targetDate);
+    if (idx === -1) return;
+
+    document.getElementById("weatherHigh").textContent =
+      Math.round(data.daily.temperature_2m_max[idx]) + "°";
+    document.getElementById("weatherLow").textContent =
+      Math.round(data.daily.temperature_2m_min[idx]) + "°";
+    document.getElementById("weatherRain").textContent =
+      data.daily.precipitation_probability_max[idx] + "%";
+
+    document.getElementById("weatherSummary").textContent =
+      "Live forecast for Antigua on wedding day.";
+
+    document.getElementById("weatherUpdated").textContent =
+      "Updated " + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+  } catch (e) {
+    console.warn("Weather data unavailable");
+  }
+}
+
+loadWeather();
+</script>
+
+</script>
+
+  
 </script>
 
 </body>
