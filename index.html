@@ -28,6 +28,12 @@
   --shadow: 0 10px 30px rgba(43, 29, 20, 0.05);
 }
 
+  .weatherTemp strong {
+  min-height: 34px;
+}
+
+
+  
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -884,48 +890,7 @@ document.querySelectorAll(".tile").forEach(t => {
 document.getElementById("modalClose").onclick = () => modal.classList.remove("open");
 modal.onclick = (e) => { if(e.target === modal) modal.classList.remove("open"); };
 
-
-  <script>
-async function loadWeather() {
-  const eventDate = new Date("2026-07-25T16:00:00-06:00");
-  const today = new Date();
-  const daysOut = Math.ceil((eventDate - today) / (1000 * 60 * 60 * 24));
-
-  // Antigua, Guatemala coordinates
-  const lat = 14.5586;
-  const lon = -90.7332;
-
-  // Only load live forecast within 10 days
-  if (daysOut > 10) return;
-
-  try {
-    const res = await fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=America/Guatemala`
-    );
-
-    const data = await res.json();
-    const dayIndex = data.daily.time.findIndex(d =>
-      d === eventDate.toISOString().split("T")[0]
-    );
-
-    if (dayIndex === -1) return;
-
-    const high = Math.round(data.daily.temperature_2m_max[dayIndex]);
-    const low = Math.round(data.daily.temperature_2m_min[dayIndex]);
-    const rain = data.daily.precipitation_probability_max[dayIndex];
-
-    document.getElementById("liveWeather").innerHTML =
-      `Forecasted high of ${high}°F and low of ${low}°F, with a ${rain}% chance of rain.`;
-  } catch (err) {
-    console.warn("Weather fetch failed");
-  }
-}
-
-loadWeather();
-
-
-
-  <script>
+// Weather Channel style forecast
 async function loadWeather() {
   const eventISO = "2026-07-25T16:00:00-06:00";
   const eventDate = new Date(eventISO);
@@ -936,13 +901,34 @@ async function loadWeather() {
   const lat = 14.5586;
   const lon = -90.7332;
 
-  // Show seasonal averages until forecast window
+  const highEl = document.getElementById("weatherHigh");
+  const lowEl = document.getElementById("weatherLow");
+  const rainEl = document.getElementById("weatherRain");
+  const summaryEl = document.getElementById("weatherSummary");
+  const updatedEl = document.getElementById("weatherUpdated");
+
+  // Guard if elements aren't found
+  if (!highEl || !lowEl || !rainEl) return;
+
+  // Dim placeholders
+  [highEl, lowEl, rainEl].forEach(el => {
+    if (el.textContent.includes("--")) {
+      el.style.opacity = "0.4";
+    }
+  });
+
+  // Seasonal averages until forecast window
   if (daysOut > 10) {
-    document.getElementById("weatherHigh").textContent = "78°";
-    document.getElementById("weatherLow").textContent = "64°";
-    document.getElementById("weatherRain").textContent = "35%";
-    document.getElementById("weatherSummary").textContent =
+    highEl.textContent = "78°";
+    lowEl.textContent = "64°";
+    rainEl.textContent = "35%";
+
+    summaryEl.textContent =
       "Seasonal July averages for Antigua. Evenings remain mild.";
+
+    updatedEl.textContent = "Updated automatically";
+
+    [highEl, lowEl, rainEl].forEach(el => el.style.opacity = "1");
     return;
   }
 
@@ -950,37 +936,32 @@ async function loadWeather() {
     const res = await fetch(
       `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=America/Guatemala`
     );
-    const data = await res.json();
 
+    const data = await res.json();
     const targetDate = eventDate.toISOString().split("T")[0];
     const idx = data.daily.time.indexOf(targetDate);
     if (idx === -1) return;
 
-    document.getElementById("weatherHigh").textContent =
-      Math.round(data.daily.temperature_2m_max[idx]) + "°";
-    document.getElementById("weatherLow").textContent =
-      Math.round(data.daily.temperature_2m_min[idx]) + "°";
-    document.getElementById("weatherRain").textContent =
-      data.daily.precipitation_probability_max[idx] + "%";
+    highEl.textContent = Math.round(data.daily.temperature_2m_max[idx]) + "°";
+    lowEl.textContent = Math.round(data.daily.temperature_2m_min[idx]) + "°";
+    rainEl.textContent = data.daily.precipitation_probability_max[idx] + "%";
 
-    document.getElementById("weatherSummary").textContent =
-      "Live forecast for Antigua on wedding day.";
+    summaryEl.textContent = "Live forecast for Antigua on wedding day.";
+    updatedEl.textContent =
+      "Updated " + new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 
-    document.getElementById("weatherUpdated").textContent =
-      "Updated " + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    [highEl, lowEl, rainEl].forEach(el => el.style.opacity = "1");
 
   } catch (e) {
     console.warn("Weather data unavailable");
   }
 }
 
+// Run once after page load
 loadWeather();
 </script>
 
-</script>
 
-  
-</script>
 
 </body>
 </html>
