@@ -213,11 +213,45 @@ header.solid {
 .badge { padding: 8px 14px; border: 1px solid var(--line); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); border-radius: 999px; }
 
 /* Timeline */
-.timeline { max-width: 850px; margin: 60px auto 0; }
-.item { display: grid; grid-template-columns: 140px 1fr; gap: 30px; padding: 35px 0; border-bottom: 1px solid var(--line); text-align: left; }
-.item:last-child { border-bottom: none; }
-.time { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
-.item strong { font-size: 20px; display: block; margin-bottom: 6px; }
+              .itinerary {
+                max-width: 520px;
+                margin: 60px auto 0;
+              }
+              
+              .itinerary .item {
+                display: grid;
+                grid-template-columns: 90px 1fr;
+                gap: 24px;
+                padding: 22px 0;
+                border-bottom: 1px solid var(--line);
+              }
+              
+              .itinerary .item:last-child {
+                border-bottom: none;
+              }
+              
+              .itinerary .time {
+                font-size: 12px;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                color: var(--accent);
+                text-align: right;
+                padding-top: 4px;
+              }
+              
+              .itinerary strong {
+                display: block;
+                font-weight: 500;
+                margin-bottom: 6px;
+              }
+              
+              .itinerary span {
+                display: block;
+                font-size: 14px;
+                color: var(--muted);
+                line-height: 1.6;
+              }
+
 
 /* Map Placeholder */
 .mapWrap { margin-top: 50px; background: var(--sand2); border: 1px solid var(--line); padding: 70px 40px; text-align: center; }
@@ -581,18 +615,49 @@ input:focus, select:focus { border-bottom-color: var(--accent); }
     </div>
   </section>
 
-  <section class="section sectionAlt center" id="schedule">
-    <div class="container">
-      <span class="kicker">The Plan</span>
-      <h2 class="h2">Schedule</h2>
-      <div class="timeline">
-        <div class="item"><div class="time">3:30 PM</div><div><strong>Guest Arrival</strong><span>Seating and welcome music</span></div></div>
-        <div class="item"><div class="time">4:00 PM</div><div><strong>Ceremony</strong><span>Vows and exchange of rings</span></div></div>
-        <div class="item"><div class="time">5:00 PM</div><div><strong>Cocktail Hour</strong><span>Drinks and light bites</span></div></div>
-        <div class="item"><div class="time">6:30 PM</div><div><strong>Reception</strong><span>Dinner, toasts, and dancing</span></div></div>
-      </div>
-    </div>
-  </section>
+                             <section class="section sectionAlt center" id="schedule">
+                              <div class="container">
+                                <span class="kicker">The Plan</span>
+                                <h2 class="h2">Schedule</h2>
+                            
+                                <div class="itinerary">
+                            
+                                  <div class="item">
+                                    <div class="time">3:30 PM</div>
+                                    <div>
+                                      <strong>Guest Arrival</strong>
+                                      <span>Seating and welcome music</span>
+                                    </div>
+                                  </div>
+                            
+                                  <div class="item">
+                                    <div class="time">4:00 PM</div>
+                                    <div>
+                                      <strong>Ceremony</strong>
+                                      <span>Vows and exchange of rings</span>
+                                    </div>
+                                  </div>
+                            
+                                  <div class="item">
+                                    <div class="time">5:00 PM</div>
+                                    <div>
+                                      <strong>Cocktail Hour</strong>
+                                      <span>Drinks and light bites</span>
+                                    </div>
+                                  </div>
+                            
+                                  <div class="item">
+                                    <div class="time">6:30 PM</div>
+                                    <div>
+                                      <strong>Reception</strong>
+                                      <span>Dinner, toasts, and dancing</span>
+                                    </div>
+                                  </div>
+                            
+                                </div>
+                              </div>
+                            </section>
+
 
   <section class="section center" id="travel">
     <div class="container">
