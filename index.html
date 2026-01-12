@@ -1106,12 +1106,12 @@ function rotateHero(delay) {
     }, 800);
 
     // After first image, rotate every 4 seconds
-    rotateHero(8000);
+    rotateHero(7000);
   }, delay);
 }
 
 // First image stays longer (8 seconds)
-rotateHero(12000);
+rotateHero(10000);
 
   
   const modal=document.getElementById("modal");const modalImg=document.getElementById("modalImg");document.querySelectorAll(".tile").forEach(t=>{t.onclick=()=>{modalImg.src=t.dataset.full;modal.classList.add("open");};});
