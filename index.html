@@ -22,6 +22,60 @@
   object-fit: cover;
 }
 
+
+/* === Story Slideshow === */
+.storyImage.slideshow {
+  position: relative;
+}
+
+.storyImage.slideshow .slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.6s ease;
+}
+
+.storyImage.slideshow img {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Navigation arrows */
+.slideNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(252,249,243,0.9);
+  border: 1px solid var(--line);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 34px;
+  text-align: center;
+  color: var(--text);
+}
+
+.slideNav.prev { left: 12px; }
+.slideNav.next { right: 12px; }
+
+/* Mobile: swipe only */
+@media (max-width: 768px) {
+  .slideNav { display: none; }
+}
+
+
+
+
+
+
+
+
+
+
+
+  
   
   .storyContent h3{font-size:28px;margin-bottom:20px;color:var(--accent)}.storyDivider{margin:50px auto 10px;width:140px;height:1px;background:linear-gradient(to right,transparent,var(--accent),transparent);opacity:.6}.storyLabel{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted2);margin-bottom:6px}.storyQuote{max-width:520px;margin:80px auto;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;line-height:1.7;color:var(--muted);text-align:center}
   
@@ -223,10 +277,39 @@ This site will host all details, travel guidance, and updates as we approach our
 
 <h2 class=h2>Our Story</h2>
 <div class=storyDivider></div>
-<div class=storySplit>
-<div class=storyImage>
-<img src=assets/images/CD1_Throwback_HighSchool_Promposal-min.jpeg alt=Prom>
+
+
+
+
+
+  
+<div class="storyImage slideshow">
+  <div class="slides">
+    <img src="assets/images/CD1_Engagement_Fall_Trees_Walk-min.jpeg" alt="">
+    <img src="assets/images/CD1_Engagement_Gondola_Bride_Ring_Reveal-min.jpeg" alt="">
+    <img src="assets/images/CD1_Engagement_Gondola_Groom_Portrait-min.jpeg" alt="">
+    <img src="assets/images/CD1_Engagement_Market_Casual_Portrait-min-min.jpeg" alt="">
+    <img src="assets/images/CD1_Engagement_Overlook_Selfie-min.jpeg" alt="">
+    <img src="assets/images/CD1_Engagement_Snow_Mountain_Kiss-min.jpeg" alt="">
+    <img src="assets/images/CD1_Engagement_Snow_Mountain_Wide-min.jpeg" alt="">
+    <img src="assets/images/CD1_Engagement_Travel_Canal_Portrait-min.jpeg" alt="">
+    <img src="assets/images/CD1_Engagement_Travel_Night_Selfie-min.jpeg" alt="">
+    <img src="assets/images/CD1_Engagement_Travel_Street_Kiss-min.jpeg" alt="">
+  </div>
+
+  <button class="slideNav prev">‹</button>
+  <button class="slideNav next">›</button>
 </div>
+
+
+
+
+
+
+
+
+
+  
 <div class=storyContent>
 <div class=storyLabel>Our Beginning</div>
 <h3>High School Sweethearts</h3>
@@ -662,6 +745,33 @@ modal.onclick = (e) => {
 };
 
 
+
+
+document.querySelectorAll(".slideshow").forEach(slideshow => {
+  const slides = slideshow.querySelector(".slides");
+  const images = slides.children;
+  let index = 0;
+
+  const update = () => {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  };
+
+  slideshow.querySelector(".next").onclick = () => {
+    index = (index + 1) % images.length;
+    update();
+  };
+
+  slideshow.querySelector(".prev").onclick = () => {
+    index = (index - 1 + images.length) % images.length;
+    update();
+  };
+});
+
+
+
+
+
+  
   
 </script>
 </body>
