@@ -70,10 +70,14 @@ img.center-low {
 
   
 /* === Swiss Yes auto-fade === */
+/* === Swiss Yes auto-fade === */
 .fadeStack {
   position: relative;
-  height: 520px;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  overflow: hidden;
 }
+
 
 .fadeStack img {
   position: absolute;
@@ -89,11 +93,7 @@ img.center-low {
   opacity: 1;
 }
 
-@media (max-width: 768px) {
-  .fadeStack {
-    height: 360px;
-  }
-}
+
 
 
 
