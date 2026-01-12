@@ -44,6 +44,45 @@
   height: 520px;
 }
 
+
+
+
+
+  
+/* === Swiss Yes auto-fade === */
+.fadeStack {
+  position: relative;
+  height: 520px;
+}
+
+.fadeStack img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.8s ease;
+}
+
+.fadeStack img.active {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .fadeStack {
+    height: 360px;
+  }
+}
+
+
+
+
+
+
+
+
+  
 @media (max-width: 768px) {
   .storyImage.slideshow {
     height: 360px;
@@ -329,15 +368,23 @@ Some stories take years to tell.
 
   
   
-<div class="storyImage slideshow">
-  <div class="slides">
-    <img src="assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg" alt="">
-    <img src="assets/images/CD1_Proposal_Another_Image-min.jpg" alt="">
-    <img src="assets/images/CD1_Proposal_Another_Image_2-min.jpg" alt="">
-  </div>
-  <button class="slideNav prev" type="button">‹</button>
-  <button class="slideNav next" type="button">›</button>
+<div class="storyImage fadeStack">
+  <img src="assets/images/CD1_Engagement_Fall_Trees_Walk-min.jpeg" class="active" alt="">
+  <img src="assets/images/CD1_Engagement_Gondola_Bride_Ring_Reveal-min.jpeg" alt="">
+  <img src="assets/images/CD1_Engagement_Gondola_Groom_Portrait-min.jpeg" alt="">
+  <img src="assets/images/CD1_Engagement_Market_Casual_Portrait-min-min.jpeg" alt="">
+  <img src="assets/images/CD1_Engagement_Overlook_Selfie-min.jpeg" alt="">
+  <img src="assets/images/CD1_Engagement_Snow_Mountain_Kiss-min.jpeg" alt="">
+  <img src="assets/images/CD1_Engagement_Snow_Mountain_Wide-min.jpeg" alt="">
+  <img src="assets/images/CD1_Engagement_Travel_Canal_Portrait-min.jpeg" alt="">
+  <img src="assets/images/CD1_Engagement_Travel_Night_Selfie-min.jpeg" alt="">
+  <img src="assets/images/CD1_Engagement_Travel_Street_Kiss-min.jpeg" alt="">
+  <img src="assets/images/CD1_Proposal_Action_The_Jump-min.jpg" alt="">
+  <img src="assets/images/CD1_Proposal_Celebration_Cheek_Kiss-min.jpg" alt="">
+  <img src="assets/images/CD1_Proposal_Celebration_Hug-min.jpg" alt="">
+  <img src="assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg" alt="">
 </div>
+
 
 
 
@@ -783,6 +830,16 @@ document.querySelectorAll(".slideshow").forEach(slideshow => {
 });
 
 
+document.querySelectorAll(".fadeStack").forEach(stack => {
+  const images = stack.querySelectorAll("img");
+  let index = 0;
+
+  setInterval(() => {
+    images[index].classList.remove("active");
+    index = (index + 1) % images.length;
+    images[index].classList.add("active");
+  }, 5000);
+});
 
 
 
