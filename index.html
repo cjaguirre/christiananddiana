@@ -1034,6 +1034,7 @@ Updated automatically
   
 <section class="section sectionAlt center" id="rsvp">
   <div class="container">
+
     <span class="kicker">Response Requested</span>
     <h2 class="h2">RSVP</h2>
 
@@ -1042,6 +1043,8 @@ Updated automatically
     </p>
 
     <div class="formWrap">
+
+      <!-- RSVP FORM -->
       <form
         id="rsvpForm"
         action="https://formspree.io/f/mreegaol"
@@ -1094,9 +1097,57 @@ Updated automatically
           Send Response
         </button>
       </form>
+
+      <!-- THANK YOU MESSAGE -->
+      <div
+        id="thankYouMessage"
+        style="
+          display:none;
+          text-align:center;
+          padding:60px 0 20px;
+        "
+      >
+        <span class="kicker">Response Received</span>
+
+        <h3
+          style="
+            font-family:'Playfair Display',serif;
+            font-size:32px;
+            font-weight:400;
+            margin:10px 0 18px;
+            color:var(--text);
+          "
+        >
+          Thank You
+        </h3>
+
+        <div
+          style="
+            width:120px;
+            height:1px;
+            background:var(--line);
+            margin:0 auto 28px;
+          "
+        ></div>
+
+        <p
+          style="
+            max-width:480px;
+            margin:0 auto;
+            font-size:14px;
+            line-height:1.8;
+            color:var(--muted);
+          "
+        >
+          We’ve received your response and truly appreciate you taking the time to RSVP.
+          We’re so looking forward to celebrating together in Antigua.
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
+
 
 
 
@@ -1202,6 +1253,32 @@ document.querySelectorAll(".fadeStack").forEach(stack => {
   }, 5000);
 });
 
+  // ======================
+  // RSVP FORM HANDLER
+  // ======================
+  const rsvpForm = document.getElementById("rsvpForm");
+  const thankYouMessage = document.getElementById("thankYouMessage");
+
+  if (rsvpForm) {
+    rsvpForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(rsvpForm);
+
+      const response = await fetch(rsvpForm.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (response.ok) {
+        rsvpForm.style.display = "none";
+        thankYouMessage.style.display = "block";
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    });
+  }
 
 
   
