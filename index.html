@@ -1045,16 +1045,9 @@ Updated automatically
     <div class="formWrap">
 
       <!-- RSVP FORM -->
-      <form
-        id="rsvpForm"
-        action="https://formspree.io/f/mreegaol"
-        method="POST"
-      >
-        <!-- Email subject -->
-        <input type="hidden" name="_subject" value="New Wedding RSVP Submission">
+<form id="rsvpForm">
 
-        <!-- Spam protection -->
-        <input type="text" name="_gotcha" style="display:none">
+
 
         <div class="row">
           <input
@@ -1255,7 +1248,8 @@ document.querySelectorAll(".fadeStack").forEach(stack => {
   // ======================
   // RSVP FORM HANDLER
   // ======================
-  const rsvpForm = document.getElementById("rsvpForm");
+  
+const rsvpForm = document.getElementById("rsvpForm");
 const thankYouMessage = document.getElementById("thankYouMessage");
 const thankYouText = document.getElementById("thankYouText");
 const attendingSelect = document.getElementById("attendingSelect");
@@ -1272,33 +1266,43 @@ attendingSelect.addEventListener("change", () => {
 });
 
 // 2️⃣ Conditional thank-you message + submit
-rsvpForm.addEventListener("submit", async function (e) {
+rsvpForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const attending = attendingSelect.value;
-  const formData = new FormData(rsvpForm);
+  const payload = {
+    name: rsvpForm.name.value.trim(),
+    email: rsvpForm.email.value.trim(),
+    attending: attendingSelect.value,
+    guests: guestCount.value || 0,
+    notes: rsvpForm.notes.value.trim()
+  };
 
-  const response = await fetch(rsvpForm.action, {
-    method: "POST",
-    body: formData,
-    headers: { "Accept": "application/json" }
-  });
+  try {
+    const res = await fetch(
+      "https://script.google.com/macros/s/AKfycbxKeyzimLovxPyLZS34JMgU0USycAgOxqiUwbQiWc7vqUxlZuL28lh7sk_wZ_PWxHlrUA/exec",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      }
+    );
 
-  if (response.ok) {
+    if (!res.ok) throw new Error("Request failed");
+
     rsvpForm.style.display = "none";
     thankYouMessage.style.display = "block";
 
-    if (attending === "Yes") {
-      thankYouText.textContent =
-        "We’re so happy you’ll be joining us. We can’t wait to celebrate together in Antigua.";
-    } else {
-      thankYouText.textContent =
-        "Thank you for letting us know. You’ll be missed, and we truly appreciate your response.";
-    }
-  } else {
+    thankYouText.textContent =
+      payload.attending === "Yes"
+        ? "We’re so happy you’ll be joining us. A confirmation email has been sent."
+        : "Thank you for letting us know. You’ll be missed, and we truly appreciate your response.";
+
+  } catch (err) {
     alert("Something went wrong. Please try again.");
   }
 });
+
+
 
 
 
