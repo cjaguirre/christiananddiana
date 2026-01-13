@@ -1270,21 +1270,19 @@ attendingSelect.addEventListener("change", () => {
 rsvpForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const payload = {
-    name: rsvpForm.name.value.trim(),
-    email: rsvpForm.email.value.trim(),
-    attending: attendingSelect.value,
-    guests: guestCount.value || 0,
-    notes: rsvpForm.notes.value.trim()
-  };
+  const formData = new FormData();
+  formData.append("name", rsvpForm.name.value.trim());
+  formData.append("email", rsvpForm.email.value.trim());
+  formData.append("attending", attendingSelect.value);
+  formData.append("guests", guestCount.value || 0);
+  formData.append("notes", rsvpForm.notes.value.trim());
 
   try {
     const res = await fetch(
       "https://script.google.com/macros/s/AKfycbxKeyzimLovxPyLZS34JMgU0USycAgOxqiUwbQiWc7vqUxlZuL28lh7sk_wZ_PWxHlrUA/exec",
       {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
+        body: formData
       }
     );
 
@@ -1294,7 +1292,7 @@ rsvpForm.addEventListener("submit", async (e) => {
     thankYouMessage.style.display = "block";
 
     thankYouText.textContent =
-      payload.attending === "Yes"
+      attendingSelect.value === "Yes"
         ? "We’re so happy you’ll be joining us. A confirmation email has been sent."
         : "Thank you for letting us know. You’ll be missed, and we truly appreciate your response.";
 
@@ -1302,6 +1300,7 @@ rsvpForm.addEventListener("submit", async (e) => {
     alert("Something went wrong. Please try again.");
   }
 });
+
 
 
 
