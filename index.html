@@ -18,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel=stylesheet>
 <style>:root{--bg:#fcf9f3;--paper:#fff;--sand:#f7f2e8;--sand2:#efe7da;--text:#2b1d14;--muted:#6b5d52;--muted2:#9c8b7a;--line:#d9cec1;--accent:#8e2d3f;--accent-light:#f4e8ea;--max:1100px;--r:2px;--shadow:0 10px 30px rgba(43,29,20,0.05)}.weatherTemp strong{min-height:34px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.8;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none;transition:.2s ease}.container{width:min(var(--max),calc(100% - 48px));margin:0 auto}.center{text-align:center}h1,h2,h3,.serif{font-family:"Playfair Display",serif;font-weight:400;letter-spacing:.02em}.italic{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.25em;color:var(--muted)}header{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .4s cubic-bezier(0.165,0.84,0.44,1);padding:10px 0}header.solid{background:rgba(252,249,243,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:5px 0}.navWrap{display:flex;align-items:center;justify-content:space-between}.brand{display:flex;flex-direction:column}.brand strong{font-family:"Playfair Display",serif;font-size:18px;font-weight:500;color:var(--text)}.brand span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2);margin-top:-2px}.nav{display:flex;gap:24px;font-size:10px;letter-spacing:.25em;text-transform:uppercase}.nav a{padding:8px 4px;opacity:.6}.nav a:hover,.nav a.active{opacity:1;color:var(--accent)}
   
-   
+  
 /* HEADER ACTION BUTTONS */
 .pill {
   padding: 10px 24px;
@@ -37,7 +37,7 @@
   color: #fff;
 }
 
- 
+
 .nav a {
   opacity: 1;
 }
@@ -1045,9 +1045,16 @@ Updated automatically
     <div class="formWrap">
 
       <!-- RSVP FORM -->
-<form id="rsvpForm">
+      <form
+        id="rsvpForm"
+        action="https://formspree.io/f/mreegaol"
+        method="POST"
+      >
+        <!-- Email subject -->
+        <input type="hidden" name="_subject" value="New Wedding RSVP Submission">
 
-
+        <!-- Spam protection -->
+        <input type="text" name="_gotcha" style="display:none">
 
         <div class="row">
           <input
@@ -1248,8 +1255,7 @@ document.querySelectorAll(".fadeStack").forEach(stack => {
   // ======================
   // RSVP FORM HANDLER
   // ======================
-  
-const rsvpForm = document.getElementById("rsvpForm");
+  const rsvpForm = document.getElementById("rsvpForm");
 const thankYouMessage = document.getElementById("thankYouMessage");
 const thankYouText = document.getElementById("thankYouText");
 const attendingSelect = document.getElementById("attendingSelect");
@@ -1257,51 +1263,42 @@ const guestCount = document.getElementById("guestCount");
 
 // 1️⃣ Auto-hide guest count when declining
 attendingSelect.addEventListener("change", () => {
-  if (attendingSelect.value === "Yes") {
-    guestCount.style.display = "block";
-  } else {
+  if (attendingSelect.value === "No") {
     guestCount.style.display = "none";
     guestCount.value = "";
+  } else {
+    guestCount.style.display = "block";
   }
 });
 
-
 // 2️⃣ Conditional thank-you message + submit
-rsvpForm.addEventListener("submit", async (e) => {
+rsvpForm.addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  const formData = new FormData();
-  formData.append("name", rsvpForm.name.value.trim());
-  formData.append("email", rsvpForm.email.value.trim());
-  formData.append("attending", attendingSelect.value);
-  formData.append("guests", guestCount.value || 0);
-  formData.append("notes", rsvpForm.notes.value.trim());
+  const attending = attendingSelect.value;
+  const formData = new FormData(rsvpForm);
 
-  try {
-    await fetch(
-      "https://script.google.com/macros/s/AKfycbxKeyzimLovxPyLZS34JMgU0USycAgOxqiUwbQiWc7vqUxlZuL28lh7sk_wZ_PWxHlrUA/exec",
-      {
-        method: "POST",
-        body: formData,
-        mode: "no-cors"
-      }
-    );
+  const response = await fetch(rsvpForm.action, {
+    method: "POST",
+    body: formData,
+    headers: { "Accept": "application/json" }
+  });
 
+  if (response.ok) {
     rsvpForm.style.display = "none";
     thankYouMessage.style.display = "block";
 
-    thankYouText.textContent =
-      attendingSelect.value === "Yes"
-        ? "We’re so happy you’ll be joining us. A confirmation email has been sent."
-        : "Thank you for letting us know. You’ll be missed, and we truly appreciate your response.";
-
-  } catch (err) {
+    if (attending === "Yes") {
+      thankYouText.textContent =
+        "We’re so happy you’ll be joining us. We can’t wait to celebrate together in Antigua.";
+    } else {
+      thankYouText.textContent =
+        "Thank you for letting us know. You’ll be missed, and we truly appreciate your response.";
+    }
+  } else {
     alert("Something went wrong. Please try again.");
   }
 });
-
-
-
 
 
 
