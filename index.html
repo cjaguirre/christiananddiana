@@ -1073,13 +1073,13 @@ Updated automatically
         </div>
 
         <div class="row">
-          <select name="attending" required>
+        <select name="attending" id="attendingSelect" required>
             <option value="" selected disabled>Will you attend?</option>
             <option value="Yes">Joyfully Accept</option>
             <option value="No">Regretfully Decline</option>
           </select>
 
-          <select name="guests">
+        <select name="guests" id="guestCount">
             <option value="" selected disabled>Number of Guests</option>
             <option value="0">0</option>
             <option value="1">1</option>
@@ -1130,18 +1130,17 @@ Updated automatically
           "
         ></div>
 
-        <p
-          style="
-            max-width:480px;
-            margin:0 auto;
-            font-size:14px;
-            line-height:1.8;
-            color:var(--muted);
-          "
-        >
-          We’ve received your response and truly appreciate you taking the time to RSVP.
-          We’re so looking forward to celebrating together in Antigua.
-        </p>
+       <p
+  id="thankYouText"
+  style="
+    max-width:480px;
+    margin:0 auto;
+    font-size:14px;
+    line-height:1.8;
+    color:var(--muted);
+  "
+></p>
+
       </div>
 
     </div>
@@ -1257,28 +1256,50 @@ document.querySelectorAll(".fadeStack").forEach(stack => {
   // RSVP FORM HANDLER
   // ======================
   const rsvpForm = document.getElementById("rsvpForm");
-  const thankYouMessage = document.getElementById("thankYouMessage");
+const thankYouMessage = document.getElementById("thankYouMessage");
+const thankYouText = document.getElementById("thankYouText");
+const attendingSelect = document.getElementById("attendingSelect");
+const guestCount = document.getElementById("guestCount");
 
-  if (rsvpForm) {
-    rsvpForm.addEventListener("submit", async function (e) {
-      e.preventDefault();
-
-      const formData = new FormData(rsvpForm);
-
-      const response = await fetch(rsvpForm.action, {
-        method: "POST",
-        body: formData,
-        headers: { "Accept": "application/json" }
-      });
-
-      if (response.ok) {
-        rsvpForm.style.display = "none";
-        thankYouMessage.style.display = "block";
-      } else {
-        alert("Something went wrong. Please try again.");
-      }
-    });
+// 1️⃣ Auto-hide guest count when declining
+attendingSelect.addEventListener("change", () => {
+  if (attendingSelect.value === "No") {
+    guestCount.style.display = "none";
+    guestCount.value = "";
+  } else {
+    guestCount.style.display = "block";
   }
+});
+
+// 2️⃣ Conditional thank-you message + submit
+rsvpForm.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const attending = attendingSelect.value;
+  const formData = new FormData(rsvpForm);
+
+  const response = await fetch(rsvpForm.action, {
+    method: "POST",
+    body: formData,
+    headers: { "Accept": "application/json" }
+  });
+
+  if (response.ok) {
+    rsvpForm.style.display = "none";
+    thankYouMessage.style.display = "block";
+
+    if (attending === "Yes") {
+      thankYouText.textContent =
+        "We’re so happy you’ll be joining us. We can’t wait to celebrate together in Antigua.";
+    } else {
+      thankYouText.textContent =
+        "Thank you for letting us know. You’ll be missed, and we truly appreciate your response.";
+    }
+  } else {
+    alert("Something went wrong. Please try again.");
+  }
+});
+
 
 
   
