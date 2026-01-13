@@ -1278,15 +1278,14 @@ rsvpForm.addEventListener("submit", async (e) => {
   formData.append("notes", rsvpForm.notes.value.trim());
 
   try {
-    const res = await fetch(
+    await fetch(
       "https://script.google.com/macros/s/AKfycbxKeyzimLovxPyLZS34JMgU0USycAgOxqiUwbQiWc7vqUxlZuL28lh7sk_wZ_PWxHlrUA/exec",
       {
         method: "POST",
-        body: formData
+        body: formData,
+        mode: "no-cors"
       }
     );
-
-    if (!res.ok) throw new Error("Request failed");
 
     rsvpForm.style.display = "none";
     thankYouMessage.style.display = "block";
