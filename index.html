@@ -1025,37 +1025,83 @@ Updated automatically
 </div>
 </div>
 </section>
-<section class="section sectionAlt center" id=rsvp>
-<div class=container>
-<span class=kicker>Response Requested</span>
-<h2 class=h2>RSVP</h2>
-<p class=copy>Please let us know if you can join us. To make this form live, replace the action with your Formspree endpoint.</p>
-<div class=formWrap>
-<form id=rsvpForm action=# method=POST>
-<div class=row>
-<input name=name type=text placeholder="Full Name" required>
-<input name=email type=email placeholder="Email Address" required>
-</div>
-<div class=row>
-<select name=attending required>
-<option value selected disabled>Will you attend?</option>
-<option value=Yes>Joyfully Accept</option>
-<option value=No>Regretfully Decline</option>
-</select>
-<select name=guests>
-<option value selected disabled>Number of Guests</option>
-<option value=0>0</option>
-<option value=1>1</option>
-<option value=2>2</option>
-<option value=3>3</option>
-</select>
-</div>
-<textarea name=notes placeholder="Dietary restrictions or notes for the couple"></textarea>
-<button class=submit type=submit>Send Response</button>
-</form>
-</div>
-</div>
+
+
+
+
+
+
+  
+<section class="section sectionAlt center" id="rsvp">
+  <div class="container">
+    <span class="kicker">Response Requested</span>
+    <h2 class="h2">RSVP</h2>
+
+    <p class="copy">
+      Please let us know if you can join us. We kindly ask that you respond by the date listed on your invitation.
+    </p>
+
+    <div class="formWrap">
+      <form
+        id="rsvpForm"
+        action="https://formspree.io/f/mreegaol"
+        method="POST"
+      >
+        <!-- Email subject -->
+        <input type="hidden" name="_subject" value="New Wedding RSVP Submission">
+
+        <!-- Spam protection -->
+        <input type="text" name="_gotcha" style="display:none">
+
+        <div class="row">
+          <input
+            name="name"
+            type="text"
+            placeholder="Full Name"
+            required
+          >
+
+          <input
+            name="email"
+            type="email"
+            placeholder="Email Address"
+            required
+          >
+        </div>
+
+        <div class="row">
+          <select name="attending" required>
+            <option value="" selected disabled>Will you attend?</option>
+            <option value="Yes">Joyfully Accept</option>
+            <option value="No">Regretfully Decline</option>
+          </select>
+
+          <select name="guests">
+            <option value="" selected disabled>Number of Guests</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+
+        <textarea
+          name="notes"
+          placeholder="Dietary restrictions or notes for the couple"
+        ></textarea>
+
+        <button class="submit" type="submit">
+          Send Response
+        </button>
+      </form>
+    </div>
+  </div>
 </section>
+
+
+
+
+  
 <footer class=footer>
 <div class=container>
 <strong>Diana & Christian</strong>
