@@ -110,21 +110,38 @@
   height: auto;
   object-fit: contain;
   opacity: 0;
-  transition: opacity 1.8s ease;
+ transition: opacity 1.8s ease, transform 6s ease;
+transform: scale(1.02);
+
 }
 
 .fadeStack img.active {
   opacity: 1;
+  transform: scale(1);
 }
 
-@media (max-width: 768px) {
+
+
+
   .fadeStack {
-    height: 360px;
-  }
+  background: #f7f2e8;
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 28px rgba(43,29,20,0.06);
+  padding: 14px;
 }
 
 
 
+
+  .fadeStack::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, 
+    rgba(0,0,0,0) 55%,
+    rgba(0,0,0,0.08) 100%);
+}
 
 @media (max-width: 768px) {
   .fadeStack {
@@ -488,6 +505,11 @@ the moment was quiet, meaningful, and unforgettable.
 </div>
 </div>
 </div>
+
+
+
+
+  
 </section>
 <section class="section center" id=details>
 <div class=container>
