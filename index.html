@@ -79,39 +79,36 @@
   height: 520px;
 }
 
-/* Fine-tune centering for specific Swiss photos */
-img.center-top {
-  object-position: center top;
-}
 
-img.center-high {
-  object-position: center 30%;
-}
-
-img.center-low {
-  object-position: center 70%;
-}
 
 
 
 
   
 /* === Swiss Yes auto-fade === */
-/* === Swiss Yes auto-fade === */
+
+
+
+
+
 .fadeStack {
   position: relative;
-  aspect-ratio: 4 / 5;
   width: 100%;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
+  aspect-ratio: auto;
 }
-
 
 .fadeStack img {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   opacity: 0;
   transition: opacity 1.8s ease;
 }
@@ -120,17 +117,20 @@ img.center-low {
   opacity: 1;
 }
 
-
-
-
-
-/* Strong left-focus image */
-img.center-left {
-  object-position: 25% 45%;
+@media (max-width: 768px) {
+  .fadeStack {
+    height: 360px;
+  }
 }
 
 
 
+
+@media (max-width: 768px) {
+  .fadeStack {
+    height: 360px;
+  }
+}
 
 
   
@@ -459,8 +459,8 @@ Some stories take years to tell.
   <img src="assets/images/CD1_Proposal_Action_The_Jump-min.jpg">
   <img src="assets/images/CD1_Proposal_Celebration_Hug-min.jpg">
   <img src="assets/images/CD1_Proposal_Celebration_Cheek_Kiss-min.jpg">
-  <img src="assets/images/CD1_Engagement_Fall_Trees_Walk-min.JPEG" class="center-left">
-  <img src="assets/images/CD1_Engagement_Gondola_Bride_Ring_Reveal-min.JPG" class="center-high">
+  <img src="assets/images/CD1_Engagement_Fall_Trees_Walk-min.JPEG">
+  <img src="assets/images/CD1_Engagement_Gondola_Bride_Ring_Reveal-min.JPG">
   <img src="assets/images/CD1_Engagement_Gondola_Groom_Portrait-min.JPG">
   <img src="assets/images/CD1_Engagement_Overlook_Selfie-min.JPG">
   <img src="assets/images/CD1_Engagement_Snow_Mountain_Kiss-min.JPG">
