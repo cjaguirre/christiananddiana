@@ -113,6 +113,13 @@
   aspect-ratio: auto;
 }
 
+.fadeStack::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 60%, rgba(0,0,0,0.05) 100%);
+}
 
 
 
