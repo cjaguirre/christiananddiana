@@ -37,7 +37,13 @@
   color: #fff;
 }
 
+.pill:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
 
+  
 .nav a {
   opacity: 1;
 }
@@ -161,6 +167,12 @@ transform: scale(1.02);
   .storyImage.slideshow {
     height: 360px;
   }
+
+  #galleryPrev,
+#galleryNext {
+  display: none;
+}
+
 }
 
   
@@ -407,13 +419,19 @@ transform: scale(1.02);
     height: 300px;
   }
 
-  /* GALLERY */
-  .gallery {
-    grid-template-columns: 1fr;
-  }
+/* GALLERY MOBILE FIX */
+.gallery {
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
 
-  .tile {
-    height: 280px;
+.tile {
+  height: auto;
+  transform: none;
+  margin-top: 0 !important;
+}
+
+  
   }
 
   /* RSVP */
@@ -1147,25 +1165,17 @@ Updated automatically
     <span class="kicker">Memories</span>
     <h2 class="h2">Gallery</h2>
 
-    <div class="gallery">
 
-      <div class="tile" data-full="assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.jpeg">
-        <img src="assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.jpeg" alt="Wedding beach selfie">
-      </div>
+<div style="display:flex;justify-content:center;gap:16px;margin-top:30px">
+  <button class="pill" id="galleryPrev" type="button">Prev</button>
+  <button class="pill" id="galleryNext" type="button">Next</button>
+</div>
 
-      <div class="tile" data-full="assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg">
-        <img src="assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg" alt="Wedding archway hug">
-      </div>
+<div class="gallery" id="galleryGrid"></div>
 
-      <div class="tile" data-full="assets/images/CD1_Engagement_Fall_Trees_Walk-min.JPEG">
-        <img src="assets/images/CD1_Engagement_Fall_Trees_Walk-min.JPEG" alt="Engagement fall walk">
-      </div>
 
-      <div class="tile" data-full="assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg">
-        <img src="assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg" alt="Proposal moment">
-      </div>
 
-    </div>
+    
   </div>
 </section>
 
@@ -1352,8 +1362,136 @@ function rotateHero(delay) {
 rotateHero(10000);
 
   
-  const modal=document.getElementById("modal");const modalImg=document.getElementById("modalImg");document.querySelectorAll(".tile").forEach(t=>{t.onclick=()=>{modalImg.src=t.dataset.full;modal.classList.add("open");};});
+// ======================
+// GALLERY BATCH SYSTEM
+// ======================
 
+const galleryGrid = document.getElementById("galleryGrid");
+const prevBtn = document.getElementById("galleryPrev");
+const nextBtn = document.getElementById("galleryNext");
+
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modalImg");
+
+// Add ALL your gallery images here
+const galleryImages = [
+  "assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.jpeg",
+  "assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg",
+  "assets/images/CD1_Engagement_Fall_Trees_Walk-min.JPEG",
+  "assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg"
+
+  // add more below
+];
+
+const batchSize = 4;
+let galleryIndex = 0;
+
+function updateButtons() {
+  prevBtn.disabled = galleryIndex === 0;
+  nextBtn.disabled = galleryIndex + batchSize >= galleryImages.length;
+}
+
+function renderGallery() {
+
+  galleryGrid.style.minHeight = galleryGrid.offsetHeight + "px";
+  galleryGrid.innerHTML = "";
+
+  const batch = galleryImages.slice(
+    galleryIndex,
+    galleryIndex + batchSize
+  );
+
+  batch.forEach(src => {
+
+    const tile = document.createElement("div");
+    tile.className = "tile";
+    tile.dataset.full = src;
+
+    const img = document.createElement("img");
+    img.src = src;
+    img.loading = "lazy";
+
+    tile.appendChild(img);
+
+    tile.onclick = () => {
+      modalImg.src = src;
+      modal.classList.add("open");
+    };
+
+    galleryGrid.appendChild(tile);
+  });
+
+  updateButtons();
+  galleryGrid.style.minHeight = "auto";
+}
+
+// Desktop buttons
+nextBtn.onclick = () => {
+  if (galleryIndex + batchSize < galleryImages.length) {
+    galleryIndex += batchSize;
+    renderGallery();
+  }
+};
+
+prevBtn.onclick = () => {
+  if (galleryIndex > 0) {
+    galleryIndex -= batchSize;
+    renderGallery();
+  }
+};
+
+// ======================
+// MOBILE SWIPE SUPPORT
+// ======================
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+galleryGrid.addEventListener("touchstart", e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+galleryGrid.addEventListener("touchend", e => {
+
+  // Prevent swipe while modal is open
+  if (modal.classList.contains("open")) return;
+
+  touchEndX = e.changedTouches[0].screenX;
+  const threshold = 50;
+
+  // Swipe LEFT = next batch
+  if (touchStartX - touchEndX > threshold) {
+    if (galleryIndex + batchSize < galleryImages.length) {
+      galleryIndex += batchSize;
+      renderGallery();
+    }
+  }
+
+  // Swipe RIGHT = previous batch
+  if (touchEndX - touchStartX > threshold) {
+    if (galleryIndex > 0) {
+      galleryIndex -= batchSize;
+      renderGallery();
+    }
+  }
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 document.getElementById("modalClose").onclick = () =>
   modal.classList.remove("open");
 
