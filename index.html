@@ -434,6 +434,25 @@ transform: scale(1.02);
   
   }
 
+.gallery {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.gallery.fade-out {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.gallery.fade-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+
+  
+
   /* RSVP */
   .row {
     grid-template-columns: 1fr;
@@ -1362,6 +1381,8 @@ function rotateHero(delay) {
 rotateHero(10000);
 
   
+
+
 // ======================
 // GALLERY BATCH SYSTEM
 // ======================
@@ -1373,71 +1394,107 @@ const nextBtn = document.getElementById("galleryNext");
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modalImg");
 
-// Add ALL your gallery images here
 const galleryImages = [
-  "assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.jpeg",
-  "assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg",
-  "assets/images/CD1_Engagement_Fall_Trees_Walk-min.JPEG",
-  "assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg"
 
-  // add more below
+  "assets/images/CD1_WaterfrontSunset.png",
+  "assets/images/CD1_HolidayTreeFarmGoofy.png",
+  "assets/images/CD1_TheaterStageKiss.png",
+  "assets/images/CD1_CentralParkBench.png",
+
+  "assets/images/CD1_KingsDominionFountain.png",
+  "assets/images/CD1_HolidayTreeFarmHug.png",
+  "assets/images/CD1_GoldLightsSnowflake.png",
+  "assets/images/CD1_WinterPorchSnowflake.png",
+
+  "assets/images/CD1_WinterWalkFestivalLights.png",
+  "assets/images/CD1_ChristmasGingerbreadDog.png",
+  "assets/images/CD1_JustMarriedBalloons.jpg",
+  "assets/images/CD1_StaircaseKiss.jpg",
+
+  "assets/images/CD1_ReceptionTableDinner.jpg",
+  "assets/images/CD1_CakeCuttingPose.jpg",
+  "assets/images/CD1_CakeCuttingLaughs.jpg",
+  "assets/images/CD1_CakeCuttingFlash.jpg",
+
+  "assets/images/CD1_LakeMountainSelfie.jpg",
+
+  "assets/images/CD1_Engagement_Overlook_Selfie-min.JPG",
+  "assets/images/CD1_Engagement_Market_Casual_Portrait-min.JPG",
+  "assets/images/CD1_Engagement_Gondola_Bride_Ring_Reveal-min.JPG",
+  "assets/images/CD1_Engagement_Gondola_Groom_Portrait-min.JPG",
+
+  "assets/images/CD1_Engagement_Snow_Mountain_Kiss-min.JPG",
+  "assets/images/CD1_Engagement_Snow_Mountain_Wide-min.JPG",
+
+  "assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.jpeg",
+  "assets/images/CD1_Wedding_Beach_Ocean_Kiss-min.jpeg"
 ];
 
 const batchSize = 4;
 let galleryIndex = 0;
 
-function updateButtons() {
-  prevBtn.disabled = galleryIndex === 0;
-  nextBtn.disabled = galleryIndex + batchSize >= galleryImages.length;
-}
+// ---------- Render Gallery ----------
 
 function renderGallery() {
 
-  galleryGrid.style.minHeight = galleryGrid.offsetHeight + "px";
-  galleryGrid.innerHTML = "";
+  galleryGrid.classList.add("fade-out");
 
-  const batch = galleryImages.slice(
-    galleryIndex,
-    galleryIndex + batchSize
-  );
+  setTimeout(() => {
 
-  batch.forEach(src => {
+    galleryGrid.innerHTML = "";
 
-    const tile = document.createElement("div");
-    tile.className = "tile";
-    tile.dataset.full = src;
+    const batch = galleryImages.slice(
+      galleryIndex,
+      galleryIndex + batchSize
+    );
 
-    const img = document.createElement("img");
-    img.src = src;
-    img.loading = "lazy";
+    batch.forEach(src => {
 
-    tile.appendChild(img);
+      const tile = document.createElement("div");
+      tile.className = "tile";
 
-    tile.onclick = () => {
-      modalImg.src = src;
-      modal.classList.add("open");
-    };
+      const img = document.createElement("img");
+      img.src = src;
+      img.loading = "lazy";
 
-    galleryGrid.appendChild(tile);
-  });
+      tile.appendChild(img);
 
-  updateButtons();
-  galleryGrid.style.minHeight = "auto";
+      tile.onclick = () => {
+        modalImg.src = src;
+        modal.classList.add("open");
+      };
+
+      galleryGrid.appendChild(tile);
+    });
+
+    galleryGrid.classList.remove("fade-out");
+    galleryGrid.classList.add("fade-in");
+
+  }, 250);
 }
 
-// Desktop buttons
+// ---------- Desktop Buttons ----------
+
 nextBtn.onclick = () => {
-  if (galleryIndex + batchSize < galleryImages.length) {
-    galleryIndex += batchSize;
-    renderGallery();
+
+  galleryIndex += batchSize;
+
+  if (galleryIndex >= galleryImages.length) {
+    galleryIndex = 0;
   }
+
+  renderGallery();
 };
 
 prevBtn.onclick = () => {
-  if (galleryIndex > 0) {
-    galleryIndex -= batchSize;
-    renderGallery();
+
+  galleryIndex -= batchSize;
+
+  if (galleryIndex < 0) {
+    galleryIndex = galleryImages.length - batchSize;
   }
+
+  renderGallery();
 };
 
 // ======================
@@ -1449,39 +1506,44 @@ let touchEndX = 0;
 
 galleryGrid.addEventListener("touchstart", e => {
   touchStartX = e.changedTouches[0].screenX;
-});
+}, { passive: true });
 
 galleryGrid.addEventListener("touchend", e => {
 
-  // Prevent swipe while modal is open
   if (modal.classList.contains("open")) return;
 
   touchEndX = e.changedTouches[0].screenX;
   const threshold = 50;
 
-  // Swipe LEFT = next batch
+  // Swipe LEFT
   if (touchStartX - touchEndX > threshold) {
-    if (galleryIndex + batchSize < galleryImages.length) {
-      galleryIndex += batchSize;
-      renderGallery();
+
+    galleryIndex += batchSize;
+
+    if (galleryIndex >= galleryImages.length) {
+      galleryIndex = 0;
     }
+
+    renderGallery();
   }
 
-  // Swipe RIGHT = previous batch
+  // Swipe RIGHT
   if (touchEndX - touchStartX > threshold) {
-    if (galleryIndex > 0) {
-      galleryIndex -= batchSize;
-      renderGallery();
+
+    galleryIndex -= batchSize;
+
+    if (galleryIndex < 0) {
+      galleryIndex = galleryImages.length - batchSize;
     }
+
+    renderGallery();
   }
 
 });
 
+// ---------- Initial Load ----------
 
-// Load first gallery batch on page load
 renderGallery();
-
-
 
 
 
