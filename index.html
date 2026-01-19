@@ -19,8 +19,7 @@
 <style>:root{--bg:#fcf9f3;--paper:#fff;--sand:#f7f2e8;--sand2:#efe7da;--text:#2b1d14;--muted:#6b5d52;--muted2:#9c8b7a;--line:#d9cec1;--accent:#8e2d3f;--accent-light:#f4e8ea;--max:1100px;--r:2px;--shadow:0 10px 30px rgba(43,29,20,0.05)}.weatherTemp strong{min-height:34px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.8;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none;transition:.2s ease}.container{width:min(var(--max),calc(100% - 48px));margin:0 auto}.center{text-align:center}h1,h2,h3,.serif{font-family:"Playfair Display",serif;font-weight:400;letter-spacing:.02em}.italic{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.25em;color:var(--muted)}header{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .4s cubic-bezier(0.165,0.84,0.44,1);padding:10px 0}header.solid{background:rgba(252,249,243,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:5px 0}.navWrap{display:flex;align-items:center;justify-content:space-between}.brand{display:flex;flex-direction:column}.brand strong{font-family:"Playfair Display",serif;font-size:18px;font-weight:500;color:var(--text)}.brand span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2);margin-top:-2px}.nav{display:flex;gap:24px;font-size:10px;letter-spacing:.25em;text-transform:uppercase}.nav a{padding:8px 4px;opacity:.6}.nav a:hover,.nav a.active{opacity:1;color:var(--accent)}
   
   
-/* HEADER ACTION BUTTONS */transform: rotate(-0.6deg);
-
+/* HEADER ACTION BUTTONS */
 .pill {
   padding: 10px 24px;
   border: 1px solid #000;
@@ -38,13 +37,7 @@
   color: #fff;
 }
 
-.pill:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-  pointer-events: none;
-}
 
-  
 .nav a {
   opacity: 1;
 }
@@ -168,12 +161,6 @@ transform: scale(1.02);
   .storyImage.slideshow {
     height: 360px;
   }
-
-  #galleryPrev,
-#galleryNext {
-  display: none;
-}
-
 }
 
   
@@ -236,12 +223,11 @@ transform: scale(1.02);
  
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-flow: dense;
+  gap: 30px;
   margin-top: 70px;
-  justify-items: center;
 }
-
 
 
   
@@ -251,31 +237,47 @@ transform: scale(1.02);
   padding: 12px;
   box-shadow: 0 12px 24px rgba(0,0,0,0.12);
   border-radius: 2px;
+  transform: rotate(-0.6deg);
+}
 
+
+
+
+
+  
+.tile img {
+  display: block;
   width: 100%;
-  max-width: 340px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: auto;
 }
 
 
 
-#galleryGrid {
-  justify-content: center;
+
+
+.tile:nth-child(1) {
+  grid-column: span 2;
 }
 
+.tile:nth-child(2) {
+  grid-column: span 1;
+  margin-top: 50px;
+}
 
+.tile:nth-child(3) {
+  grid-column: span 2;
+  margin-top: -30px;
+}
+
+.tile:nth-child(4) {
+  grid-column: span 1;
+  margin-top: 30px;
+}
 
 
 .tile img {
-  width: 100%;
-  height: auto;
-  max-height: 520px;
-  object-fit: contain;
+  object-fit: cover;
 }
-
 
 
   
@@ -297,8 +299,7 @@ transform: scale(1.02);
   .footer strong{font-family:"Playfair Display",serif;font-size:26px;font-weight:400;display:block;margin-bottom:10px}
   .footer span{font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--muted2)}
   .modal{position:fixed;inset:0;background:rgba(252,249,243,0.98);display:none;align-items:center;justify-content:center;z-index:1000;padding:40px}.modal.open{display:flex}.modalInner{width:min(1000px,100%);position:relative}.modalBody img{width:100%;max-height:85vh;object-fit:contain}.modalClose{position:absolute;top:-50px;right:0;background:0;border:0;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}.weatherCard{margin-top:20px;padding:22px;border:1px solid var(--line);background:#fff}.weatherHeader{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}.weatherDate{font-family:"Playfair Display",serif;font-size:18px;color:var(--text)}.weatherStatus{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted2)}.weatherMain{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center;margin-bottom:16px}.weatherTemp strong{display:block;font-size:28px;font-family:"Playfair Display",serif;color:var(--text)}.weatherLabel{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted2)}.weatherFooter{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}.weatherUpdated{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2)}.celebration{padding-top:130px;padding-bottom:120px}.celebrationInner{max-width:680px}.celebrationKicker{margin-bottom:22px;font-size:9px;letter-spacing:.55em}.celebrationDate{margin-bottom:0}.celebrationLocation{margin-top:18px;font-size:16px}.celebrationCount{margin-top:60px;gap:68px}.celebrationNum{font-size:38px;font-weight:400}.celebrationLbl{margin-top:12px;font-size:8px;letter-spacing:.45em;color:var(--muted2)}.celebrationRule{width:220px;height:1px;background:var(--line);margin:52px auto 34px}.celebrationCopy{max-width:560px;font-size:13px;line-height:1.9}.itineraryWide{max-width:720px;margin:0 auto;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);padding:60px}.itineraryRow{display:grid;grid-template-columns:110px 1fr;gap:40px;padding:26px 0;border-bottom:1px solid var(--line)}.itineraryRow:last-child{border-bottom:0}.itineraryTime{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);text-align:right;padding-top:6px}.itineraryDetails strong{display:block;font-family:"Playfair Display",serif;font-size:18px;margin-bottom:6px;color:var(--text)}.itineraryDetails span{display:block;font-size:14px;color:var(--muted);line-height:1.7}@media(max-width:700px){.itineraryWide{padding:40px 24px}.itineraryRow{grid-template-columns:1fr;gap:10px;text-align:center}.itineraryTime{text-align:center;padding-top:0}}@media(max-width:700px){.celebration{padding-top:110px;padding-bottom:100px}.celebrationCount{margin-top:46px;gap:30px}.celebrationRule{margin:40px auto 26px}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        .tile{grid-column:span 12!important;height:320px}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         .formWrap{padding:40px 20px}.countRow{gap:20px;flex-wrap:wrap}}
@@ -307,14 +308,6 @@ transform: scale(1.02);
    ========================= */
 @media (max-width: 768px) {
 
-
-  .tile img {
-  max-height: 420px;
-}
-
-
-
-  
   html, body {
     overflow-x: hidden;
   }
@@ -414,39 +407,14 @@ transform: scale(1.02);
     height: 300px;
   }
 
-/* GALLERY MOBILE FIX */
-.gallery {
-  grid-template-columns: 1fr;
-  gap: 24px;
-}
-
-.tile {
-  height: auto;
-  transform: none;
-  margin-top: 0 !important;
-}
-
-  
+  /* GALLERY */
+  .gallery {
+    grid-template-columns: 1fr;
   }
 
-.gallery {
-  transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-.gallery.fade-out {
-  opacity: 0;
-  transform: translateX(-20px);
-}
-
-.gallery.fade-in {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-
-
-
-  
+  .tile {
+    height: 280px;
+  }
 
   /* RSVP */
   .row {
@@ -1179,17 +1147,25 @@ Updated automatically
     <span class="kicker">Memories</span>
     <h2 class="h2">Gallery</h2>
 
+    <div class="gallery">
 
-<div style="display:flex;justify-content:center;gap:16px;margin-top:30px">
-  <button class="pill" id="galleryPrev" type="button">Prev</button>
-  <button class="pill" id="galleryNext" type="button">Next</button>
-</div>
+      <div class="tile" data-full="assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.jpeg">
+        <img src="assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.jpeg" alt="Wedding beach selfie">
+      </div>
 
-<div class="gallery" id="galleryGrid"></div>
+      <div class="tile" data-full="assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg">
+        <img src="assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg" alt="Wedding archway hug">
+      </div>
 
+      <div class="tile" data-full="assets/images/CD1_Engagement_Fall_Trees_Walk-min.JPEG">
+        <img src="assets/images/CD1_Engagement_Fall_Trees_Walk-min.JPEG" alt="Engagement fall walk">
+      </div>
 
+      <div class="tile" data-full="assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg">
+        <img src="assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg" alt="Proposal moment">
+      </div>
 
-    
+    </div>
   </div>
 </section>
 
@@ -1376,215 +1352,8 @@ function rotateHero(delay) {
 rotateHero(10000);
 
   
+  const modal=document.getElementById("modal");const modalImg=document.getElementById("modalImg");document.querySelectorAll(".tile").forEach(t=>{t.onclick=()=>{modalImg.src=t.dataset.full;modal.classList.add("open");};});
 
-
-// ======================
-// GALLERY BATCH SYSTEM
-// ======================
-
-const galleryGrid = document.getElementById("galleryGrid");
-const prevBtn = document.getElementById("galleryPrev");
-const nextBtn = document.getElementById("galleryNext");
-
-const modal = document.getElementById("modal");
-const modalImg = document.getElementById("modalImg");
-
-const galleryImages = [
-
-   // Reception + celebration
-  "assets/images/CD1_JustMarriedBalloons.jpg",
-  "assets/images/CD1_StaircaseKiss.jpg",
-  "assets/images/CD1_ReceptionTableDinner.jpg",
-  
-  "assets/images/CD1_CakeCuttingFlash.jpg",
-  "assets/images/CD1_CakeCuttingLaughs.jpg",
-  "assets/images/CD1_CakeCuttingPose.jpg",
-
-   // Courthouse moments
-  "assets/images/CD1_Courthouse_Candid_Climbing_Stairs_Together-min.jpeg",
-  "assets/images/CD1_Courthouse_Candid_Walking_Hand_in_Hand-min.jpeg",
-  "assets/images/CD1_Courthouse_Evening_Portrait_Indoor_Tiles-min.JPG",
-
-  
-  // Wedding beach set
-  "assets/images/CD1_Wedding_Beach_Dunes_Standing-min.jpeg",
-  "assets/images/CD1_Wedding_Beach_Dunes_Standing-min-min.jpeg",
-  "assets/images/CD1_Wedding_Beach_Ocean_Kiss-min.jpeg",
-  
-  "assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.jpeg",
-  "assets/images/CD1_Wedding_Beach_Sitting_Kiss-min.jpeg",
-  "assets/images/CD1_Wedding_Beach_Sitting_Portrait-min.jpeg",
-  
-  "assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg",
-  // Proposal series
-  "assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg",
-  "assets/images/CD1_Proposal_Action_The_Jump-min.jpg",
-  
-  "assets/images/CD1_Proposal_Celebration_Hug-min.jpg",
-  "assets/images/CD1_Proposal_Celebration_Cheek_Kiss-min.jpg",
-  // Engagement travel set
-  "assets/images/CD1_Engagement_Fall_Trees_Walk-min.JPEG",
-  
-  "assets/images/CD1_Engagement_Gondola_Bride_Ring_Reveal-min.JPG",
-  "assets/images/CD1_Engagement_Gondola_Groom_Portrait-min.JPG",
-  "assets/images/CD1_Engagement_Overlook_Selfie-min.JPG",
-  
-  "assets/images/CD1_Engagement_Snow_Mountain_Kiss-min.JPG",
-  "assets/images/CD1_Engagement_Snow_Mountain_Wide-min.JPG",
-  "assets/images/CD1_Engagement_Travel_Canal_Portrait-min.JPG",
-  
-  "assets/images/CD1_Engagement_Travel_Night_Selfie-min.JPG",
-  "assets/images/CD1_Engagement_Travel_Street_Kiss-min.JPG",
-  // Casual + lifestyle
-  "assets/images/CD1_LakeMountainSelfie.jpg",
-  
-  "assets/images/CD1_Engagement_Market_Casual_Portrait-min-min.JPG",
-  "assets/images/CD1_WaterfrontSunset.png",
-  "assets/images/CD1_CentralParkBench.png",
-  
-  "assets/images/CD1_KingsDominionFountain.png",
-  "assets/images/CD1_TheaterStageKiss.png",
-  // Holiday set
-  "assets/images/CD1_ChristmasGingerbreadDog.png",
-  
-  "assets/images/CD1_GoldLightsSnowflake.png",
-  "assets/images/CD1_HolidayTreeFarmGoofy.png",
-  "assets/images/CD1_HolidayTreeFarmHug.png",
-  
-  "assets/images/CD1_WinterPorchSnowflake.png",
-  "assets/images/CD1_WinterWalkFestivalLights.png",
-  // Throwback
-  "assets/images/CD1_Throwback_HighSchool_Promposal-min.jpeg"
-
-];
-
-
-const batchSize = 3;
-let galleryIndex = 0;
-
-// ---------- Render Gallery ----------
-
-function renderGallery() {
-
-  galleryGrid.classList.add("fade-out");
-
-  setTimeout(() => {
-
-    galleryGrid.innerHTML = "";
-
-    const batch = galleryImages.slice(
-      galleryIndex,
-      galleryIndex + batchSize
-    );
-
-    batch.forEach(src => {
-
-      const tile = document.createElement("div");
-      tile.className = "tile";
-
-      const img = document.createElement("img");
-      img.src = src;
-      img.loading = "lazy";
-
-      tile.appendChild(img);
-
-      tile.onclick = () => {
-        modalImg.src = src;
-        modal.classList.add("open");
-      };
-
-      galleryGrid.appendChild(tile);
-    });
-
-    galleryGrid.classList.remove("fade-out");
-    galleryGrid.classList.add("fade-in");
-
-  }, 250);
-}
-
-// ---------- Desktop Buttons ----------
-
-nextBtn.onclick = () => {
-
-  galleryIndex += batchSize;
-
-  if (galleryIndex >= galleryImages.length) {
-    galleryIndex = 0;
-  }
-
-  renderGallery();
-};
-
-prevBtn.onclick = () => {
-
-  galleryIndex -= batchSize;
-
-  if (galleryIndex < 0) {
-    galleryIndex = galleryImages.length - batchSize;
-  }
-
-  renderGallery();
-};
-
-// ======================
-// MOBILE SWIPE SUPPORT
-// ======================
-
-let touchStartX = 0;
-let touchEndX = 0;
-
-galleryGrid.addEventListener("touchstart", e => {
-  touchStartX = e.changedTouches[0].screenX;
-}, { passive: true });
-
-galleryGrid.addEventListener("touchend", e => {
-
-  if (modal.classList.contains("open")) return;
-
-  touchEndX = e.changedTouches[0].screenX;
-  const threshold = 50;
-
-  // Swipe LEFT
-  if (touchStartX - touchEndX > threshold) {
-
-    galleryIndex += batchSize;
-
-    if (galleryIndex >= galleryImages.length) {
-      galleryIndex = 0;
-    }
-
-    renderGallery();
-  }
-
-  // Swipe RIGHT
-  if (touchEndX - touchStartX > threshold) {
-
-    galleryIndex -= batchSize;
-
-    if (galleryIndex < 0) {
-      galleryIndex = galleryImages.length - batchSize;
-    }
-
-    renderGallery();
-  }
-
-});
-
-// ---------- Initial Load ----------
-
-renderGallery();
-
-
-
-
-
-
-
-
-
-
-
-  
 document.getElementById("modalClose").onclick = () =>
   modal.classList.remove("open");
 
