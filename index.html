@@ -30,21 +30,24 @@
 /* HEADER ACTION BUTTONS */transform: rotate(-0.6deg);
 
 .pill {
-  padding: 10px 24px;
+  display: inline-block;
+  padding: 12px 28px;
   border: 1px solid #000;
   border-radius: 999px;
   font-size: 10px;
-  letter-spacing: .2em;
+  letter-spacing: .25em;
   text-transform: uppercase;
-  color: #000;
-  background: transparent;
+  color: #000 !important;
+  background: transparent !important;
   transition: all .25s ease;
 }
 
 .pill:hover {
-  background: #000;
-  color: #fff;
+  background: #000 !important;
+  color: #fff !important;
 }
+
+  
 
 .pill:disabled {
   opacity: 0.35;
@@ -774,6 +777,7 @@ This weekend may see increased traffic due to a local Patron Saint celebration.
 <span class=smallMeta style=margin-top:18px;display:block>
 Airport Code: GUA
 </span>
+  
 <a href="https://www.google.com/travel/flights?q=flights%20to%20GUA" target=_blank class=pill style=margin-top:22px;display:inline-block>
 Explore Flights
 </a>
