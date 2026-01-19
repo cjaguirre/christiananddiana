@@ -1329,13 +1329,26 @@ Updated automatically
         <!-- Guest Names Container -->
         <div id="guestNamesContainer" style="display:none;margin-top:20px"></div>
 
+        <div
+  id="partySizePreview"
+  style="
+    display:none;
+    margin-top:14px;
+    font-size:13px;
+    color:var(--muted);
+    text-align:center;
+  "
+>
+  Total Party Size: 1
+</div>
+
       
         <textarea
           name="notes"
           placeholder="Dietary restrictions or notes for the couple"
         ></textarea>
 
-        <button class="submit" type="submit">
+        <button class="submit" id="submitBtn" type="submit">
           Send Response
         </button>
       </form>
@@ -1345,8 +1358,8 @@ Updated automatically
         id="thankYouMessage"
         style="
           display:none;
-          text-align:center;
-          padding:60px 0 20px;
+          text-align:const attendingSelect = document.getElementById("attendingSelect");
+
         "
       >
         <span class="kicker">Response Received</span>
@@ -1710,6 +1723,9 @@ const thankYouText = document.getElementById("thankYouText");
 const attendingSelect = document.getElementById("attendingSelect");
 const guestCount = document.getElementById("guestCount");
 const guestNamesContainer = document.getElementById("guestNamesContainer");
+const partySizePreview = document.getElementById("partySizePreview");
+const submitBtn = document.getElementById("submitBtn");
+
 
 
 // 1️⃣ Auto-hide guest count when declining
@@ -1730,15 +1746,25 @@ attendingSelect.addEventListener("change", () => {
 });
 
 
-  guestCount.addEventListener("change", () => {
+guestCount.addEventListener("change", () => {
 
   const count = parseInt(guestCount.value);
 
   guestNamesContainer.innerHTML = "";
 
+  // Always include the form filler as 1
+  const totalParty = 1 + count;
+
+  partySizePreview.style.display = "block";
+  partySizePreview.textContent = `Total Party Size: ${totalParty}`;
+
+  submitBtn.disabled = false;
+
   if (count > 0) {
 
     guestNamesContainer.style.display = "block";
+
+    submitBtn.disabled = true;
 
     for (let i = 1; i <= count; i++) {
 
@@ -1748,8 +1774,10 @@ attendingSelect.addEventListener("change", () => {
       input.name = `guest_${i}_name`;
       input.placeholder = `Guest ${i} Full Name`;
       input.required = true;
-
       input.style.marginTop = "18px";
+
+      // Watch typing to enable submit only when ALL filled
+      input.addEventListener("input", validateGuestInputs);
 
       guestNamesContainer.appendChild(input);
     }
@@ -1757,10 +1785,25 @@ attendingSelect.addEventListener("change", () => {
   } else {
 
     guestNamesContainer.style.display = "none";
+    submitBtn.disabled = false;
 
   }
 
 });
+
+function validateGuestInputs() {
+
+  const inputs = guestNamesContainer.querySelectorAll("input");
+  let allFilled = true;
+
+  inputs.forEach(input => {
+    if (input.value.trim() === "") {
+      allFilled = false;
+    }
+  });
+
+  submitBtn.disabled = !allFilled;
+}
 
   
 
