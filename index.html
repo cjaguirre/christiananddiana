@@ -1730,19 +1730,33 @@ const submitBtn = document.getElementById("submitBtn");
 
 // 1️⃣ Auto-hide guest count when declining
 attendingSelect.addEventListener("change", () => {
+
   if (attendingSelect.value === "No") {
 
+    // Hide guest selector
     guestCount.style.display = "none";
     guestCount.value = "";
 
+    // Hide guest name inputs
     guestNamesContainer.style.display = "none";
     guestNamesContainer.innerHTML = "";
 
+    // Hide party size counter
+    partySizePreview.style.display = "none";
+
+    // Enable submit
+    submitBtn.disabled = false;
+
   } else {
 
+    // Show guest selector again
     guestCount.style.display = "block";
 
+    // Reset party preview until guest number chosen
+    partySizePreview.style.display = "none";
+
   }
+
 });
 
 
@@ -1755,7 +1769,10 @@ guestCount.addEventListener("change", () => {
   // Always include the form filler as 1
   const totalParty = 1 + count;
 
+if (!isNaN(count)) {
   partySizePreview.style.display = "block";
+}
+  
   partySizePreview.textContent = `Total Party Size: ${totalParty}`;
 
   submitBtn.disabled = false;
