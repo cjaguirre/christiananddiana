@@ -1433,6 +1433,10 @@ Kindly refer to your invitation for guest allowances. Only invited guests may be
         action="https://formspree.io/f/mreegaol"
         method="POST"
       >
+
+
+        <input type="hidden" name="_redirect" value="https://aguirregocowedding.com/thank-you.html">
+
         <!-- Email subject -->
         <input type="hidden" name="_subject" value="New Wedding RSVP Submission">
 
@@ -1503,14 +1507,8 @@ Kindly refer to your invitation for guest allowances. Only invited guests may be
       </form>
 
       <!-- THANK YOU MESSAGE -->
-      <div
-        id="thankYouMessage"
-        style="
-          display:none;
-          text-align:const attendingSelect = document.getElementById("attendingSelect");
+     <div id="thankYouMessage" style="display:none; text-align:center;">
 
-        "
-      >
         <span class="kicker">Response Received</span>
 
         <h3
@@ -1981,34 +1979,6 @@ function validateGuestInputs() {
 
   
 
-// 2️⃣ Conditional thank-you message + submit
-rsvpForm.addEventListener("submit", async function (e) {
-  e.preventDefault();
-
-  const attending = attendingSelect.value;
-  const formData = new FormData(rsvpForm);
-
-  const response = await fetch(rsvpForm.action, {
-    method: "POST",
-    body: formData,
-    headers: { "Accept": "application/json" }
-  });
-
-  if (response.ok) {
-    rsvpForm.style.display = "none";
-    thankYouMessage.style.display = "block";
-
-    if (attending === "Yes") {
-      thankYouText.textContent =
-        "We’re so happy you’ll be joining us. We can’t wait to celebrate together in Antigua.";
-    } else {
-      thankYouText.textContent =
-        "Thank you for letting us know. You’ll be missed, and we truly appreciate your response.";
-    }
-  } else {
-    alert("Something went wrong. Please try again.");
-  }
-});
 
 
 
