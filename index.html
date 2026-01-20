@@ -332,7 +332,9 @@ transform: scale(1.02);
 
   .footer strong{font-family:"Playfair Display",serif;font-size:26px;font-weight:400;display:block;margin-bottom:10px}
   .footer span{font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--muted2)}
-  .modal{position:fixed;inset:0;background:rgba(252,249,243,0.98);display:none;align-items:center;justify-content:center;z-index:1000;padding:40px}.modal.open{display:flex}.modalInner{width:min(1000px,100%);position:relative}.modalBody img{width:100%;max-height:85vh;object-fit:contain}.modalClose{position:absolute;top:-50px;right:0;background:0;border:0;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}.weatherCard{margin-top:20px;padding:22px;border:1px solid var(--line);background:#fff}.weatherHeader{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}.weatherDate{font-family:"Playfair Display",serif;font-size:18px;color:var(--text)}.weatherStatus{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted2)}.weatherMain{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center;margin-bottom:16px}.weatherTemp strong{display:block;font-size:28px;font-family:"Playfair Display",serif;color:var(--text)}.weatherLabel{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted2)}.weatherFooter{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}.weatherUpdated{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2)}.celebration{padding-top:130px;padding-bottom:120px}.celebrationInner{max-width:680px}.celebrationKicker{margin-bottom:22px;font-size:9px;letter-spacing:.55em}.celebrationDate{margin-bottom:0}.celebrationLocation{margin-top:18px;font-size:16px}.celebrationCount{margin-top:60px;gap:68px}
+  .modal{position:fixed;inset:0;background:rgba(252,249,243,0.98);display:none;align-items:center;justify-content:center;z-index:1000;padding:40px}.modal.open{display:flex}.modalInner{width:min(1000px,100%);position:relative}.modalBody img{width:100%;max-height:85vh;object-fit:contain}.modalClose{position:absolute;top:-50px;right:0;background:0;border:0;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}
+  .weatherCard{margin-top:20px;padding:22px;border:1px solid var(--line);background:#fff}
+  .weatherHeader{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}.weatherDate{font-family:"Playfair Display",serif;font-size:18px;color:var(--text)}.weatherStatus{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted2)}.weatherMain{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center;margin-bottom:16px}.weatherTemp strong{display:block;font-size:28px;font-family:"Playfair Display",serif;color:var(--text)}.weatherLabel{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted2)}.weatherFooter{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}.weatherUpdated{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2)}.celebration{padding-top:130px;padding-bottom:120px}.celebrationInner{max-width:680px}.celebrationKicker{margin-bottom:22px;font-size:9px;letter-spacing:.55em}.celebrationDate{margin-bottom:0}.celebrationLocation{margin-top:18px;font-size:16px}.celebrationCount{margin-top:60px;gap:68px}
   
 .celebrationNum{
   font-size:52px;
@@ -1019,18 +1021,19 @@ Explore Flights
 </div>
 <div class=weatherMain>
 <div class=weatherTemp>
-<strong id=weatherHigh>--°</strong>
+<strong id=weatherHigh>74°</strong>
 <span class=weatherLabel>High</span>
 </div>
 <div class=weatherTemp>
-<strong id=weatherLow>--°</strong>
+<strong id=weatherLow>60°</strong>
 <span class=weatherLabel>Low</span>
 </div>
 <div class=weatherTemp>
-<strong id=weatherRain>--%</strong>
+<strong id=weatherRain>55%</strong>
 <span class=weatherLabel>Rain</span>
 </div>
 </div>
+  
 <div class=weatherFooter>
 <span id=weatherSummary>
 Seasonal averages shown. Live forecast will appear closer to the date.
