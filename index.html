@@ -332,9 +332,7 @@ transform: scale(1.02);
 
   .footer strong{font-family:"Playfair Display",serif;font-size:26px;font-weight:400;display:block;margin-bottom:10px}
   .footer span{font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--muted2)}
-  .modal{position:fixed;inset:0;background:rgba(252,249,243,0.98);display:none;align-items:center;justify-content:center;z-index:1000;padding:40px}.modal.open{display:flex}.modalInner{width:min(1000px,100%);position:relative}.modalBody img{width:100%;max-height:85vh;object-fit:contain}.modalClose{position:absolute;top:-50px;right:0;background:0;border:0;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}
-  .weatherCard{margin-top:20px;padding:22px;border:1px solid var(--line);background:#fff}
-  .weatherHeader{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}.weatherDate{font-family:"Playfair Display",serif;font-size:18px;color:var(--text)}.weatherStatus{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted2)}.weatherMain{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center;margin-bottom:16px}.weatherTemp strong{display:block;font-size:28px;font-family:"Playfair Display",serif;color:var(--text)}.weatherLabel{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted2)}.weatherFooter{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}.weatherUpdated{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2)}.celebration{padding-top:130px;padding-bottom:120px}.celebrationInner{max-width:680px}.celebrationKicker{margin-bottom:22px;font-size:9px;letter-spacing:.55em}.celebrationDate{margin-bottom:0}.celebrationLocation{margin-top:18px;font-size:16px}.celebrationCount{margin-top:60px;gap:68px}
+  .modal{position:fixed;inset:0;background:rgba(252,249,243,0.98);display:none;align-items:center;justify-content:center;z-index:1000;padding:40px}.modal.open{display:flex}.modalInner{width:min(1000px,100%);position:relative}.modalBody img{width:100%;max-height:85vh;object-fit:contain}.modalClose{position:absolute;top:-50px;right:0;background:0;border:0;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}.weatherCard{margin-top:20px;padding:22px;border:1px solid var(--line);background:#fff}.weatherHeader{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}.weatherDate{font-family:"Playfair Display",serif;font-size:18px;color:var(--text)}.weatherStatus{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted2)}.weatherMain{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center;margin-bottom:16px}.weatherTemp strong{display:block;font-size:28px;font-family:"Playfair Display",serif;color:var(--text)}.weatherLabel{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted2)}.weatherFooter{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}.weatherUpdated{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2)}.celebration{padding-top:130px;padding-bottom:120px}.celebrationInner{max-width:680px}.celebrationKicker{margin-bottom:22px;font-size:9px;letter-spacing:.55em}.celebrationDate{margin-bottom:0}.celebrationLocation{margin-top:18px;font-size:16px}.celebrationCount{margin-top:60px;gap:68px}
   
 .celebrationNum{
   font-size:52px;
@@ -350,91 +348,10 @@ transform: scale(1.02);
   
   
   
-  .celebrationRule{width:220px;height:1px;background:var(--line);margin:52px auto 34px}.celebrationCopy{max-width:560px;font-size:13px;line-height:1.9}.itineraryWide{max-width:720px;margin:0 auto;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);padding:60px}
-  
-.itineraryRow{
-display:grid;
-grid-template-columns:110px 1fr;
-gap:40px;
-padding:26px 0;
-border-bottom:none;
-}
-
-  
-  .itineraryRow:last-child{border-bottom:0}
-  .itineraryTime{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);text-align:right;padding-top:6px}
-  .itineraryDetails strong{display:block;font-family:"Playfair Display",serif;font-size:18px;margin-bottom:6px;color:var(--text)}
-  .itineraryDetails span{display:block;font-size:14px;color:var(--muted);line-height:1.7}@media(max-width:700px){.itineraryWide{padding:40px 24px}.itineraryRow{grid-template-columns:1fr;gap:10px;text-align:center}.itineraryTime{text-align:center;padding-top:0}}@media(max-width:700px){.celebration{padding-top:110px;padding-bottom:100px}.celebrationCount{margin-top:46px;gap:30px}.celebrationRule{margin:40px auto 26px}
+  .celebrationRule{width:220px;height:1px;background:var(--line);margin:52px auto 34px}.celebrationCopy{max-width:560px;font-size:13px;line-height:1.9}.itineraryWide{max-width:720px;margin:0 auto;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);padding:60px}.itineraryRow{display:grid;grid-template-columns:110px 1fr;gap:40px;padding:26px 0;border-bottom:1px solid var(--line)}.itineraryRow:last-child{border-bottom:0}.itineraryTime{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);text-align:right;padding-top:6px}.itineraryDetails strong{display:block;font-family:"Playfair Display",serif;font-size:18px;margin-bottom:6px;color:var(--text)}.itineraryDetails span{display:block;font-size:14px;color:var(--muted);line-height:1.7}@media(max-width:700px){.itineraryWide{padding:40px 24px}.itineraryRow{grid-template-columns:1fr;gap:10px;text-align:center}.itineraryTime{text-align:center;padding-top:0}}@media(max-width:700px){.celebration{padding-top:110px;padding-bottom:100px}.celebrationCount{margin-top:46px;gap:30px}.celebrationRule{margin:40px auto 26px}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-.scheduleDayBlock {
-  margin-bottom: 40px;
-}
-
-.scheduleDayLabel {
-  text-align: center;
-  font-size: 24px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--text);
-  margin-bottom: 26px;
-  text-decoration: underline;
-}
-
-
-                                                                                                                                                                                                                                                                                             
-  .fridayDivider {
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 36px;
-  margin-bottom: 36px;
-}
-                                                                                                                                                                                                                                                                                           
-
-                                                                                                                                                                                                                                                                                             
- .scheduleDayBlock + .scheduleDayBlock {
-  margin-top: 20px;
-}
-                                                                                                                                                                                                                                                                                            
-.scheduleDayLabel:after {
-  content: "";
-  display: block;
-  width: 120px;
-  height: 1px;
-  background: var(--line);
-  margin: 10px auto 0;
-}
-
-
-                                                                                                                                                                                                                                                                                             
-/* Improve row spacing */
-.itineraryRow {
-  padding: 22px 0;
-}
-
-/* Make times softer */
-.itineraryTime {
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: #9b1c1f;
-}
-
-/* Improve event titles */
-.itineraryDetails strong {
-  display: block;
-  font-size: 17px;
-  font-weight: 500;
-  margin-bottom: 6px;
-}
-
-
-/* Improve descriptions */
-.itineraryDetails span {
-  line-height: 1.6;
-  max-width: 480px;
-  display: inline-block;
-}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         .formWrap{padding:40px 20px}.countRow{gap:20px;flex-wrap:wrap}}
   
@@ -610,27 +527,6 @@ border-bottom:none;
   gap: 12px;
 }
 
-/* FORCE DATE HEADERS TO DOMINATE */
-
-/* Date headers — refined size */
-
-.scheduleDayLabel {
-  font-family: "Playfair Display", serif;
-  font-size: 20px !important;
-  font-weight: 600 !important;
-  letter-spacing: 2px;
-  color: var(--text);
-  margin-bottom: 22px;
-  text-decoration: underline;
-}
-
-
-/* Slightly reduce event title emphasis */
-
-.itineraryDetails strong {
-  font-size: 16px !important;
-  font-weight: 500 !important;
-}
 
 
 
@@ -744,10 +640,9 @@ This site will host all details, travel guidance, and updates as we approach our
     <div class="storyLabel">Our Beginning</div>
     <h3>High School Sweethearts</h3>
     <p class="copy" style="text-align:left">
-      Diana and Christian’s love story began in the hallways of high school when Christian first
-      asked Diana to prom. Since then they have travelled the world, developed new interests, and
-      moved to new places but always did it together as a team. From the tiny question of “Join Me at Prom?”
-      to the big question of “Will You Marry Me?” their relationship has blossomed into one of commitment, love, and laughter.
+      Diana and Christian began talking during their high school years and later went to prom together.
+      From there, their relationship grew naturally through everyday moments, family time, and a steady
+      commitment to one another.
     </p>
   </div>
 </div>
@@ -776,6 +671,7 @@ Some stories take years to tell.
   <img src="assets/images/CD1_Proposal_Action_The_Jump-min.jpg">
   <img src="assets/images/CD1_Proposal_Celebration_Hug-min.jpg">
   <img src="assets/images/CD1_Proposal_Celebration_Cheek_Kiss-min.jpg">
+  <img src="assets/images/CD1_Engagement_Fall_Trees_Walk-min.JPEG">
   <img src="assets/images/CD1_Engagement_Gondola_Bride_Ring_Reveal-min.JPG">
   <img src="assets/images/CD1_Engagement_Gondola_Groom_Portrait-min.JPG">
   <img src="assets/images/CD1_Engagement_Overlook_Selfie-min.JPG">
@@ -796,9 +692,9 @@ Some stories take years to tell.
 <h3>A Swiss Yes</h3>
   
 <p class=copy style=text-align:left>
-In March 2025, while traveling through the valleys of the snowcapped mountains in Switzerland, Christian popped the
-  question in the picturesque village of Lucerne. With a hop of excitement and a tearful “Yes!” their love was
-  immortalized in a ring that promised a loving future together forever.
+In March 2025, while traveling through Switzerland, Christian proposed in the hills
+above Kriens near Lucerne. With the Alps in the distance and the town below,
+the moment was quiet, meaningful, and unforgettable.
 </p>
   
 </div>
@@ -836,78 +732,38 @@ ruins of Convento Santa Clara. Located at 2nd Avenue North and 2nd Street East, 
 </div>
 </div>
 </section>
-
-
-  
-<section class="section sectionAlt center" id="schedule">
-  <div class="container">
-    <span class="kicker">The Plan</span>
-    <h2 class="h2">Schedule</h2>
-    <p class="copy" style="margin-bottom:70px">
-      The following times are approximate and meant to guide the flow of the day.
-    </p>
-
-  <div class="itineraryWide">
-
-  <!-- FRIDAY -->
-  <div class="scheduleDayBlock">
-
-    <div class="scheduleDayLabel">
-      Friday, July 24, 2026
-    </div>
-
-<div class="itineraryRow fridayDivider">
-      <div class="itineraryTime">Evening</div>
-      <div class="itineraryDetails">
-        <strong>Welcome Party</strong>
-        <span>Join us for an evening of drinks, light bites, and celebration as we kick off the wedding weekend</span>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- SATURDAY -->
-  <div class="scheduleDayBlock">
-
-    <div class="scheduleDayLabel">
-      Saturday, July 25, 2026
-    </div>
-
-    <div class="itineraryRow">
-      <div class="itineraryTime">2:00 PM</div>
-      <div class="itineraryDetails">
-        <strong>Ceremony at Iglesia Escuela de Cristo</strong>
-        <span>Vows and exchange of rings</span>
-      </div>
-    </div>
-
-    <div class="itineraryRow">
-      <div class="itineraryTime">3:00 PM – 4:00 PM</div>
-      <div class="itineraryDetails">
-        <strong>Cocktail Hour at Convento Santa Clara</strong>
-        <span>Following the ceremony, join us for a cocktail hour for guests to settle in at the historic ruins of Convento Santa Clara</span>
-      </div>
-    </div>
-
-    <div class="itineraryRow">
-      <div class="itineraryTime">4:00 PM – 9:00 PM</div>
-      <div class="itineraryDetails">
-        <strong>Reception at Convento Santa Clara</strong>
-        <span>Following the cocktail hour, join us for a night of dinner, drinks, dancing, and celebration at the ruins of Convento Santa Clara</span>
-      </div>
-    </div>
-
-  </div>
-
+<section class="section sectionAlt center" id=schedule>
+<div class=container>
+<span class=kicker>The Plan</span>
+<h2 class=h2>Schedule</h2>
+<p class=copy style=margin-bottom:70px>
+The following times are approximate and meant to guide the flow of the day.
+</p>
+<div class=itineraryWide>
+<div class=itineraryRow>
+<div class=itineraryTime>2:00 PM</div>
+<div class=itineraryDetails>
+<strong>Ceremony at Iglesia Escuela de Cristo</strong>
+<span>Vows and exchange of rings</span>
 </div>
-
-
-
-  
+</div>
+<div class=itineraryRow>
+<div class=itineraryTime>3:00 PM - 4:00 PM</div>
+<div class=itineraryDetails>
+<strong>Cocktail Hour at Convento Santa Clara </strong>
+<span>Drinks and Appetizers</span>
+</div>
+</div>
+<div class=itineraryRow>
+<div class=itineraryTime>4:00 PM - 9:00 PM</div>
+<div class=itineraryDetails>
+<strong>Reception at Convento Santa Clara</strong>
+<span>Dinner, Toasts, and Dancing!</span>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-
-
 
   
 <section class="section center" id=travel>
@@ -1023,19 +879,18 @@ Explore Flights
 </div>
 <div class=weatherMain>
 <div class=weatherTemp>
-<strong id=weatherHigh>74°</strong>
+<strong id=weatherHigh>--°</strong>
 <span class=weatherLabel>High</span>
 </div>
 <div class=weatherTemp>
-<strong id=weatherLow>60°</strong>
+<strong id=weatherLow>--°</strong>
 <span class=weatherLabel>Low</span>
 </div>
 <div class=weatherTemp>
-<strong id=weatherRain>55%</strong>
+<strong id=weatherRain>--%</strong>
 <span class=weatherLabel>Rain</span>
 </div>
 </div>
-  
 <div class=weatherFooter>
 <span id=weatherSummary>
 Seasonal averages shown. Live forecast will appear closer to the date.
@@ -1314,7 +1169,7 @@ Updated automatically
           <span class="summaryHint">Invite rules</span>
         </summary>
         <p>
-          No. This celebration welcomes guests of all ages. We look forward to celebrating with your entire family.
+          Yes. While we love your little ones, we have chosen to make this an adults-only celebration.
         </p>
       </details>
 
@@ -1324,8 +1179,8 @@ Updated automatically
           <span class="summaryHint">Coming soon</span>
         </summary>
         <p>
-         Kindly submit your RSVP by May 15. This helps us finalize guest counts and make the necessary arrangements.
-
+          The RSVP deadline will be clearly listed on your invitation and updated on
+          this site once finalized.
         </p>
       </details>
 
@@ -1359,9 +1214,8 @@ Updated automatically
           <span class="summaryHint">Yes</span>
         </summary>
         <p>
-          Yes. Guests will enjoy a full dinner with drinks and dessert throughout the evening.
-          We will do our best to accommodate all dietary restrictions. If there are any allergies,
-          please include when submitting your RSVP
+          Yes. Guests will enjoy a full dinner, drinks, and dessert throughout the
+          evening. Please include any dietary restrictions when submitting your RSVP.
         </p>
       </details>
 
@@ -1433,16 +1287,11 @@ Kindly refer to your invitation for guest allowances. Only invited guests may be
         action="https://formspree.io/f/mreegaol"
         method="POST"
       >
-
-
         <!-- Email subject -->
         <input type="hidden" name="_subject" value="New Wedding RSVP Submission">
 
         <!-- Spam protection -->
         <input type="text" name="_gotcha" style="display:none">
-
-        <input type="hidden" name="party_size" id="partySizeField" value="1">
-
 
         <div class="row">
           <input
@@ -1505,8 +1354,14 @@ Kindly refer to your invitation for guest allowances. Only invited guests may be
       </form>
 
       <!-- THANK YOU MESSAGE -->
-     <div id="thankYouMessage" style="display:none; text-align:center;">
+      <div
+        id="thankYouMessage"
+        style="
+          display:none;
+          text-align:const attendingSelect = document.getElementById("attendingSelect");
 
+        "
+      >
         <span class="kicker">Response Received</span>
 
         <h3
@@ -1569,10 +1424,9 @@ Kindly refer to your invitation for guest allowances. Only invited guests may be
 <script>const SETTINGS={eventISO:"2026-07-25T16:00:00-06:00",
                         
 heroImages: [
-  "assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.png",   // FIRST / HOME
-  "assets/images/CD1_Wedding_Beach_Ocean_Kiss-min.png",
+  "assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.jpeg",   // FIRST / HOME
+  "assets/images/CD1_Wedding_Beach_Ocean_Kiss-min.jpeg",
   "assets/images/CD1_Wedding_Beach_Sitting_Kiss-min.jpeg",
-  "assets/images/CD1_Beach_Ocean_Look_Back-min.png",
   "assets/images/CD1_Wedding_Beach_Sitting_Portrait-min.jpeg",
   "assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg",
   "assets/images/CD1_Wedding_Beach_Dunes_Standing-min.jpeg",
@@ -1871,72 +1725,29 @@ const guestCount = document.getElementById("guestCount");
 const guestNamesContainer = document.getElementById("guestNamesContainer");
 const partySizePreview = document.getElementById("partySizePreview");
 const submitBtn = document.getElementById("submitBtn");
-const partySizeField = document.getElementById("partySizeField");
 
-
-rsvpForm.addEventListener("submit", async function(e) {
-  e.preventDefault();
-
-  submitBtn.disabled = true;
-
-  const formData = new FormData(rsvpForm);
-
-const response = await fetch(rsvpForm.action, {
-  method: "POST",
-  body: formData
-});
-
-
-  if (response.ok) {
-
-    const name = formData.get("name");
-    const attending = formData.get("attending");
-    const guests = formData.get("guests") || "0";
-    const partySize = formData.get("party_size");
-
-    let message = "";
-
-    if (attending === "Yes") {
-      message = `Thank you ${name}! We are so excited to celebrate with you in Antigua. Your RSVP has been successfully recorded.`;
-    } else {
-      message = `Thank you ${name}. We will miss you on our special day, but we appreciate you letting us know.`;
-    }
-
-    thankYouText.textContent = message;
-
-    rsvpForm.style.display = "none";
-    thankYouMessage.style.display = "block";
-
-  } else {
-    alert("Submission failed. Please try again.");
-    submitBtn.disabled = false;
-  }
-});
 
 
 // 1️⃣ Auto-hide guest count when declining
 attendingSelect.addEventListener("change", () => {
 
- if (attendingSelect.value === "No") {
+  if (attendingSelect.value === "No") {
 
-  // Hide guest selector
-  guestCount.style.display = "none";
-  guestCount.value = "";
+    // Hide guest selector
+    guestCount.style.display = "none";
+    guestCount.value = "";
 
-  // Hide guest name inputs
-  guestNamesContainer.style.display = "none";
-  guestNamesContainer.innerHTML = "";
+    // Hide guest name inputs
+    guestNamesContainer.style.display = "none";
+    guestNamesContainer.innerHTML = "";
 
-  // Hide party size counter
-  partySizePreview.style.display = "none";
+    // Hide party size counter
+    partySizePreview.style.display = "none";
 
-  // SET PARTY SIZE
-  partySizeField.value = 0;
+    // Enable submit
+    submitBtn.disabled = false;
 
-  // Enable submit
-  submitBtn.disabled = false;
-}
- else {
+  } else {
 
     // Show guest selector again
     guestCount.style.display = "block";
@@ -1957,8 +1768,6 @@ guestCount.addEventListener("change", () => {
 
   // Always include the form filler as 1
   const totalParty = 1 + count;
-  partySizeField.value = totalParty;
-
 
 if (!isNaN(count)) {
   partySizePreview.style.display = "block";
@@ -2015,6 +1824,34 @@ function validateGuestInputs() {
 
   
 
+// 2️⃣ Conditional thank-you message + submit
+rsvpForm.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const attending = attendingSelect.value;
+  const formData = new FormData(rsvpForm);
+
+  const response = await fetch(rsvpForm.action, {
+    method: "POST",
+    body: formData,
+    headers: { "Accept": "application/json" }
+  });
+
+  if (response.ok) {
+    rsvpForm.style.display = "none";
+    thankYouMessage.style.display = "block";
+
+    if (attending === "Yes") {
+      thankYouText.textContent =
+        "We’re so happy you’ll be joining us. We can’t wait to celebrate together in Antigua.";
+    } else {
+      thankYouText.textContent =
+        "Thank you for letting us know. You’ll be missed, and we truly appreciate your response.";
+    }
+  } else {
+    alert("Something went wrong. Please try again.");
+  }
+});
 
 
 
