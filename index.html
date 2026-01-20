@@ -1435,8 +1435,6 @@ Kindly refer to your invitation for guest allowances. Only invited guests may be
       >
 
 
-        <input type="hidden" name="_redirect" value="https://aguirregocowedding.com/thank-you.html">
-
         <!-- Email subject -->
         <input type="hidden" name="_subject" value="New Wedding RSVP Submission">
 
@@ -1876,6 +1874,46 @@ const submitBtn = document.getElementById("submitBtn");
 const partySizeField = document.getElementById("partySizeField");
 
 
+rsvpForm.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  submitBtn.disabled = true;
+
+  const formData = new FormData(rsvpForm);
+
+  const response = await fetch(rsvpForm.action, {
+    method: "POST",
+    body: formData,
+    headers: {
+      Accept: "application/json"
+    }
+  });
+
+  if (response.ok) {
+
+    const name = formData.get("name");
+    const attending = formData.get("attending");
+    const guests = formData.get("guests") || "0";
+    const partySize = formData.get("party_size");
+
+    let message = "";
+
+    if (attending === "Yes") {
+      message = `Thank you ${name}! We are so excited to celebrate with you in Antigua. Your RSVP has been successfully recorded.`;
+    } else {
+      message = `Thank you ${name}. We will miss you on our special day, but we appreciate you letting us know.`;
+    }
+
+    thankYouText.textContent = message;
+
+    rsvpForm.style.display = "none";
+    thankYouMessage.style.display = "block";
+
+  } else {
+    alert("Submission failed. Please try again.");
+    submitBtn.disabled = false;
+  }
+});
 
 
 // 1️⃣ Auto-hide guest count when declining
