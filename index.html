@@ -20,6 +20,7 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<meta http-equiv="Content-Security-Policy" content="connect-src https://api.emailjs.com https://formspree.io">
 
 <script>
 (function(){
@@ -714,14 +715,12 @@ rsvpForm.addEventListener("submit", async function (e) {
   // CONTROL EMAIL SENDING
   if (attendingSelect.value === "Yes") {
     document.getElementById("sendConfirmation").value = "yes";
-  } else {
-    document.getElementById("sendConfirmation").value = "no";
+  } 
 
-    // Remove email so Formspree does not send auto reply
-    const emailInput = rsvpForm.querySelector('input[name="email"]');
-    emailInput.value = "";
-  }
-
+  else {
+  document.getElementById("sendConfirmation").value = "no";
+}
+  
   const formData = new FormData(rsvpForm);
 
   const response = await fetch(rsvpForm.action, {
@@ -730,25 +729,51 @@ rsvpForm.addEventListener("submit", async function (e) {
     headers: { "Accept": "application/json" }
   });
 
-  if (response.ok) {
+ if (response.ok) {
 
-    const attending = attendingSelect.value;
+  const attending = attendingSelect.value;
 
-    rsvpForm.style.display = "none";
-    thankYouMessage.style.display = "block";
+  // SEND EMAILJS CONFIRMATION ONLY IF ATTENDING YES
+  if (attending === "Yes") {
 
-    if (attending === "Yes") {
-      thankYouText.textContent =
-        "We’re so happy you’ll be joining us. We can’t wait to celebrate together in Antigua.";
-    } else {
-      thankYouText.textContent =
-        "Thank you for letting us know. You’ll be missed, and we truly appreciate your response.";
-    }
+    const templateParams = {
+      name: rsvpForm.querySelector('input[name="name"]').value,
+      email: rsvpForm.querySelector('input[name="email"]').value,
+      attending: attendingSelect.value,
+      guests: guestCount.value || 0,
+      party_size: partySizeField.value,
+      guest_names_combined: document.getElementById("guestNamesCombined").value
+    };
 
-  } else {
-    alert("Something went wrong. Please try again.");
-    submitBtn.disabled = false;
+try {
+  await emailjs.send(
+    "service_jdf8abn",
+    "template_lzt0kvl",
+    templateParams
+  );
+
+  console.log("EmailJS confirmation sent");
+
+} catch (error) {
+  console.error("EmailJS error:", error);
+}
+
+
   }
+
+  rsvpForm.style.display = "none";
+  thankYouMessage.style.display = "block";
+
+  if (attending === "Yes") {
+    thankYouText.textContent =
+      "We’re so happy you’ll be joining us. We can’t wait to celebrate together in Antigua.";
+  } else {
+    thankYouText.textContent =
+      "Thank you for letting us know. You’ll be missed, and we truly appreciate your response.";
+  }
+
+}
+
 });
 
 
