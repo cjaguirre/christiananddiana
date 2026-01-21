@@ -656,9 +656,146 @@ renderGallery();};prevBtn.onclick=()=>{galleryIndex-=batchSize;if(galleryIndex<0
 renderGallery();};let touchStartX=0;let touchEndX=0;galleryGrid.addEventListener("touchstart",e=>{touchStartX=e.changedTouches[0].screenX;},{passive:true});galleryGrid.addEventListener("touchend",e=>{if(modal.classList.contains("open"))return;touchEndX=e.changedTouches[0].screenX;const threshold=50;if(touchStartX-touchEndX>threshold){galleryIndex+=batchSize;if(galleryIndex>=galleryImages.length){galleryIndex=0;}
 renderGallery();}
 if(touchEndX-touchStartX>threshold){galleryIndex-=batchSize;if(galleryIndex<0){galleryIndex=galleryImages.length-batchSize;}
-renderGallery();}});renderGallery();document.getElementById("modalClose").onclick=()=>modal.classList.remove("open");modal.onclick=(e)=>{if(e.target===modal)modal.classList.remove("open");};document.querySelectorAll(".slideshow").forEach(slideshow=>{const slides=slideshow.querySelector(".slides");const images=slides.children;let index=0;const update=()=>{slides.style.transform=`translateX(-${index*100}%)`;};slideshow.querySelector(".next").onclick=()=>{index=(index+1)%images.length;update();};slideshow.querySelector(".prev").onclick=()=>{index=(index-1+images.length)%images.length;update();};});document.querySelectorAll(".fadeStack").forEach(stack=>{const images=stack.querySelectorAll("img");let index=0;setInterval(()=>{images[index].classList.remove("active");index=(index+1)%images.length;images[index].classList.add("active");},5000);});const rsvpForm=document.getElementById("rsvpForm");const thankYouMessage=document.getElementById("thankYouMessage");const thankYouText=document.getElementById("thankYouText");const attendingSelect=document.getElementById("attendingSelect");const guestCount=document.getElementById("guestCount");const guestNamesContainer=document.getElementById("guestNamesContainer");const partySizePreview=document.getElementById("partySizePreview");const submitBtn=document.getElementById("submitBtn");const partySizeField=document.getElementById("partySizeField");rsvpForm.addEventListener("submit",async function(e){e.preventDefault();submitBtn.disabled=true;const formData=new FormData(rsvpForm);const response=await fetch(rsvpForm.action,{method:"POST",body:formData});if(response.ok){const name=formData.get("name");const attending=formData.get("attending");const guests=formData.get("guests")||"0";const partySize=formData.get("party_size");let message="";if(attending==="Yes"){message=`Thank you ${name}!We are so excited to celebrate with you in Antigua.Your RSVP has been successfully recorded.`;}else{message=`Thank you ${name}.We will miss you on our special day,but we appreciate you letting us know.`;}
-thankYouText.textContent=message;rsvpForm.style.display="none";thankYouMessage.style.display="block";}else{alert("Submission failed. Please try again.");submitBtn.disabled=false;}});attendingSelect.addEventListener("change",()=>{if(attendingSelect.value==="No"){guestCount.style.display="none";guestCount.value="";guestNamesContainer.style.display="none";guestNamesContainer.innerHTML="";partySizePreview.style.display="none";partySizeField.value=0;submitBtn.disabled=false;}
-else{guestCount.style.display="block";partySizePreview.style.display="none";}});guestCount.addEventListener("change",()=>{const count=parseInt(guestCount.value);guestNamesContainer.innerHTML="";const totalParty=1+count;partySizeField.value=totalParty;if(!isNaN(count)){partySizePreview.style.display="block";}
-partySizePreview.textContent=`Total Party Size:${totalParty}`;submitBtn.disabled=false;if(count>0){guestNamesContainer.style.display="block";submitBtn.disabled=true;for(let i=1;i<=count;i++){const input=document.createElement("input");input.type="text";input.name=`guest_${i}_name`;input.placeholder=`Guest ${i}Full Name`;input.required=true;input.style.marginTop="18px";input.addEventListener("input",validateGuestInputs);guestNamesContainer.appendChild(input);}}else{guestNamesContainer.style.display="none";submitBtn.disabled=false;}});function validateGuestInputs(){const inputs=guestNamesContainer.querySelectorAll("input");let allFilled=true;inputs.forEach(input=>{if(input.value.trim()===""){allFilled=false;}});submitBtn.disabled=!allFilled;}</script>
+renderGallery();}});renderGallery();document.getElementById("modalClose").onclick=()=>modal.classList.remove("open");modal.onclick=(e)=>{if(e.target===modal)modal.classList.remove("open");};document.querySelectorAll(".slideshow").forEach(slideshow=>{const slides=slideshow.querySelector(".slides");const images=slides.children;let index=0;const update=()=>{slides.style.transform=`translateX(-${index*100}%)`;};slideshow.querySelector(".next").onclick=()=>{index=(index+1)%images.length;update();};slideshow.querySelector(".prev").onclick=()=>{index=(index-1+images.length)%images.length;update();};});document.querySelectorAll(".fadeStack").forEach(stack=>{const images=stack.querySelectorAll("img");let index=0;setInterval(()=>{images[index].classList.remove("active");index=(index+1)%images.length;images[index].classList.add("active");},5000);});
+  
+ 
+const rsvpForm = document.getElementById("rsvpForm");
+const thankYouMessage = document.getElementById("thankYouMessage");
+const thankYouText = document.getElementById("thankYouText");
+
+const attendingSelect = document.getElementById("attendingSelect");
+const guestCount = document.getElementById("guestCount");
+const guestNamesContainer = document.getElementById("guestNamesContainer");
+const partySizePreview = document.getElementById("partySizePreview");
+const submitBtn = document.getElementById("submitBtn");
+const partySizeField = document.getElementById("partySizeField");
+
+
+// --------------------
+// RSVP SUBMIT HANDLER
+// --------------------
+
+rsvpForm.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  submitBtn.disabled = true;
+
+  const formData = new FormData(rsvpForm);
+
+  const response = await fetch(rsvpForm.action, {
+    method: "POST",
+    body: formData,
+    headers: { "Accept": "application/json" }
+  });
+
+  if (response.ok) {
+
+    const attending = attendingSelect.value;
+
+    rsvpForm.style.display = "none";
+    thankYouMessage.style.display = "block";
+
+    // ORIGINAL THANK YOU MESSAGES
+    if (attending === "Yes") {
+      thankYouText.textContent =
+        "We’re so happy you’ll be joining us. We can’t wait to celebrate together in Antigua.";
+    } else {
+      thankYouText.textContent =
+        "Thank you for letting us know. You’ll be missed, and we truly appreciate your response.";
+    }
+
+  } else {
+    alert("Something went wrong. Please try again.");
+    submitBtn.disabled = false;
+  }
+});
+
+
+// --------------------
+// RSVP FORM LOGIC
+// --------------------
+
+attendingSelect.addEventListener("change", () => {
+
+  if (attendingSelect.value === "No") {
+
+    guestCount.style.display = "none";
+    guestCount.value = "";
+
+    guestNamesContainer.style.display = "none";
+    guestNamesContainer.innerHTML = "";
+
+    partySizePreview.style.display = "none";
+    partySizeField.value = 1;
+
+    submitBtn.disabled = false;
+
+  } else {
+
+    guestCount.style.display = "block";
+    partySizePreview.style.display = "none";
+  }
+});
+
+
+guestCount.addEventListener("change", () => {
+
+  const count = parseInt(guestCount.value);
+
+  guestNamesContainer.innerHTML = "";
+
+  const totalParty = 1 + count;
+  partySizeField.value = totalParty;
+
+  if (!isNaN(count)) {
+    partySizePreview.style.display = "block";
+    partySizePreview.textContent = `Total Party Size: ${totalParty}`;
+  }
+
+  if (count > 0) {
+
+    guestNamesContainer.style.display = "block";
+    submitBtn.disabled = true;
+
+    for (let i = 1; i <= count; i++) {
+
+      const input = document.createElement("input");
+
+      input.type = "text";
+      input.name = `guest_${i}_name`;
+      input.placeholder = `Guest ${i} Full Name`;
+      input.required = true;
+      input.style.marginTop = "18px";
+
+      input.addEventListener("input", validateGuestInputs);
+
+      guestNamesContainer.appendChild(input);
+    }
+
+  } else {
+
+    guestNamesContainer.style.display = "none";
+    submitBtn.disabled = false;
+  }
+});
+
+
+function validateGuestInputs() {
+
+  const inputs = guestNamesContainer.querySelectorAll("input");
+  let allFilled = true;
+
+  inputs.forEach(input => {
+    if (input.value.trim() === "") {
+      allFilled = false;
+    }
+  });
+
+  submitBtn.disabled = !allFilled;
+}
+
+
+
+</script>
 </body>
 </html>
