@@ -668,9 +668,75 @@ Thank You
 <div class=modalBody><img id=modalImg src></div>
 </div>
 </div>
-<script>const SETTINGS={eventISO:"2026-07-25T16:00:00-06:00",heroImages:["assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.png","assets/images/CD1_Wedding_Beach_Ocean_Kiss-min.png","assets/images/CD1_Wedding_Beach_Sitting_Kiss-min.jpeg","assets/images/CD1_Beach_Ocean_Look_Back-min.png","assets/images/CD1_Wedding_Beach_Sitting_Portrait-min.jpeg","assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg","assets/images/CD1_Wedding_Beach_Dunes_Standing-min-min.jpeg"]};function tick(){const diff=Math.max(0,new Date(SETTINGS.eventISO).getTime()-Date.now());document.getElementById("cdDays").textContent=Math.floor(diff/(1000*60*60*24));document.getElementById("cdHours").textContent=String(Math.floor((diff/(1000*60*60))%24)).padStart(2,'0');document.getElementById("cdMins").textContent=String(Math.floor((diff/(1000*60))%60)).padStart(2,'0');document.getElementById("cdSecs").textContent=String(Math.floor((diff/1000)%60)).padStart(2,'0');}
+
+<script>const SETTINGS={eventISO:"2026-07-25T16:00:00-06:00",heroImages:
+  
+["assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.png","assets/images/CD1_Wedding_Beach_Ocean_Kiss-min.png","assets/images/CD1_Wedding_Beach_Sitting_Kiss-min.jpeg","assets/images/CD1_Beach_Ocean_Look_Back-min.png","assets/images/CD1_Wedding_Beach_Sitting_Portrait-min.jpeg","assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg","assets/images/CD1_Wedding_Beach_Dunes_Standing-min-min.jpeg"]};function tick(){const diff=Math.max(0,new Date(SETTINGS.eventISO).getTime()-Date.now());document.getElementById("cdDays").textContent=Math.floor(diff/(1000*60*60*24));document.getElementById("cdHours").textContent=String(Math.floor((diff/(1000*60*60))%24)).padStart(2,'0');document.getElementById("cdMins").textContent=String(Math.floor((diff/(1000*60))%60)).padStart(2,'0');document.getElementById("cdSecs").textContent=String(Math.floor((diff/1000)%60)).padStart(2,'0');}
 setInterval(tick,1000);tick();const header=document.getElementById("siteHeader");window.addEventListener("scroll",()=>{header.classList.toggle("solid",window.scrollY>50);},{passive:true});const heroBg=document.getElementById("heroBg");let hIdx=0;heroBg.style.backgroundImage=`url("${SETTINGS.heroImages[0]}")`;function rotateHero(delay){setTimeout(()=>{hIdx=(hIdx+1)%SETTINGS.heroImages.length;heroBg.style.opacity=0.5;setTimeout(()=>{heroBg.style.backgroundImage=`url("${SETTINGS.heroImages[hIdx]}")`;heroBg.style.opacity=1;},800);rotateHero(7000);},delay);}
-rotateHero(10000);const galleryGrid=document.getElementById("galleryGrid");const prevBtn=document.getElementById("galleryPrev");const nextBtn=document.getElementById("galleryNext");const modal=document.getElementById("modal");const modalImg=document.getElementById("modalImg");const galleryImages=["assets/images/CD1_JustMarriedBalloons.jpg","assets/images/CD1_StaircaseKiss.jpg","assets/images/CD1_ReceptionTableDinner.jpg","assets/images/CD1_CakeCuttingFlash.jpg","assets/images/CD1_CakeCuttingLaughs.jpg","assets/images/CD1_CakeCuttingPose.jpg","assets/images/CD1_Courthouse_Candid_Climbing_Stairs_Together-min.jpeg","assets/images/CD1_Courthouse_Candid_Walking_Hand_in_Hand-min.jpeg","assets/images/CD1_Courthouse_Evening_Portrait_Indoor_Tiles-min.JPG","assets/images/CD1_Wedding_Beach_Dunes_Standing-min.jpeg","assets/images/CD1_Wedding_Beach_Ocean_Kiss-min.png","assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.png","assets/images/CD1_Wedding_Beach_Sitting_Kiss-min.jpeg","assets/images/CD1_Wedding_Beach_Sitting_Portrait-min.jpeg","assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg","assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg","assets/images/CD1_Proposal_Action_The_Jump-min.jpg","assets/images/CD1_Proposal_Celebration_Hug-min.jpg","assets/images/CD1_Proposal_Celebration_Cheek_Kiss-min.jpg","assets/images/CD1_Engagement_Fall_Trees_Walk-min.JPEG","assets/images/CD1_Engagement_Gondola_Bride_Ring_Reveal-min.JPG","assets/images/CD1_Engagement_Gondola_Groom_Portrait-min.JPG","assets/images/CD1_Engagement_Overlook_Selfie-min.JPG","assets/images/CD1_Engagement_Snow_Mountain_Kiss-min.JPG","assets/images/CD1_Engagement_Snow_Mountain_Wide-min.JPG","assets/images/CD1_Engagement_Travel_Canal_Portrait-min.JPG","assets/images/CD1_Engagement_Travel_Night_Selfie-min.JPG","assets/images/CD1_Engagement_Travel_Street_Kiss-min.JPG","assets/images/CD1_LakeMountainSelfie.jpg","assets/images/CD1_Engagement_Market_Casual_Portrait-min-min.JPG","assets/images/CD1_WaterfrontSunset.png","assets/images/CD1_CentralParkBench.png","assets/images/CD1_KingsDominionFountain.png","assets/images/CD1_TheaterStageKiss.png","assets/images/CD1_ChristmasGingerbreadDog.png","assets/images/CD1_GoldLightsSnowflake.png","assets/images/CD1_HolidayTreeFarmGoofy.png","assets/images/CD1_HolidayTreeFarmHug.png","assets/images/CD1_WinterPorchSnowflake.png","assets/images/CD1_WinterWalkFestivalLights.png","assets/images/CD1_Throwback_HighSchool_Promposal-min.jpeg"];const batchSize=3;let galleryIndex=0;function renderGallery(){galleryGrid.classList.add("fade-out");setTimeout(()=>{galleryGrid.innerHTML="";const batch=galleryImages.slice(galleryIndex,galleryIndex+batchSize);batch.forEach(src=>{const tile=document.createElement("div");tile.className="tile";const img=document.createElement("img");img.src=src;img.loading="lazy";tile.appendChild(img);tile.onclick=()=>{modalImg.src=src;modal.classList.add("open");};galleryGrid.appendChild(tile);});galleryGrid.classList.remove("fade-out");galleryGrid.classList.add("fade-in");},250);}
+rotateHero(10000);const galleryGrid=document.getElementById("galleryGrid");const prevBtn=document.getElementById("galleryPrev");const nextBtn=document.getElementById("galleryNext");const modal=document.getElementById("modal");const modalImg=document.getElementById("modalImg");
+  
+  const galleryImages=[
+                       // GALLERY BATCH 1
+                      "assets/images/CD1_JustMarriedBalloons.jpg",
+                       "assets/images/CD1_StaircaseKiss.jpg",
+                       "assets/images/CD1_ReceptionTableDinner.jpg",
+                       // GALLERY BATCH 2
+                       "assets/images/CD1_CakeCuttingFlash.jpg",
+                       "assets/images/CD1_CakeCuttingLaughs.jpg",
+                       "assets/images/CD1_CakeCuttingPose.jpg",
+                       // GALLERY BATCH 3
+                       "assets/images/CD1_Courthouse_Candid_Climbing_Stairs_Together-min.jpeg",
+                       "assets/images/CD1_Courthouse_Candid_Walking_Hand_in_Hand-min.jpeg",
+                       "assets/images/CD1_Courthouse_Evening_Portrait_Indoor_Tiles-min.JPG",
+                       // GALLERY BATCH 4
+                       "assets/images/CD1_Wedding_Beach_Dunes_Standing-min.jpeg",
+                       "assets/images/CD1_Wedding_Beach_Ocean_Kiss-min.png",
+                       "assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.png",
+                       // GALLERY BATCH 5
+                       "assets/images/CD1_Wedding_Beach_Sitting_Kiss-min.jpeg",
+                       "assets/images/CD1_Wedding_Beach_Sitting_Portrait-min.jpeg",
+                       "assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg",
+                       // GALLERY BATCH 6
+                       "assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg",
+                       "assets/images/CD1_Proposal_Action_The_Jump-min.jpg",
+                       "assets/images/CD1_Proposal_Celebration_Hug-min.jpg",
+                       // GALLERY BATCH 7
+                       "assets/images/CD1_Proposal_Celebration_Cheek_Kiss-min.jpg",
+                       "assets/images/CD1_Engagement_Fall_Trees_Walk-min.JPEG",
+                       "assets/images/CD1_Engagement_Gondola_Bride_Ring_Reveal-min.JPG",
+                       // GALLERY BATCH 8
+                       "assets/images/CD1_Engagement_Gondola_Groom_Portrait-min.JPG",
+                       "assets/images/CD1_Engagement_Overlook_Selfie-min.JPG",
+                       "assets/images/CD1_Engagement_Snow_Mountain_Kiss-min.JPG",
+                       // GALLERY BATCH 9
+                       "assets/images/CD1_Engagement_Snow_Mountain_Wide-min.JPG",
+                       "assets/images/CD1_Engagement_Travel_Canal_Portrait-min.JPG",
+                       "assets/images/CD1_Engagement_Travel_Night_Selfie-min.JPG",
+                       // GALLERY BATCH 10
+                       "assets/images/CD1_Engagement_Travel_Street_Kiss-min.JPG",
+                       "assets/images/CD1_LakeMountainSelfie.jpg",
+                       "assets/images/CD1_Engagement_Market_Casual_Portrait-min-min.JPG",
+                       // GALLERY BATCH 11
+                       "assets/images/CD1_WaterfrontSunset.png",
+                       "assets/images/CD1_CentralParkBench.png",
+                       "assets/images/CD1_KingsDominionFountain.png",
+                       // GALLERY BATCH 12
+                       "assets/images/CD1_TheaterStageKiss.png",
+                       "assets/images/CD1_ChristmasGingerbreadDog.png",
+                       "assets/images/CD1_GoldLightsSnowflake.png",
+                       // GALLERY BATCH 13
+                       "assets/images/CD1_HolidayTreeFarmGoofy.png",
+                       "assets/images/CD1_HolidayTreeFarmHug.png",
+                       "assets/images/CD1_WinterPorchSnowflake.png",
+                       // GALLERY BATCH 14
+                       "assets/images/CD1_WinterWalkFestivalLights.png",
+                       "assets/images/CD1_Throwback_HighSchool_Promposal-min.jpeg"];
+  
+  
+  
+  
+  
+  const batchSize=3;let galleryIndex=0;function renderGallery(){galleryGrid.classList.add("fade-out");setTimeout(()=>{galleryGrid.innerHTML="";const batch=galleryImages.slice(galleryIndex,galleryIndex+batchSize);batch.forEach(src=>{const tile=document.createElement("div");tile.className="tile";const img=document.createElement("img");img.src=src;img.loading="lazy";tile.appendChild(img);tile.onclick=()=>{modalImg.src=src;modal.classList.add("open");};galleryGrid.appendChild(tile);});galleryGrid.classList.remove("fade-out");galleryGrid.classList.add("fade-in");},250);}
 nextBtn.onclick=()=>{galleryIndex+=batchSize;if(galleryIndex>=galleryImages.length){galleryIndex=0;}
 renderGallery();};prevBtn.onclick=()=>{galleryIndex-=batchSize;if(galleryIndex<0){galleryIndex=galleryImages.length-batchSize;}
 renderGallery();};let touchStartX=0;let touchEndX=0;galleryGrid.addEventListener("touchstart",e=>{touchStartX=e.changedTouches[0].screenX;},{passive:true});galleryGrid.addEventListener("touchend",e=>{if(modal.classList.contains("open"))return;touchEndX=e.changedTouches[0].screenX;const threshold=50;if(touchStartX-touchEndX>threshold){galleryIndex+=batchSize;if(galleryIndex>=galleryImages.length){galleryIndex=0;}
