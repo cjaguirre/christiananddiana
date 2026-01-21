@@ -596,6 +596,12 @@ Kindly refer to your invitation for guest allowances. Only invited guests may be
 <input type=hidden name=_subject value="New Wedding RSVP Submission">
 <input type=text name=_gotcha style=display:none>
 <input type=hidden name=party_size id=partySizeField value=1>
+  
+            <input type="hidden" name="guest_names_combined" id="guestNamesCombined">
+            <input type="hidden" name="send_confirmation" id="sendConfirmation" value="no">
+
+
+  
 <div class=row>
 <input name=name type=text placeholder="Full Name" required>
 <input name=email type=email placeholder="Email Address" required>
@@ -680,6 +686,29 @@ rsvpForm.addEventListener("submit", async function (e) {
 
   submitBtn.disabled = true;
 
+  // COMBINE GUEST NAMES
+  const guestInputs = guestNamesContainer.querySelectorAll("input");
+  const names = [];
+
+  guestInputs.forEach(input => {
+    if (input.value.trim() !== "") {
+      names.push(input.value.trim());
+    }
+  });
+
+  document.getElementById("guestNamesCombined").value = names.join(", ");
+
+  // CONTROL EMAIL SENDING
+  if (attendingSelect.value === "Yes") {
+    document.getElementById("sendConfirmation").value = "yes";
+  } else {
+    document.getElementById("sendConfirmation").value = "no";
+
+    // Remove email so Formspree does not send auto reply
+    const emailInput = rsvpForm.querySelector('input[name="email"]');
+    emailInput.value = "";
+  }
+
   const formData = new FormData(rsvpForm);
 
   const response = await fetch(rsvpForm.action, {
@@ -695,7 +724,6 @@ rsvpForm.addEventListener("submit", async function (e) {
     rsvpForm.style.display = "none";
     thankYouMessage.style.display = "block";
 
-    // ORIGINAL THANK YOU MESSAGES
     if (attending === "Yes") {
       thankYouText.textContent =
         "We’re so happy you’ll be joining us. We can’t wait to celebrate together in Antigua.";
@@ -709,6 +737,7 @@ rsvpForm.addEventListener("submit", async function (e) {
     submitBtn.disabled = false;
   }
 });
+
 
 
 // --------------------
