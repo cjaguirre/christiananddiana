@@ -663,36 +663,51 @@ Guests may book independently
 <div class="block weatherBlock">
 <h3>Weather</h3>
 <p class=smallMeta>Antigua, Guatemala</p>
+
 <div class=weatherCard>
-<div class=weatherHeader>
-<span class=weatherDate>Saturday, July 25</span>
-<span class=weatherStatus>Wedding Day Forecast</span>
+  <div class=weatherHeader>
+    <span class=weatherDate>Saturday, July 25</span>
+    <span class=weatherStatus>Wedding Day Forecast</span>
+  </div>
+
+  <div class=weatherMain>
+    <div class=weatherTemp>
+      <strong id=weatherHigh>74°</strong>
+      <span class=weatherLabel>High</span>
+    </div>
+
+    <div class=weatherTemp>
+      <strong id=weatherLow>60°</strong>
+      <span class=weatherLabel>Low</span>
+    </div>
+
+    <div class=weatherTemp>
+      <strong id=weatherRain>55%</strong>
+      <span class=weatherLabel>Rain</span>
+    </div>
+  </div>
+
+  <div class=weatherFooter>
+    <span id=weatherSummary>
+      Seasonal averages shown. Live forecast will appear closer to the date.
+    </span>
+    <span class=weatherUpdated id=weatherUpdated>
+      Updated automatically
+    </span>
+  </div>
 </div>
-<div class=weatherMain>
-<div class=weatherTemp>
-<strong id=weatherHigh>74°</strong>
-<span class=weatherLabel>High</span>
+
+<!-- WEATHER IMAGE -->
+<div style="margin-top:20px">
+  <img 
+    src="assets/images/CD1_WeatherPic.jpg" 
+    alt="Antigua Guatemala mountain and volcano landscape" 
+    style="width:100%;height:auto;border-radius:2px;box-shadow:var(--shadow)" 
+    loading="lazy">
 </div>
-<div class=weatherTemp>
-<strong id=weatherLow>60°</strong>
-<span class=weatherLabel>Low</span>
+
 </div>
-<div class=weatherTemp>
-<strong id=weatherRain>55%</strong>
-<span class=weatherLabel>Rain</span>
-</div>
-</div>
-<div class=weatherFooter>
-<span id=weatherSummary>
-Seasonal averages shown. Live forecast will appear closer to the date.
-</span>
-<span class=weatherUpdated id=weatherUpdated>
-Updated automatically
-</span>
-</div>
-</div>
-</div>
-</div>
+
 
 
 
