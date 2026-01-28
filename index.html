@@ -261,6 +261,30 @@
 }
 
 
+.videoPopup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+  z-index:99999;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+/* Cropped popup card */
+
+.videoPopup video{
+  width:100%;
+  max-width:420px;
+  max-height:70vh;
+  object-fit:cover;
+  border-radius:14px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.45);
+  background:#000;
+}
 
     
 /* Make desktop schedule match mobile card layout */
@@ -452,7 +476,44 @@
 }
 
     
-  
+
+.videoClose{
+  position:absolute;
+  top:18px;
+  right:18px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  border:none;
+  background:rgba(255,255,255,0.9);
+  color:#000;
+  font-size:22px;
+  font-weight:300;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+  z-index:100000;
+  transition:all .2s ease;
+}
+
+.videoClose:hover{
+  background:#fff;
+  transform:scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
+
+    
 </style>
 
 
@@ -1307,29 +1368,16 @@ Thank You
 
 
   <!-- SECRET VIDEO EASTER EGG -->
-<div id="videoModal" style="
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.85);
-justify-content:center;
-align-items:center;
-z-index:99999;
-">
+<div id="videoModal" class="videoPopup">
 
-<video id="easterVideo" controls preload="metadata" playsinline style="
-  max-width:90%;
-  max-height:90%;
-  border-radius:12px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.5);
-  ">
+  <button id="videoCloseBtn" class="videoClose">×</button>
+
+  <video id="easterVideo" controls preload="metadata" playsinline webkit-playsinline>
     <source src="assets/images/CD1_CanelaAntigua.mp4" type="video/mp4">
   </video>
 
 </div>
+
 
   
 <script>const SETTINGS={eventISO:"2026-07-25T16:00:00-06:00",heroImages:
@@ -1611,6 +1659,8 @@ let eggTimer;
 const eggTrigger = document.getElementById("easterEggTrigger");
 const eggModal = document.getElementById("videoModal");
 const eggVideo = document.getElementById("easterVideo");
+  const videoCloseBtn = document.getElementById("videoCloseBtn");
+
 
 if (eggTrigger && eggModal && eggVideo) {
 
@@ -1627,8 +1677,13 @@ if (eggTrigger && eggModal && eggVideo) {
 
 if (eggClicks >= 5) {
 
-      eggModal.style.display = "flex";
-      eggVideo.play();
+     eggModal.style.display = "flex";
+document.body.style.overflow = "hidden";
+
+eggVideo.currentTime = 0;
+eggVideo.load();
+eggVideo.play();
+
 
       eggClicks = 0;
     }
@@ -1639,27 +1694,45 @@ if (eggClicks >= 5) {
 
 
 
-  // CLOSE VIDEO
-eggModal.addEventListener("click", () => {
+// CLOSE WITH X BUTTON
+videoCloseBtn.addEventListener("click", () => {
 
   eggVideo.pause();
   eggVideo.currentTime = 0;
+
   eggModal.style.display = "none";
+  document.body.style.overflow = "";
 
   eggClicks = 0;
   clearTimeout(eggTimer);
 
 });
 
+// CLOSE WHEN CLICKING BACKDROP
+eggModal.addEventListener("click", (e) => {
+
+  if (e.target === eggModal) {
+
+    eggVideo.pause();
+    eggVideo.currentTime = 0;
+
+    eggModal.style.display = "none";
+    document.body.style.overflow = "";
+
+    eggClicks = 0;
+    clearTimeout(eggTimer);
+
+  }
+
+});
 
 }
 
+</script>
 
 
 
 
   
-
-</script>
 </body>
 </html>
