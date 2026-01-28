@@ -530,7 +530,7 @@ This site will host all details, travel guidance, and updates as we approach our
 </p>
 
 <p class="smallMeta" style="margin-top:22px;">
-A very special thank you to Christian Joel Aguirre for making our dream website possible. We love you!
+A very special thank you to <span id="easterEggTrigger">Christian Joel Aguirre</span> for making our dream website possible. We love you!
 </p>
   
 </div>
@@ -1299,6 +1299,33 @@ Thank You
 </div>
 </div>
 
+
+  <!-- SECRET VIDEO EASTER EGG -->
+<div id="videoModal" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+justify-content:center;
+align-items:center;
+z-index:99999;
+">
+
+  <video id="easterVideo" controls preload="metadata" style="
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.5);
+  ">
+    <source src="assets/images/CD1_CanelaAntigua.mp4" type="video/mp4">
+  </video>
+
+</div>
+
+  
 <script>const SETTINGS={eventISO:"2026-07-25T16:00:00-06:00",heroImages:
   
 ["assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.png","assets/images/CD1_Wedding_Beach_Ocean_Kiss-min.png","assets/images/CD1_Beach_Ocean_Look_Back-min.png","assets/images/CD1_Wedding_Beach_Sitting_Portrait-min.jpeg","assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg","assets/images/CD1_Wedding_Beach_Dunes_Standing-min-min.jpeg"]};function tick(){const diff=Math.max(0,new Date(SETTINGS.eventISO).getTime()-Date.now());document.getElementById("cdDays").textContent=Math.floor(diff/(1000*60*60*24));document.getElementById("cdHours").textContent=String(Math.floor((diff/(1000*60*60))%24)).padStart(2,'0');document.getElementById("cdMins").textContent=String(Math.floor((diff/(1000*60))%60)).padStart(2,'0');document.getElementById("cdSecs").textContent=String(Math.floor((diff/1000)%60)).padStart(2,'0');}
@@ -1567,6 +1594,61 @@ function validateGuestInputs() {
 }
 
 
+
+// --------------------
+// EASTER EGG CLICK TRIGGER
+// --------------------
+
+let eggClicks = 0;
+let eggTimer;
+
+const eggTrigger = document.getElementById("easterEggTrigger");
+const eggModal = document.getElementById("videoModal");
+const eggVideo = document.getElementById("easterVideo");
+
+if (eggTrigger) {
+
+  eggTrigger.addEventListener("click", () => {
+
+    eggClicks++;
+
+    clearTimeout(eggTimer);
+
+    eggTimer = setTimeout(() => {
+      eggClicks = 0;
+    }, 1200);
+
+    if (eggClicks === 5) {
+
+      eggModal.style.display = "flex";
+      eggVideo.play();
+
+      eggClicks = 0;
+    }
+
+  });
+
+  eggModal.addEventListener("click", () => {
+
+    eggVideo.pause();
+    eggVideo.currentTime = 0;
+    eggModal.style.display = "none";
+
+  });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+  
 
 </script>
 </body>
