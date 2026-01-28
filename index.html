@@ -1695,7 +1695,8 @@ eggVideo.play();
 
 
 // CLOSE WITH X BUTTON
-videoCloseBtn.addEventListener("click", () => {
+videoCloseBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
 
   eggVideo.pause();
   eggVideo.currentTime = 0;
