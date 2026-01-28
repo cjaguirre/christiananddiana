@@ -1607,7 +1607,6 @@ function validateGuestInputs() {
 
 let eggClicks = 0;
 let eggTimer;
-let pressTimer;
 
 const eggTrigger = document.getElementById("easterEggTrigger");
 const eggModal = document.getElementById("videoModal");
@@ -1637,24 +1636,7 @@ if (eggTrigger && eggModal && eggVideo) {
   });
 
 
-  // MOBILE: long-press trigger
-  eggTrigger.addEventListener("touchstart", (e) => {
 
-    e.preventDefault();
-
-    pressTimer = setTimeout(() => {
-
-      eggModal.style.display = "flex";
-      eggVideo.play();
-
-    }, 900);
-
-  }, { passive:false });
-
-
-  eggTrigger.addEventListener("touchend", () => {
-    clearTimeout(pressTimer);
-  });
 
 
   // CLOSE VIDEO
