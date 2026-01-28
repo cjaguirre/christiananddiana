@@ -446,6 +446,12 @@
 }
 
 
+#easterEggTrigger {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+    
   
 </style>
 
@@ -1314,7 +1320,7 @@ align-items:center;
 z-index:99999;
 ">
 
-  <video id="easterVideo" controls preload="metadata" style="
+<video id="easterVideo" controls preload="metadata" playsinline style="
   max-width:90%;
   max-height:90%;
   border-radius:12px;
@@ -1596,18 +1602,20 @@ function validateGuestInputs() {
 
 
 // --------------------
-// EASTER EGG CLICK TRIGGER
+// EASTER EGG CLICK + MOBILE LONG PRESS
 // --------------------
 
 let eggClicks = 0;
 let eggTimer;
+let pressTimer;
 
 const eggTrigger = document.getElementById("easterEggTrigger");
 const eggModal = document.getElementById("videoModal");
 const eggVideo = document.getElementById("easterVideo");
 
-if (eggTrigger) {
+if (eggTrigger && eggModal && eggVideo) {
 
+  // DESKTOP: 5-click trigger
   eggTrigger.addEventListener("click", () => {
 
     eggClicks++;
@@ -1628,6 +1636,28 @@ if (eggTrigger) {
 
   });
 
+
+  // MOBILE: long-press trigger
+  eggTrigger.addEventListener("touchstart", (e) => {
+
+    e.preventDefault();
+
+    pressTimer = setTimeout(() => {
+
+      eggModal.style.display = "flex";
+      eggVideo.play();
+
+    }, 900);
+
+  }, { passive:false });
+
+
+  eggTrigger.addEventListener("touchend", () => {
+    clearTimeout(pressTimer);
+  });
+
+
+  // CLOSE VIDEO
   eggModal.addEventListener("click", () => {
 
     eggVideo.pause();
@@ -1637,12 +1667,6 @@ if (eggTrigger) {
   });
 
 }
-
-
-
-
-
-
 
 
 
