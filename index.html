@@ -1625,7 +1625,7 @@ if (eggTrigger && eggModal && eggVideo) {
       eggClicks = 0;
     }, 1200);
 
-    if (eggClicks === 5) {
+if (eggClicks >= 5) {
 
       eggModal.style.display = "flex";
       eggVideo.play();
@@ -1640,13 +1640,17 @@ if (eggTrigger && eggModal && eggVideo) {
 
 
   // CLOSE VIDEO
-  eggModal.addEventListener("click", () => {
+eggModal.addEventListener("click", () => {
 
-    eggVideo.pause();
-    eggVideo.currentTime = 0;
-    eggModal.style.display = "none";
+  eggVideo.pause();
+  eggVideo.currentTime = 0;
+  eggModal.style.display = "none";
 
-  });
+  eggClicks = 0;
+  clearTimeout(eggTimer);
+
+});
+
 
 }
 
