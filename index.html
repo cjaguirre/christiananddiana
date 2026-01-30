@@ -13,550 +13,11 @@
 <meta name=twitter:card content=summary_large_image>
 <link rel=preconnect href=https://fonts.googleapis.com>
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
-  
-<link href="https://fonts.googleapis.com/css2?family=Baskervville&family=Libre+Baskerville:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500&family=Parisienne&family=Carattere&display=swap" rel="stylesheet">
-
-
-
-
-  <style>
-  :root{
-  --bg:#fff9f9;     /* NEW bone pink tone */
-  --paper:#fff;
-  --sand:#fbeeee;   /* NEW darker blush beige */
-  --sand2:#efe7da;
-
-        
-        
-        --text:#2b1d14;--muted:#6b5d52;--muted2:#9c8b7a;--line:#d9cec1;--accent:#8e2d3f;--accent-light:#f4e8ea;--max:1100px;--r:2px;--shadow:0 10px 30px rgba(43,29,20,0.05)}.weatherTemp strong{min-height:34px}*{box-sizing:border-box}html{scroll-behavior:smooth}
-    body{
-  margin:0;
-  font-family:"Baskervville", serif;
-
-         
-         
-         
-         
-         background:var(--bg);color:var(--text);line-height:1.8;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none;transition:.2s ease}
-    
-    .container{width:min(var(--max),calc(100% - 48px));margin:0 auto}.section .container{max-width:1100px}.center{text-align:center}h1,h2,h3,.serif{font-family:"Playfair Display",serif;font-weight:400;letter-spacing:.02em}.italic{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.25em;color:var(--muted)}header{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .4s cubic-bezier(0.165,0.84,0.44,1);padding:10px 0}header.solid{background:rgba(252,249,243,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:5px 0}.navWrap{display:flex;align-items:center;justify-content:space-between}.brand{display:flex;flex-direction:column}.brand strong{font-family:"Playfair Display",serif;font-size:18px;font-weight:500;color:var(--text)}
-   
-    
-    
-.brand span{
-  font-family: "Libre Baskerville", serif;
-  font-size:10px;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-  font-weight:400;
-  color:var(--muted2);
-  margin-top:-2px
-}
-    
-   
-    
-    
-    .nav{display:flex;gap:24px;font-size:10px;letter-spacing:.25em;text-transform:uppercase}
-    
-    .nav a{padding:8px 4px;opacity:.6}.nav a:hover,.nav a.active{opacity:1;color:var(--accent)}
-    
-    .pill{display:inline-block;padding:12px 28px;border:1px solid #000;border-radius:999px;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#000!important;background:transparent!important;transition:all .25s ease}.pill:hover{background:#000!important;color:#fff!important}.pill:disabled{opacity:.35;cursor:not-allowed;pointer-events:none}.nav a{opacity:1}.hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;background:#e8e2d9;overflow:hidden}.heroBg{position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity 1.5s ease;z-index:1}.heroOverlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.1),rgba(0,0,0,0.3));z-index:2}.heroInner{position:relative;z-index:10;color:#fff;text-align:center;width:100%}.heroLabel{font-size:11px;letter-spacing:.45em;text-transform:uppercase;margin-bottom:20px;display:block;opacity:.9}.heroTitle{font-size:clamp(48px,8vw,90px);margin:0;font-weight:400;line-height:1.1;text-shadow:0 4px 10px rgba(0,0,0,0.2)}.heroSubtitle{margin-top:20px;font-size:clamp(16px,2vw,22px);font-family:"Cormorant Garamond",serif;font-style:italic;letter-spacing:.1em}.heroCtas{margin-top:40px;display:flex;gap:15px;justify-content:center}.btn{padding:14px 32px;border:1px solid rgba(255,255,255,0.6);background:rgba(255,255,255,0.1);color:#fff;backdrop-filter:blur(10px);font-size:10px;letter-spacing:.25em;text-transform:uppercase;transition:.3s ease}.btn:hover{background:#fff;color:var(--text)}.section{padding:100px 0}.sectionAlt{background:var(--sand)}
-    
-.h2{
-  font-family:"Carattere", cursive;
-  font-size:clamp(46px,5vw,70px);
-  font-weight:400;
-  letter-spacing:.05em;
-  margin-bottom:8px;
-  color:var(--text);
-}
-
-
-
-
-    
-    .kicker{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;display:block}
-    
-.copy{
-  max-width:680px;
-  margin:0 auto;
-  font-family:"Baskervville", serif;
-  font-size:18px;
-  line-height:1.9;
-  color:var(--muted);
-}
-    
-    .countRow{display:flex;justify-content:center;gap:60px;margin-top:60px}.countNum{font-family:"Playfair Display",serif;font-size:52px;line-height:1;margin-bottom:8px;color:var(--text)}.countLbl{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted2)}.storySplit{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin:80px 0;text-align:left}.storySplit.reverse{direction:rtl}.storySplit.reverse .storyContent{direction:ltr}.storyImage{aspect-ratio:4 / 5;overflow:hidden;background:0}.storyImage img{width:100%;height:100%;object-fit:cover}.storyImage.slideshow{position:relative}.storyImage.slideshow .slides{display:flex;height:100%;transition:transform .6s ease}.storyImage.slideshow img{min-width:100%;height:100%;object-fit:cover}.storyImage.slideshow{height:520px}.fadeStack{position:relative;width:100%;height:520px;display:flex;align-items:center;justify-content:center;overflow:hidden;aspect-ratio:auto}.fadeStack img{position:absolute;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;opacity:0;transition:opacity 1.8s ease,transform 6s ease;transform:scale(1.02)}.fadeStack img.active{opacity:1;transform:scale(1)}.fadeStack{background:#f7f2e8;border:1px solid var(--line);box-shadow:0 12px 28px rgba(43,29,20,0.06);padding:14px}.fadeStack::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at center,rgba(0,0,0,0) 55%,rgba(0,0,0,0.08) 100%)}.hs-first{max-width:94%;max-height:94%}
-  
-
-    
-    
-    
-    
-    
-    
-    
-    
-    .fadeStack{height:360px}}
-  @media(max-width:768px){.storyImage.slideshow{height:360px}#galleryPrev,#galleryNext{display:none}}
-  .block ul a{color:var(--text);text-decoration:underline;font-weight:500}
-  .block ul a:hover{opacity:.75}
-
-
-  
-  .slideNav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(252,249,243,0.9);border:1px solid var(--line);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;line-height:34px;text-align:center;color:var(--text)}
-  .slideNav.prev{left:12px}.slideNav.next{right:12px}@media(max-width:768px){.slideNav{display:none}}
-    
-.storyContent h3{
-  font-family:"Cormorant Garamond", serif;
-
-  font-size:28px;
-  font-weight:700;
-  letter-spacing:0.02em;
-  margin-bottom:20px;
-  color:var(--accent);
-}
-    
-    .storyDivider{margin:50px auto 10px;width:140px;height:1px;background:linear-gradient(to right,transparent,var(--accent),transparent);opacity:.6}.storyLabel{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted2);margin-bottom:6px}.storyQuote{max-width:520px;margin:80px auto;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;line-height:1.7;color:var(--muted);text-align:center}
-  
-  .threeCol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;margin-top:60px}
-  
-  .fourCol{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:36px;
-  margin-top:60px;
-}
-
-  .twoCol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;margin-top:60px}
-  .block{padding:40px;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);position:relative;width:100%}
-    
-.block h3{
-  font-family:"Cormorant Garamond", serif;
-
-
-
-  
-  font-size:18px;
-  font-weight:700;
-  letter-spacing:0.03em;
-  margin-bottom:12px;
-  color:var(--accent);
-}
-    
-    .block p{font-size:14px;margin:0;color:var(--muted)}
-    
-    
-.smallMeta{
-  font-family: "Libre Baskerville", serif;
-  font-size:10px;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-  color:var(--muted2);
-}
-    
-
-
-    .eventMeta {
-  text-align: center;
-  margin-top: 18px;
-}
-
-.eventMeta .smallMeta {
-  display: block;
-  margin-top: 6px;
-}
-
-.eventMeta .smallMeta:first-child {
-  margin-top: 0;
-}
-
-    
-.badgeRow{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:20px;
-  justify-content:center;
-}
-    
-    
-.badge{
-  font-family: "Libre Baskerville", serif;
-  padding:6px 12px;
-  border:1px solid var(--line);
-  font-size:8px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  font-weight:400;
-  color:var(--muted);
-  border-radius:999px;
-  white-space:nowrap;
-}
-
-    
-    
-    
-    .transferLinks{list-style:none;padding:0;margin:10px 0 0 0}.transferLinks li{margin-bottom:12px}.transferLinks a{font-size:14px;font-weight:500;color:var(--accent)}.transferLinks a:hover{text-decoration:underline}.linkNote{display:block;font-size:12px;color:var(--muted);margin-top:2px}.scheduleCard{max-width:720px;margin:0 auto;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);padding:60px 60px}.mapWrap{margin-top:50px;background:var(--sand2);border:1px solid var(--line);padding:70px 40px;text-align:center}.mapWrap strong{font-size:20px;color:var(--text);display:block;margin-bottom:10px}.faq{max-width:850px;margin:60px auto 0;text-align:left}details{border-bottom:1px solid var(--line);padding:25px 0}summary{list-style:none;cursor:pointer;font-family:"Playfair Display",serif;font-size:19px;display:flex;justify-content:space-between;align-items:center;color:var(--text)}summary::-webkit-details-marker{display:none}.summaryHint{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2)}details p{margin-top:15px;font-size:14px;color:var(--muted);line-height:1.7}.formWrap{max-width:750px;margin:60px auto 0;background:#fff;padding:60px;border:1px solid var(--line);box-shadow:var(--shadow)}input,select,textarea{width:100%;padding:18px 0;border:0;border-bottom:1px solid var(--line);background:transparent;font-family:inherit;font-size:14px;outline:0}input:focus,select:focus{border-bottom-color:var(--accent)}.row{display:grid;grid-template-columns:1fr 1fr;gap:40px}.submit{margin-top:40px;background:var(--accent);color:#fff;border:0;padding:16px 52px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;cursor:pointer;transition:.3s ease}.submit:hover{background:var(--text)}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:70px;justify-items:center}.tile{position:relative;background:#fff;padding:12px;box-shadow:0 12px 24px rgba(0,0,0,0.12);border-radius:2px;width:100%;max-width:340px;display:flex;align-items:center;justify-content:center}#galleryGrid{justify-content:center}.tile img{width:100%;height:auto;max-height:520px;object-fit:contain}.footer{padding:100px 0;text-align:center;border-top:1px solid var(--line);background:var(--sand)}.footer strong{font-family:"Playfair Display",serif;font-size:26px;font-weight:400;display:block;margin-bottom:10px}.footer span{font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--muted2)}.modal{position:fixed;inset:0;background:rgba(252,249,243,0.98);display:none;align-items:center;justify-content:center;z-index:1000;padding:40px}.modal.open{display:flex}.modalInner{width:min(1000px,100%);position:relative}.modalBody img{width:100%;max-height:85vh;object-fit:contain}.modalClose{position:absolute;top:-50px;right:0;background:0;border:0;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}.weatherCard{margin-top:20px;padding:22px;border:1px solid var(--line);background:#fff}.weatherHeader{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}.weatherDate{font-family:"Playfair Display",serif;font-size:18px;color:var(--text)}.weatherStatus{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted2)}.weatherMain{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center;margin-bottom:16px}.weatherTemp strong{display:block;font-size:28px;font-family:"Playfair Display",serif;color:var(--text)}.weatherLabel{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted2)}.weatherFooter{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}.weatherUpdated{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2)}.celebration{padding-top:130px;padding-bottom:120px}.celebrationInner{max-width:680px}.celebrationKicker{margin-bottom:22px;font-size:9px;letter-spacing:.55em}
-   
-.celebrationDate{
-  margin-bottom:0;
-  font-size:clamp(40px,4.5vw,60px);
-}
-    
-    .celebrationLocation{margin-top:18px;font-size:16px}.celebrationCount{margin-top:60px;gap:68px}.celebrationNum{font-size:52px;font-weight:400}.celebrationLbl{margin-top:12px;font-size:10px;letter-spacing:.45em;color:var(--muted2)}.celebrationRule{width:220px;height:1px;background:var(--line);margin:52px auto 34px}.celebrationCopy{max-width:560px;font-size:13px;line-height:1.9}
-  
-  
-  .itineraryRow{display:grid;grid-template-columns:110px 1fr;gap:40px;padding:26px 0;border-bottom:0}.itineraryRow:last-child{border-bottom:0}
-    
-.itineraryTime {
-  font-family: "Libre Baskerville", serif;
-  font-size: 10px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  font-weight: 400;
-  color: var(--accent);
-  text-align: center;
-  padding-top: 0;
-  margin-bottom: 6px;
-}
-
-
-    
-    
-    .itineraryDetails strong{display:block;font-family:"Playfair Display",serif;font-size:18px;margin-bottom:6px;color:var(--text)}.itineraryDetails span{display:block;font-size:14px;color:var(--muted);line-height:1.7}@media(max-width:700px){.itineraryWide{padding:40px 24px}.itineraryRow{grid-template-columns:1fr;gap:10px;text-align:center}.itineraryTime{text-align:center;padding-top:0}}@media(max-width:700px){.celebration{padding-top:110px;padding-bottom:100px}.celebrationCount{margin-top:46px;gap:30px}.celebrationRule{margin:40px auto 26px}.scheduleDayBlock{margin-bottom:40px}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-.scheduleDayLabel{
-  font-family:"Playfair Display",serif;
-  font-size:22px;
-  font-weight:600;
-  letter-spacing:.04em;
-  color:var(--text);
-  text-align:center;
-  margin-bottom:30px;
-  position:relative;
-}
-.scheduleDayLabel::after{
-  content:"";
-  display:block;
-  width:140px;
-  height:1px;
-  background:var(--line);
-  margin:14px auto 0;
-}
-
-
-#travel .timeNum {
-  font-family: "Libre Baskerville", serif !important;
-  font-weight: 400;
-  letter-spacing: .05em;
-}
-
-
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-.scheduleDayBlock+.scheduleDayBlock{margin-top:20px}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-.itineraryRow{padding:22px 0}.itineraryTime{font-size:12px;letter-spacing:2px;color:#9b1c1f}.itineraryDetails strong{display:block;font-size:17px;font-weight:500;margin-bottom:6px}.itineraryDetails span{line-height:1.6;max-width:480px;display:inline-block}.formWrap{padding:40px 20px}.countRow{gap:20px;flex-wrap:wrap}}@media(max-width:768px){.tile img{max-height:420px}.celebrationNum{font-size:42px}.celebrationLbl{font-size:9px}html,body{overflow-x:hidden}.nav,.navRight{display:none}header{padding:8px 0}.brand strong{font-size:16px}.brand span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#000;margin-top:-2px}.hero{height:auto;min-height:100vh;padding:120px 0 80px}.heroTitle{font-size:42px;line-height:1.15}.heroSubtitle{font-size:16px}.heroCtas{flex-direction:column;gap:14px}.btn{width:100%;max-width:280px;margin:0 auto}.section{padding:80px 0}.storySplit{grid-template-columns:1fr;gap:40px;text-align:center}.storySplit.reverse{direction:ltr}.storyContent p{text-align:center!important}.threeCol,.twoCol{grid-template-columns:1fr}.block{padding:32px 26px}.countNum{font-size:34px}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          .itineraryWide{padding:36px 22px}iframe{height:300px}.gallery{grid-template-columns:1fr;gap:24px}.tile{height:auto;transform:none;margin-top:0!important}}.gallery{transition:opacity .35s ease,transform .35s ease}.gallery.fade-out{opacity:0;transform:translateX(-20px)}.gallery.fade-in{opacity:1;transform:translateX(0)}.row{grid-template-columns:1fr}.submit{width:100%}}.navRight{display:flex;align-items:center;gap:12px}
-.scheduleDayLabel{
-  text-decoration:none !important;
-}
-  .itineraryDetails strong{font-size:16px!important;font-weight:500!important}
-
-/* FORCE MOBILE SCHEDULE LAYOUT ON DESKTOP */
-
-
-
-.itineraryTime{
-  text-align:center;
-  padding-top:0;
-  margin-bottom:6px;
-}
-
-.itineraryDetails{
-  text-align:center;
-}
-
-.itineraryDetails span{
-  display:block;
-  max-width:520px;
-  margin:0 auto;
-}
-
-
-.videoPopup{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.55);
-  backdrop-filter:blur(4px);
-  -webkit-backdrop-filter:blur(4px);
-  z-index:99999;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-
-/* Cropped popup card */
-
-.videoPopup video{
-  width:100%;
-  max-width:420px;
-  max-height:70vh;
-  object-fit:cover;
-  border-radius:14px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.45);
-  background:#000;
-}
-
-    
-/* Make desktop schedule match mobile card layout */
-
-/* FORCE MOBILE SCHEDULE CARD STYLE ON DESKTOP */
-
-#schedule .itineraryWide{
-  max-width:720px;
-  margin:0 auto;
-  background:var(--paper);
-  border:1px solid var(--line);
-  box-shadow:var(--shadow);
-  padding:60px 48px;
-}
-
-/* Stack layout like mobile */
-
-#schedule .itineraryRow{
-  grid-template-columns:1fr;
-  gap:10px;
-  text-align:center;
-  padding:20px 0;
-}
-
-
-/* Center time labels */
-
-#schedule .itineraryTime{
-  text-align:center;
-  padding-top:0;
-  margin-bottom:10px;
-  font-size:11px;
-  letter-spacing:.25em;
-  font-weight:500;
-}
-
-
-/* Center details */
-
-#schedule .itineraryDetails{
-  text-align:center;
-}
-
-/* Limit text width like mobile */
-
-#schedule .itineraryDetails span{
-  display:block;
-  max-width:520px;
-  margin:0 auto;
-}
-
-/* Day spacing */
-
-#schedule .scheduleDayLabel{
-  margin-bottom:30px;
-}
-
-
-/* FORCE MOBILE SCHEDULE LAYOUT ON DESKTOP */
-
-#schedule .itineraryWide{
-  max-width:720px;
-  margin:0 auto;
-  background:var(--paper);
-  border:1px solid var(--line);
-  box-shadow:var(--shadow);
-  padding:60px 40px;
-}
-
-/* Stack time above text */
-
-#schedule .itineraryRow{
-  display:block;
-  text-align:center;
-  padding:26px 0;
-}
-
-/* Center time */
-
-#schedule .itineraryTime{
-  text-align:center;
-  padding:0;
-  margin-bottom:8px;
-}
-
-/* Center details */
-
-#schedule .itineraryDetails{
-  text-align:center;
-}
-
-/* Limit text width like mobile */
-
-#schedule .itineraryDetails span{
-  display:block;
-  max-width:520px;
-  margin:0 auto;
-}
-
-/* Day headers styling */
-
-#schedule .scheduleDayLabel{
-  font-family:"Playfair Display",serif;
-  font-size:22px;
-  font-weight:600;
-  letter-spacing:1px;
-  text-align:center;
-  margin:40px 0 24px;
-  text-decoration:none;
-}
-
-/* REMOVE divider line completely */
-
-#schedule .scheduleDayLabel:after{
-  content:"";
-  display:block;
-  width:140px;
-  height:1px;
-  background:var(--line);
-  margin:12px auto 0;
-  opacity:0.8;
-}
-
-
-
-
-/* ============================
-   FIX DETAILS MOBILE LAYOUT
-============================ */
-
-@media (max-width: 768px) {
-
-  #details .fourCol {
-    grid-template-columns: 1fr !important;
-    gap: 24px;
-  }
-
-  #details .block {
-    max-width: 420px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 26px 22px;
-  }
-
-}
-
-
-
-/* ============================
-   FIX DESKTOP WEDDING DETAILS LAYOUT
-============================ */
-
-@media (min-width: 900px) {
-
-  /* Change 4 skinny columns into clean 2x2 grid */
-  #details .fourCol {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* Make cards visually balanced */
-  #details .block {
-    padding: 36px 34px;
-    align-self: stretch;
-  }
-
-  /* Slightly tighten text spacing */
-  #details .block p {
-    line-height: 1.65;
-  }
-
-}
-
-    /* Emphasize numeric time values only */
-
-.celebration .smallMeta{
-  font-size:8px;
-  letter-spacing:.12em;
-  line-height:1.6;
-}
-
-
-#easterEggTrigger {
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-    
-
-.videoClose{
-  position:absolute;
-  top:18px;
-  right:18px;
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  border:none;
-  background:rgba(255,255,255,0.9);
-  color:#000;
-  font-size:22px;
-  font-weight:300;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 8px 20px rgba(0,0,0,0.2);
-  z-index:100000;
-  transition:all .2s ease;
-}
-
-.videoClose:hover{
-  background:#fff;
-  transform:scale(1.05);
-}
-
-
-
-
-
-
-
-
-
-
-
-    
-</style>
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<meta http-equiv="Content-Security-Policy" content="connect-src https://api.emailjs.com https://formspree.io">
-
-<script>
-(function(){
-  emailjs.init("ya8_zLmrgjmOvDAy_");
-})();
-</script>
-
-  
+<link href="https://fonts.googleapis.com/css2?family=Baskervville&family=Libre+Baskerville:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500&family=Parisienne&family=Carattere&display=swap" rel=stylesheet>
+<style>:root{--bg:#fff9f9;--paper:#fff;--sand:#fbeeee;--sand2:#efe7da;--text:#2b1d14;--muted:#6b5d52;--muted2:#9c8b7a;--line:#d9cec1;--accent:#8e2d3f;--accent-light:#f4e8ea;--max:1100px;--r:2px;--shadow:0 10px 30px rgba(43,29,20,0.05)}.weatherTemp strong{min-height:34px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Baskervville",serif;background:var(--bg);color:var(--text);line-height:1.8;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none;transition:.2s ease}.container{width:min(var(--max),calc(100% - 48px));margin:0 auto}.section .container{max-width:1100px}.center{text-align:center}h1,h2,h3,.serif{font-family:"Playfair Display",serif;font-weight:400;letter-spacing:.02em}.italic{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.25em;color:var(--muted)}header{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .4s cubic-bezier(0.165,0.84,0.44,1);padding:10px 0}header.solid{background:rgba(252,249,243,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:5px 0}.navWrap{display:flex;align-items:center;justify-content:space-between}.brand{display:flex;flex-direction:column}.brand strong{font-family:"Playfair Display",serif;font-size:18px;font-weight:500;color:var(--text)}.brand span{font-family:"Libre Baskerville",serif;font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:400;color:var(--muted2);margin-top:-2px}.nav{display:flex;gap:24px;font-size:10px;letter-spacing:.25em;text-transform:uppercase}.nav a{padding:8px 4px;opacity:.6}.nav a:hover,.nav a.active{opacity:1;color:var(--accent)}.pill{display:inline-block;padding:12px 28px;border:1px solid #000;border-radius:999px;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#000!important;background:transparent!important;transition:all .25s ease}.pill:hover{background:#000!important;color:#fff!important}.pill:disabled{opacity:.35;cursor:not-allowed;pointer-events:none}.nav a{opacity:1}.hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;background:#e8e2d9;overflow:hidden}.heroBg{position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity 1.5s ease;z-index:1}.heroOverlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.1),rgba(0,0,0,0.3));z-index:2}.heroInner{position:relative;z-index:10;color:#fff;text-align:center;width:100%}.heroLabel{font-size:11px;letter-spacing:.45em;text-transform:uppercase;margin-bottom:20px;display:block;opacity:.9}.heroTitle{font-size:clamp(48px,8vw,90px);margin:0;font-weight:400;line-height:1.1;text-shadow:0 4px 10px rgba(0,0,0,0.2)}.heroSubtitle{margin-top:20px;font-size:clamp(16px,2vw,22px);font-family:"Cormorant Garamond",serif;font-style:italic;letter-spacing:.1em}.heroCtas{margin-top:40px;display:flex;gap:15px;justify-content:center}.btn{padding:14px 32px;border:1px solid rgba(255,255,255,0.6);background:rgba(255,255,255,0.1);color:#fff;backdrop-filter:blur(10px);font-size:10px;letter-spacing:.25em;text-transform:uppercase;transition:.3s ease}.btn:hover{background:#fff;color:var(--text)}.section{padding:100px 0}.sectionAlt{background:var(--sand)}.h2{font-family:"Carattere",cursive;font-size:clamp(46px,5vw,70px);font-weight:400;letter-spacing:.05em;margin-bottom:8px;color:var(--text)}.kicker{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;display:block}.copy{max-width:680px;margin:0 auto;font-family:"Baskervville",serif;font-size:18px;line-height:1.9;color:var(--muted)}.countRow{display:flex;justify-content:center;gap:60px;margin-top:60px}.countNum{font-family:"Playfair Display",serif;font-size:52px;line-height:1;margin-bottom:8px;color:var(--text)}.countLbl{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted2)}.storySplit{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin:80px 0;text-align:left}.storySplit.reverse{direction:rtl}.storySplit.reverse .storyContent{direction:ltr}.storyImage{aspect-ratio:4 / 5;overflow:hidden;background:0}.storyImage img{width:100%;height:100%;object-fit:cover}.storyImage.slideshow{position:relative}.storyImage.slideshow .slides{display:flex;height:100%;transition:transform .6s ease}.storyImage.slideshow img{min-width:100%;height:100%;object-fit:cover}.storyImage.slideshow{height:520px}.fadeStack{position:relative;width:100%;height:520px;display:flex;align-items:center;justify-content:center;overflow:hidden;aspect-ratio:auto}.fadeStack img{position:absolute;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;opacity:0;transition:opacity 1.8s ease,transform 6s ease;transform:scale(1.02)}.fadeStack img.active{opacity:1;transform:scale(1)}.fadeStack{background:#f7f2e8;border:1px solid var(--line);box-shadow:0 12px 28px rgba(43,29,20,0.06);padding:14px}.fadeStack::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at center,rgba(0,0,0,0) 55%,rgba(0,0,0,0.08) 100%)}.hs-first{max-width:94%;max-height:94%}.fadeStack{height:360px}}@media(max-width:768px){.storyImage.slideshow{height:360px}#galleryPrev,#galleryNext{display:none}}.block ul a{color:var(--text);text-decoration:underline;font-weight:500}.block ul a:hover{opacity:.75}.slideNav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(252,249,243,0.9);border:1px solid var(--line);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;line-height:34px;text-align:center;color:var(--text)}.slideNav.prev{left:12px}.slideNav.next{right:12px}@media(max-width:768px){.slideNav{display:none}}.storyContent h3{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:700;letter-spacing:.02em;margin-bottom:20px;color:var(--accent)}.storyDivider{margin:50px auto 10px;width:140px;height:1px;background:linear-gradient(to right,transparent,var(--accent),transparent);opacity:.6}.storyLabel{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted2);margin-bottom:6px}.storyQuote{max-width:520px;margin:80px auto;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;line-height:1.7;color:var(--muted);text-align:center}.threeCol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;margin-top:60px}.fourCol{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px;margin-top:60px}.twoCol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;margin-top:60px}.block{padding:40px;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);position:relative;width:100%}.block h3{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:700;letter-spacing:.03em;margin-bottom:12px;color:var(--accent)}.block p{font-size:14px;margin:0;color:var(--muted)}.smallMeta{font-family:"Libre Baskerville",serif;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted2)}.eventMeta{text-align:center;margin-top:18px}.eventMeta .smallMeta{display:block;margin-top:6px}.eventMeta .smallMeta:first-child{margin-top:0}.badgeRow{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;justify-content:center}.badge{font-family:"Libre Baskerville",serif;padding:6px 12px;border:1px solid var(--line);font-size:8px;letter-spacing:.12em;text-transform:uppercase;font-weight:400;color:var(--muted);border-radius:999px;white-space:nowrap}.transferLinks{list-style:none;padding:0;margin:10px 0 0 0}.transferLinks li{margin-bottom:12px}.transferLinks a{font-size:14px;font-weight:500;color:var(--accent)}.transferLinks a:hover{text-decoration:underline}.linkNote{display:block;font-size:12px;color:var(--muted);margin-top:2px}.scheduleCard{max-width:720px;margin:0 auto;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);padding:60px 60px}.mapWrap{margin-top:50px;background:var(--sand2);border:1px solid var(--line);padding:70px 40px;text-align:center}.mapWrap strong{font-size:20px;color:var(--text);display:block;margin-bottom:10px}.faq{max-width:850px;margin:60px auto 0;text-align:left}details{border-bottom:1px solid var(--line);padding:25px 0}summary{list-style:none;cursor:pointer;font-family:"Playfair Display",serif;font-size:19px;display:flex;justify-content:space-between;align-items:center;color:var(--text)}summary::-webkit-details-marker{display:none}.summaryHint{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2)}details p{margin-top:15px;font-size:14px;color:var(--muted);line-height:1.7}.formWrap{max-width:750px;margin:60px auto 0;background:#fff;padding:60px;border:1px solid var(--line);box-shadow:var(--shadow)}input,select,textarea{width:100%;padding:18px 0;border:0;border-bottom:1px solid var(--line);background:transparent;font-family:inherit;font-size:14px;outline:0}input:focus,select:focus{border-bottom-color:var(--accent)}.row{display:grid;grid-template-columns:1fr 1fr;gap:40px}.submit{margin-top:40px;background:var(--accent);color:#fff;border:0;padding:16px 52px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;cursor:pointer;transition:.3s ease}.submit:hover{background:var(--text)}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:70px;justify-items:center}.tile{position:relative;background:#fff;padding:12px;box-shadow:0 12px 24px rgba(0,0,0,0.12);border-radius:2px;width:100%;max-width:340px;display:flex;align-items:center;justify-content:center}#galleryGrid{justify-content:center}.tile img{width:100%;height:auto;max-height:520px;object-fit:contain}.footer{padding:100px 0;text-align:center;border-top:1px solid var(--line);background:var(--sand)}.footer strong{font-family:"Playfair Display",serif;font-size:26px;font-weight:400;display:block;margin-bottom:10px}.footer span{font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--muted2)}.modal{position:fixed;inset:0;background:rgba(252,249,243,0.98);display:none;align-items:center;justify-content:center;z-index:1000;padding:40px}.modal.open{display:flex}.modalInner{width:min(1000px,100%);position:relative}.modalBody img{width:100%;max-height:85vh;object-fit:contain}.modalClose{position:absolute;top:-50px;right:0;background:0;border:0;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}.weatherCard{margin-top:20px;padding:22px;border:1px solid var(--line);background:#fff}.weatherHeader{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}.weatherDate{font-family:"Playfair Display",serif;font-size:18px;color:var(--text)}.weatherStatus{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted2)}.weatherMain{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center;margin-bottom:16px}.weatherTemp strong{display:block;font-size:28px;font-family:"Playfair Display",serif;color:var(--text)}.weatherLabel{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted2)}.weatherFooter{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}.weatherUpdated{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2)}.celebration{padding-top:130px;padding-bottom:120px}.celebrationInner{max-width:680px}.celebrationKicker{margin-bottom:22px;font-size:9px;letter-spacing:.55em}.celebrationDate{margin-bottom:0;font-size:clamp(40px,4.5vw,60px)}.celebrationLocation{margin-top:18px;font-size:16px}.celebrationCount{margin-top:60px;gap:68px}.celebrationNum{font-size:52px;font-weight:400}.celebrationLbl{margin-top:12px;font-size:10px;letter-spacing:.45em;color:var(--muted2)}.celebrationRule{width:220px;height:1px;background:var(--line);margin:52px auto 34px}.celebrationCopy{max-width:560px;font-size:13px;line-height:1.9}.itineraryRow{display:grid;grid-template-columns:110px 1fr;gap:40px;padding:26px 0;border-bottom:0}.itineraryRow:last-child{border-bottom:0}.itineraryTime{font-family:"Libre Baskerville",serif;font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:400;color:var(--accent);text-align:center;padding-top:0;margin-bottom:6px}.itineraryDetails strong{display:block;font-family:"Playfair Display",serif;font-size:18px;margin-bottom:6px;color:var(--text)}.itineraryDetails span{display:block;font-size:14px;color:var(--muted);line-height:1.7}@media(max-width:700px){.itineraryWide{padding:40px 24px}.itineraryRow{grid-template-columns:1fr;gap:10px;text-align:center}.itineraryTime{text-align:center;padding-top:0}}@media(max-width:700px){.celebration{padding-top:110px;padding-bottom:100px}.celebrationCount{margin-top:46px;gap:30px}.celebrationRule{margin:40px auto 26px}.scheduleDayBlock{margin-bottom:40px}.scheduleDayLabel{font-family:"Playfair Display",serif;font-size:22px;font-weight:600;letter-spacing:.04em;color:var(--text);text-align:center;margin-bottom:30px;position:relative}.scheduleDayLabel::after{content:"";display:block;width:140px;height:1px;background:var(--line);margin:14px auto 0}#travel .timeNum{font-family:"Libre Baskerville",serif!important;font-weight:400;letter-spacing:.05em}.scheduleDayBlock+.scheduleDayBlock{margin-top:20px}.itineraryRow{padding:22px 0}.itineraryTime{font-size:12px;letter-spacing:2px;color:#9b1c1f}.itineraryDetails strong{display:block;font-size:17px;font-weight:500;margin-bottom:6px}.itineraryDetails span{line-height:1.6;max-width:480px;display:inline-block}.formWrap{padding:40px 20px}.countRow{gap:20px;flex-wrap:wrap}}@media(max-width:768px){.tile img{max-height:420px}.celebrationNum{font-size:42px}.celebrationLbl{font-size:9px}html,body{overflow-x:hidden}.nav,.navRight{display:none}header{padding:8px 0}.brand strong{font-size:16px}.brand span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#000;margin-top:-2px}.hero{height:auto;min-height:100vh;padding:120px 0 80px}.heroTitle{font-size:42px;line-height:1.15}.heroSubtitle{font-size:16px}.heroCtas{flex-direction:column;gap:14px}.btn{width:100%;max-width:280px;margin:0 auto}.section{padding:80px 0}.storySplit{grid-template-columns:1fr;gap:40px;text-align:center}.storySplit.reverse{direction:ltr}.storyContent p{text-align:center!important}.threeCol,.twoCol{grid-template-columns:1fr}.block{padding:32px 26px}.countNum{font-size:34px}.itineraryWide{padding:36px 22px}iframe{height:300px}.gallery{grid-template-columns:1fr;gap:24px}.tile{height:auto;transform:none;margin-top:0!important}}.gallery{transition:opacity .35s ease,transform .35s ease}.gallery.fade-out{opacity:0;transform:translateX(-20px)}.gallery.fade-in{opacity:1;transform:translateX(0)}.row{grid-template-columns:1fr}.submit{width:100%}}.navRight{display:flex;align-items:center;gap:12px}.scheduleDayLabel{text-decoration:none!important}.itineraryDetails strong{font-size:16px!important;font-weight:500!important}.itineraryTime{text-align:center;padding-top:0;margin-bottom:6px}.itineraryDetails{text-align:center}.itineraryDetails span{display:block;max-width:520px;margin:0 auto}.videoPopup{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);z-index:99999;align-items:center;justify-content:center;padding:20px}.videoPopup video{width:100%;max-width:420px;max-height:70vh;object-fit:cover;border-radius:14px;box-shadow:0 20px 40px rgba(0,0,0,0.45);background:#000}#schedule .itineraryWide{max-width:720px;margin:0 auto;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);padding:60px 48px}#schedule .itineraryRow{grid-template-columns:1fr;gap:10px;text-align:center;padding:20px 0}#schedule .itineraryTime{text-align:center;padding-top:0;margin-bottom:10px;font-size:11px;letter-spacing:.25em;font-weight:500}#schedule .itineraryDetails{text-align:center}#schedule .itineraryDetails span{display:block;max-width:520px;margin:0 auto}#schedule .scheduleDayLabel{margin-bottom:30px}#schedule .itineraryWide{max-width:720px;margin:0 auto;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);padding:60px 40px}#schedule .itineraryRow{display:block;text-align:center;padding:26px 0}#schedule .itineraryTime{text-align:center;padding:0;margin-bottom:8px}#schedule .itineraryDetails{text-align:center}#schedule .itineraryDetails span{display:block;max-width:520px;margin:0 auto}#schedule .scheduleDayLabel{font-family:"Playfair Display",serif;font-size:22px;font-weight:600;letter-spacing:1px;text-align:center;margin:40px 0 24px;text-decoration:none}#schedule .scheduleDayLabel:after{content:"";display:block;width:140px;height:1px;background:var(--line);margin:12px auto 0;opacity:.8}@media(max-width:768px){#details .fourCol{grid-template-columns:1fr!important;gap:24px}#details .block{max-width:420px;margin-left:auto;margin-right:auto;padding:26px 22px}}@media(min-width:900px){#details .fourCol{grid-template-columns:repeat(2,1fr);gap:40px;max-width:900px;margin-left:auto;margin-right:auto}#details .block{padding:36px 34px;align-self:stretch}#details .block p{line-height:1.65}}.celebration .smallMeta{font-size:8px;letter-spacing:.12em;line-height:1.6}#easterEggTrigger{user-select:none;-webkit-user-select:none}.videoClose{position:absolute;top:18px;right:18px;width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,0.9);color:#000;font-size:22px;font-weight:300;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,0.2);z-index:100000;transition:all .2s ease}.videoClose:hover{background:#fff;transform:scale(1.05)}</style>
+<script src=https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js></script>
+<meta http-equiv=Content-Security-Policy content="connect-src https://api.emailjs.com https://formspree.io">
+<script>(function(){emailjs.init("ya8_zLmrgjmOvDAy_");})();</script>
 </head>
 <body>
 <header id=siteHeader>
@@ -624,22 +85,15 @@ in the heart of Antigua, Guatemala
 We can’t wait to celebrate with you in one of our favorite places on Earth.
 This site will host all details, travel guidance, and updates as we approach our big day.
 </p>
-
-<p class="smallMeta" style="margin-top:22px;">
-A very special thank you to <span id="easterEggTrigger">Christian Joel Aguirre</span> for making our dream website possible. We love you!
+<p class=smallMeta style=margin-top:22px>
+A very special thank you to <span id=easterEggTrigger>Christian Joel Aguirre</span> for making our dream website possible. We love you!
 </p>
-  
 </div>
 </section>
-
-
-
-  
 <section class="section sectionAlt center" id=story style=position:relative>
 <div class=container>
 <h2 class=h2>Our Story</h2>
 <div class=storyDivider></div>
-
 <div class=storySplit>
 <div class="storyImage fadeStack">
 <img src=assets/images/CD1_Throwback_HighSchool_Promposal-min.jpeg class="active hs-first">
@@ -650,7 +104,6 @@ A very special thank you to <span id="easterEggTrigger">Christian Joel Aguirre</
 <img src=assets/images/CD1_HS_BlueWallKiss.JPG>
 <img src=assets/images/CD1_HS_GraduationKiss.JPG>
 </div>
-  
 <div class=storyContent>
 <div class=storyLabel>Our Beginning</div>
 <h3>High School Sweethearts</h3>
@@ -662,11 +115,9 @@ to the big question of “Will You Marry Me?” their relationship has blossomed
 </p>
 </div>
 </div>
-
 <p class=storyQuote>
 Together is a beautiful place to be.
 </p>
-
 <div class="storySplit reverse">
 <div class="storyImage fadeStack">
 <img src=assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg class=active>
@@ -681,7 +132,6 @@ Together is a beautiful place to be.
 <img src=assets/images/CD1_Engagement_Travel_Night_Selfie-min.JPG>
 <img src=assets/images/CD1_Engagement_Travel_Street_Kiss-min.JPG>
 </div>
-  
 <div class=storyContent>
 <div class=storyLabel>The Proposal</div>
 <h3>A Swiss Yes</h3>
@@ -692,29 +142,20 @@ immortalized in a ring that promised a loving future together forever.
 </p>
 </div>
 </div>
-
-<!-- Civil Wedding Section (Images LEFT) -->
-
-<!-- Civil Wedding Section (Images LEFT) -->
-
-<div class="storySplit">
+<div class=storySplit>
 <div class="storyImage fadeStack">
-
-<img src="assets/images/CD1_Civil_ArchesEntry.jpg" class="active">
-<img src="assets/images/CD1_Civil_BridePortrait.jpg">
-<img src="assets/images/CD1_Civil_GroomPortrait.jpg">
-<img src="assets/images/CD1_Civil_CoupleWithElder.jpg">
-<img src="assets/images/CD1_Civil_FamilyGroup.jpg">
-<img src="assets/images/CD1_Civil_FriendsGroup.jpg">
-<img src="assets/images/CD1_Civil_GateLift.jpg">
-<img src="assets/images/CD1_Civil_SkylineCouple.jpg">
-<img src="assets/images/CD1_Civil_TiledAltar.jpg">
-<img src="assets/images/CD1_Civil_VenueExterior.jpg">
-<img src="assets/images/CD1_Civil_CakeCutting.jpg">
-
+<img src=assets/images/CD1_Civil_ArchesEntry.jpg class=active>
+<img src=assets/images/CD1_Civil_BridePortrait.jpg>
+<img src=assets/images/CD1_Civil_GroomPortrait.jpg>
+<img src=assets/images/CD1_Civil_CoupleWithElder.jpg>
+<img src=assets/images/CD1_Civil_FamilyGroup.jpg>
+<img src=assets/images/CD1_Civil_FriendsGroup.jpg>
+<img src=assets/images/CD1_Civil_GateLift.jpg>
+<img src=assets/images/CD1_Civil_SkylineCouple.jpg>
+<img src=assets/images/CD1_Civil_TiledAltar.jpg>
+<img src=assets/images/CD1_Civil_VenueExterior.jpg>
+<img src=assets/images/CD1_Civil_CakeCutting.jpg>
 </div>
-
-
 <div class=storyContent>
 <div class=storyLabel>The Civil Ceremony</div>
 <h3>A Civil in Sarasota</h3>
@@ -723,95 +164,66 @@ Four months after Switzerland, Diana and Christian cemented their love in Saraso
 </p>
 </div>
 </div>
-
 </div>
 </section>
-
-  
 <section class="section center" id=details>
 <div class=container>
 <span class=kicker>The Details</span>
 <h2 class=h2>Wedding Information</h2>
-
 <div class=fourCol>
-
-<div class="block">
-  <h3>Welcome Party</h3>
-  <p>
-    Join us the evening before the wedding for drinks, light bites, and celebration as we kick off the wedding weekend in Antigua.
-  </p>
-
-  <div class="eventMeta">
-    <span class="smallMeta">Friday, July 24, 2026</span>
-    <span class="smallMeta">Evening</span>
-  </div>
-</div>
-
-
-<div class="block">
-  <h3>Ceremony</h3>
-  <p>
-  The vows will take place in the heart of historic Antigua at the Iglesia Escuela de Cristo.
+<div class=block>
+<h3>Welcome Party</h3>
+<p>
+Join us the evening before the wedding for drinks, light bites, and celebration as we kick off the wedding weekend in Antigua.
 </p>
-
-<p class="smallMeta" style="margin-top:12px;">
-  Address: 7a Calle y 1a Avenida, Antigua, Guatemala
-</p>
-
-
-     
-  <div class="eventMeta">
-    <span class="smallMeta">Saturday, July 25, 2026</span>
-    <span class="smallMeta">Arrival at 1:30 PM</span>
-    <span class="smallMeta">Ceremony at 2:00 PM</span>
-  </div>
+<div class=eventMeta>
+<span class=smallMeta>Friday, July 24, 2026</span>
+<span class=smallMeta>Evening</span>
 </div>
-
-
-<div class="block">
-  <h3>Reception</h3>
-  <p>
-  Following the ceremony, join us for a night of dinner, drinks, and celebration at the historic
-  ruins of Convento Santa Clara. 
-</p>
-
-<p class="smallMeta" style="margin-top:12px;">
-  Address: 6a Calle Oriente, Antigua, Guatemala
-</p>
-
-
-
-  <div class="eventMeta">
-    <span class="smallMeta">Saturday, July 25, 2026</span>
-    <span class="smallMeta">4:00 PM to 9:00 PM</span>
-  </div>
 </div>
-
-
-<div class="block">
-  <h3>Attire</h3>
-  <p>
-    Cocktail attire is requested. Antigua can be cool after sunset, so a light layer for the evening is recommended.
-    <br><br>
-    <strong>We ask that you please avoid jeans, sneakers, shorts, or distressed clothing. Kindly reserve white for the bride and shades of raspberry for the bridal party.
-    </strong>
-  </p>
-
-  <div class="eventMeta">
-    <span class="smallMeta">Bring out your summer colors!</span>
-  </div>
+<div class=block>
+<h3>Ceremony</h3>
+<p>
+The vows will take place in the heart of historic Antigua at the Iglesia Escuela de Cristo.
+</p>
+<p class=smallMeta style=margin-top:12px>
+Address: 7a Calle y 1a Avenida, Antigua, Guatemala
+</p>
+<div class=eventMeta>
+<span class=smallMeta>Saturday, July 25, 2026</span>
+<span class=smallMeta>Arrival at 1:30 PM</span>
+<span class=smallMeta>Ceremony at 2:00 PM</span>
 </div>
-
-
-
-
+</div>
+<div class=block>
+<h3>Reception</h3>
+<p>
+Following the ceremony, join us for a night of dinner, drinks, and celebration at the historic
+ruins of Convento Santa Clara.
+</p>
+<p class=smallMeta style=margin-top:12px>
+Address: 6a Calle Oriente, Antigua, Guatemala
+</p>
+<div class=eventMeta>
+<span class=smallMeta>Saturday, July 25, 2026</span>
+<span class=smallMeta>4:00 PM to 9:00 PM</span>
+</div>
+</div>
+<div class=block>
+<h3>Attire</h3>
+<p>
+Cocktail attire is requested. Antigua can be cool after sunset, so a light layer for the evening is recommended.
+<br><br>
+<strong>We ask that you please avoid jeans, sneakers, shorts, or distressed clothing. Kindly reserve white for the bride and shades of raspberry for the bridal party.
+</strong>
+</p>
+<div class=eventMeta>
+<span class=smallMeta>Bring out your summer colors!</span>
+</div>
+</div>
 </div>
 </div>
 </section>
-
-
-
-  
 <section class="section sectionAlt center" id=schedule>
 <div class=container>
 <span class=kicker>The Plan</span>
@@ -824,9 +236,7 @@ The following times are approximate and meant to guide the flow of the day.
 <div class=scheduleDayLabel>
 Friday, July 24, 2026
 </div>
-  
-<div class="itineraryRow">
-  
+<div class=itineraryRow>
 <div class=itineraryTime>Evening</div>
 <div class=itineraryDetails>
 <strong>Welcome Party</strong>
@@ -874,53 +284,35 @@ Saturday, July 25, 2026
 <iframe src="https://www.google.com/maps?q=La+Aurora+International+Airport+to+Antigua+Guatemala&output=embed" width=100% height=420 style="border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)" loading=lazy referrerpolicy=no-referrer-when-downgrade>
 </iframe>
 </div>
-  
 <div class=threeCol>
-  
 <div class=block>
 <h3>Flights</h3>
 <p>
 Fly into Guatemala City via La Aurora International Airport (GUA).
 We recommend arriving at least one day early to enjoy Antigua.
 </p>
-
 <div class=badgeRow style=margin-top:18px;justify-content:center>
 <span class=badge>3–6 hr flight time</span>
 <span class=badge>Direct or 1 stop</span>
 <span class=badge>Best arrival: Thu–Fri</span>
 </div>
-
 <p class=smallMeta style=margin-top:20px>
 July Travel Insight
 </p>
-
 <p style=font-size:14px;color:var(--muted);margin-top:6px>
 July is peak travel season. Morning arrivals are typically smoother, and brief afternoon showers are common but pass quickly.
 This weekend may see increased traffic due to a local Patron Saint celebration.
 </p>
-
 <span class=smallMeta style=margin-top:18px;display:block>
 Airport Code: GUA
 </span>
-
 <a href="https://www.google.com/travel/flights?q=flights%20to%20GUA" target=_blank class=pill style=margin-top:22px;display:inline-block>
 Explore Flights
 </a>
-
-<div style="margin-top:22px">
-  <img 
-    src="assets/images/CD1_LaAurora.jpg"
-    alt="La Aurora International Airport Guatemala City"
-    style="width:100%;height:auto;border-radius:2px;box-shadow:var(--shadow)"
-    loading="lazy">
+<div style=margin-top:22px>
+<img src=assets/images/CD1_LaAurora.jpg alt="La Aurora International Airport Guatemala City" style=width:100%;height:auto;border-radius:2px;box-shadow:var(--shadow) loading=lazy>
 </div>
-
 </div>
-
-
-
-  
-  
 <div class=block>
 <h3>Transportation</h3>
 <p>
@@ -928,39 +320,28 @@ We recommend arranging a private driver or shuttle from La Aurora International 
 (GUA) to Antigua. This is the most comfortable and reliable option. Uber is also widely
 used within Guatemala City and Antigua.
 </p>
-
 <div class=badgeRow style=margin-top:18px;justify-content:center>
 <span class=badge>1–1.5 hour drive</span>
 <span class=badge>Private or shared shuttle</span>
 </div>
-
 <p class=smallMeta style=margin-top:20px>
 Travel Time & Traffic
 </p>
-
-<p style="font-size:14px;color:var(--muted);line-height:1.7;margin-top:8px">
-  
-<strong>Off peak:</strong> Approximately <span class="timeNum">1 to 1.5 hours</span><br>
-
-<strong>Rush hour (<span class="timeNum">4:00–7:30 PM</span>):</strong> Expect <span class="timeNum">2 to 3 plus hours</span><br>
-
-  
+<p style=font-size:14px;color:var(--muted);line-height:1.7;margin-top:8px>
+<strong>Off peak:</strong> Approximately <span class=timeNum>1 to 1.5 hours</span><br>
+<strong>Rush hour (<span class=timeNum>4:00–7:30 PM</span>):</strong> Expect <span class=timeNum>2 to 3 plus hours</span><br>
 <strong>Fridays and Sundays:</strong> Longer travel delays are common
 </p>
-
 <p class=smallMeta style=margin-top:18px>
 Arrival Tip
 </p>
-
 <p style=font-size:14px;color:var(--muted);margin-top:6px>
 Daytime arrivals are easiest. Evening arrivals are fine when transportation
 is arranged in advance, just plan for traffic.
 </p>
-
 <p class=smallMeta style=margin-top:20px>
 Shuttle Services
 </p>
-
 <ul class=transferLinks>
 <li>
 <a href=https://antiguatours.net/shuttles/ target=_blank rel=noopener>
@@ -968,7 +349,6 @@ Antigua Tours & Shuttles
 </a>
 <span class=linkNote>Private and shared shuttles</span>
 </li>
-
 <li>
 <a href=https://www.viator.com/Guatemala-tours/Airport-and-Ground-Transfers/d748-g15-c52 target=_blank rel=noopener>
 Viator Airport Transfers
@@ -976,68 +356,46 @@ Viator Airport Transfers
 <span class=linkNote>Multiple providers</span>
 </li>
 </ul>
-
 <span class=smallMeta style=margin-top:18px;display:block>
 Guests may book independently
 </span>
 </div>
-
-
-  
 <div class="block weatherBlock">
 <h3>Weather</h3>
 <p class=smallMeta>Antigua, Guatemala</p>
-
 <div class=weatherCard>
-  <div class=weatherHeader>
-    <span class=weatherDate>Saturday, July 25</span>
-    <span class=weatherStatus>Wedding Day Forecast</span>
-  </div>
-
-  <div class=weatherMain>
-    <div class=weatherTemp>
-      <strong id=weatherHigh>74°</strong>
-      <span class=weatherLabel>High</span>
-    </div>
-
-    <div class=weatherTemp>
-      <strong id=weatherLow>60°</strong>
-      <span class=weatherLabel>Low</span>
-    </div>
-
-    <div class=weatherTemp>
-      <strong id=weatherRain>55%</strong>
-      <span class=weatherLabel>Rain</span>
-    </div>
-  </div>
-
-  <div class=weatherFooter>
-    <span id=weatherSummary>
-      Seasonal averages shown. Live forecast will appear closer to the date.
-    </span>
-    <span class=weatherUpdated id=weatherUpdated>
-      Updated automatically
-    </span>
-  </div>
+<div class=weatherHeader>
+<span class=weatherDate>Saturday, July 25</span>
+<span class=weatherStatus>Wedding Day Forecast</span>
 </div>
-
-<!-- WEATHER IMAGE -->
-<div style="margin-top:20px">
-  <img 
-    src="assets/images/CD1_WeatherPic.jpg" 
-    alt="Antigua Guatemala mountain and volcano landscape" 
-    style="width:100%;height:auto;border-radius:2px;box-shadow:var(--shadow)" 
-    loading="lazy">
+<div class=weatherMain>
+<div class=weatherTemp>
+<strong id=weatherHigh>74°</strong>
+<span class=weatherLabel>High</span>
 </div>
-
+<div class=weatherTemp>
+<strong id=weatherLow>60°</strong>
+<span class=weatherLabel>Low</span>
 </div>
-
+<div class=weatherTemp>
+<strong id=weatherRain>55%</strong>
+<span class=weatherLabel>Rain</span>
 </div>
-
-
-
-
-  
+</div>
+<div class=weatherFooter>
+<span id=weatherSummary>
+Seasonal averages shown. Live forecast will appear closer to the date.
+</span>
+<span class=weatherUpdated id=weatherUpdated>
+Updated automatically
+</span>
+</div>
+</div>
+<div style=margin-top:20px>
+<img src=assets/images/CD1_WeatherPic.jpg alt="Antigua Guatemala mountain and volcano landscape" style=width:100%;height:auto;border-radius:2px;box-shadow:var(--shadow) loading=lazy>
+</div>
+</div>
+</div>
 <div class=twoCol>
 <div class=block>
 <h3>Hotels & Stays</h3>
@@ -1061,41 +419,24 @@ Recommended Hotels
 A few well loved options chosen for comfort and location. Availability varies,
 so booking early is encouraged.
 </p>
-
-  
-  
-<p style="margin-top:14px;font-size:14px;color:var(--muted);line-height:1.7">
+<p style=margin-top:14px;font-size:14px;color:var(--muted);line-height:1.7>
 <a href=https://www.casasantodomingo.com.gt/ target=_blank rel=noopener class=hotelLink>
 <strong>Hotel Museo Spa Casa Santo Domingo</strong>
 </a><br>
-
-  
 A landmark property set within a former monastery, known for its gardens and serene atmosphere.
 </p>
-
-<p style="margin-top:12px;font-size:14px;color:var(--muted);line-height:1.7">
-  
+<p style=margin-top:12px;font-size:14px;color:var(--muted);line-height:1.7>
 <a href=https://elconventoantigua.com/ target=_blank rel=noopener class=hotelLink>
 <strong>El Convento Boutique Hotel</strong>
 </a><br>
-
-  
 Elegant and centrally located, with a rooftop pool and refined dining.
 </p>
-
-<p style="margin-top:12px;font-size:14px;color:var(--muted);line-height:1.7">
-  
+<p style=margin-top:12px;font-size:14px;color:var(--muted);line-height:1.7>
 <a href=https://www.portahotelantigua.com/ target=_blank rel=noopener class=hotelLink>
 <strong>Porta Hotel Antigua</strong>
 </a><br>
-
-  
 Spacious grounds and classic style, just steps from the historic center.
 </p>
-
-
-
-  
 <p class=smallMeta style=margin-top:22px>
 Booking Tip
 </p>
@@ -1115,10 +456,6 @@ for families, groups, or longer stays.
 Browse Airbnb in Antigua
 </a>
 </div>
-
-
-
-  
 <div class=block>
 <h3>Things to Do</h3>
 <p>
@@ -1133,16 +470,11 @@ July 25th also marks Antigua’s annual Patron Saint celebration in honor of
 Saint James (Santiago Apóstol). The city comes alive with local festivities,
 parades, music, and cultural events throughout the historic center.
 </p>
-
-<p style="margin-top:6px;font-size:14px;color:var(--text);font-weight:600;">
-<a href="https://growingupbilingual.com/fiestas-patronales-antigua-guatemala-guide/" 
-   target="_blank" 
-   rel="noopener" 
-   style="color:var(--text);text-decoration:none;">
+<p style=margin-top:6px;font-size:14px;color:var(--text);font-weight:600>
+<a href=https://growingupbilingual.com/fiestas-patronales-antigua-guatemala-guide/ target=_blank rel=noopener style=color:var(--text);text-decoration:none>
 Learn more about the celebrations
 </a>
 </p>
-  
 </p>
 <div class=badgeRow>
 <span class=badge>Historic Ruins</span>
@@ -1152,8 +484,7 @@ Learn more about the celebrations
 <p class=smallMeta style=margin-top:22px>
 Must-See Sights
 </p>
-
-<p style="margin-top:14px;font-size:14px;color:var(--muted);line-height:1.7">
+<p style=margin-top:14px;font-size:14px;color:var(--muted);line-height:1.7>
 <strong>
 <a href=https://cnpag.com/ target=_blank rel=noopener>
 Convento de las Capuchinas
@@ -1164,10 +495,7 @@ One of the city’s most striking colonial ruins.
 <p class=smallMeta style=margin-top:22px>
 Coffee & Culture
 </p>
-
-
-  
-<p style="margin-top:10px;font-size:14px;color:var(--muted);line-height:1.7">
+<p style=margin-top:10px;font-size:14px;color:var(--muted);line-height:1.7>
 <strong>
 <a href=https://www.cafecondesa.com.gt/ target=_blank rel=noopener>
 Café Condesa
@@ -1175,8 +503,7 @@ Café Condesa
 </strong><br>
 A relaxed courtyard café popular for breakfast and coffee.
 </p>
-
-<p style="margin-top:12px;font-size:14px;color:var(--muted);line-height:1.7">
+<p style=margin-top:12px;font-size:14px;color:var(--muted);line-height:1.7>
 <strong>
 <a href=https://www.dlgcoffee.org/community-tourism target=_blank rel=noopener>
 De La Gente Coffee Tours
@@ -1184,17 +511,10 @@ De La Gente Coffee Tours
 </strong><br>
 Guided coffee farm tours supporting local growers.
 </p>
-
-
-  
 <p class=smallMeta style=margin-top:22px>
 Dining Favorites
 </p>
-
-
-
-  
-<p style="margin-top:10px;font-size:14px;color:var(--muted);line-height:1.7">
+<p style=margin-top:10px;font-size:14px;color:var(--muted);line-height:1.7>
 <strong>
 <a href=https://www.tripadvisor.com/Restaurant_Review-g295366-d1450251-Reviews-Hector_s_Bistro_Guatemala-Antigua_Sacatepequez_Department.html target=_blank rel=noopener>
 Hector’s Bistro
@@ -1202,8 +522,7 @@ Hector’s Bistro
 </strong><br>
 Intimate, reservation-only favorite.
 </p>
-
-<p style="margin-top:12px;font-size:14px;color:var(--muted);line-height:1.7">
+<p style=margin-top:12px;font-size:14px;color:var(--muted);line-height:1.7>
 <strong>
 <a href=https://www.tripadvisor.com/Restaurant_Review-g295366-d2272727-Reviews-La_Cuevita_de_Los_Urquizu-Antigua_Sacatepequez_Department.html target=_blank rel=noopener>
 La Cuevita de los Urquizú
@@ -1211,20 +530,10 @@ La Cuevita de los Urquizú
 </strong><br>
 Cozy spot for traditional Guatemalan cuisine.
 </p>
-
-
-
-
-  
 </div>
 </div>
 </div>
-
-  
 </section>
-
-
-  
 <section class="section sectionAlt center" id=registry>
 <div class=container>
 <span class=kicker>Registry</span>
@@ -1240,18 +549,12 @@ We are so grateful for your love and support as we begin this
 next chapter. Contributions through our registry will go toward
 meaningful experiences, travel, and memories we’ll cherish for years to come.
 </p>
-  
-<a href="https://withjoy.com/diana-christian/registry" target="_blank" rel="noopener" class="pill" style="margin-top:28px;display:inline-block">
+<a href=https://withjoy.com/diana-christian/registry target=_blank rel=noopener class=pill style=margin-top:28px;display:inline-block>
 Visit Our Registry
 </a>
-
 </div>
 </div>
 </section>
-
-
-
-  
 <section class="section center" id=faq>
 <div class=container>
 <span class=kicker>Quick Answers</span>
@@ -1292,10 +595,9 @@ Kindly submit your RSVP by May 15. This helps us finalize guest counts and make 
 </summary>
 <p>
 Formal cocktail attire is requested. Antigua evenings can be cool after sunset,
-  so a light layer is recommended. For men, suits or blazers with tailored pants,
-  a button down, and tie are encouraged. For women, mid to floor length dresses in
-  fabrics such as silk, chiffon, or satin are recommended. Please avoid white and shades of raspberry. Bring out your summer colors.
-
+so a light layer is recommended. For men, suits or blazers with tailored pants,
+a button down, and tie are encouraged. For women, mid to floor length dresses in
+fabrics such as silk, chiffon, or satin are recommended. Please avoid white and shades of raspberry. Bring out your summer colors.
 </p>
 </details>
 <details>
@@ -1323,9 +625,6 @@ please include when submitting your RSVP
 </div>
 </div>
 </section>
-
-
-  
 <section class="section sectionAlt center" id=gallery>
 <div class=container>
 <span class=kicker>Memories</span>
@@ -1352,12 +651,8 @@ Kindly refer to your invitation for guest allowances. Only invited guests may be
 <input type=hidden name=_subject value="New Wedding RSVP Submission">
 <input type=text name=_gotcha style=display:none>
 <input type=hidden name=party_size id=partySizeField value=1>
-  
-            <input type="hidden" name="guest_names_combined" id="guestNamesCombined">
-            <input type="hidden" name="send_confirmation" id="sendConfirmation" value="no">
-
-
-  
+<input type=hidden name=guest_names_combined id=guestNamesCombined>
+<input type=hidden name=send_confirmation id=sendConfirmation value=no>
 <div class=row>
 <input name=name type=text placeholder="Full Name" required>
 <input name=email type=email placeholder="Email Address" required>
@@ -1400,7 +695,7 @@ Thank You
 <footer class=footer>
 <div class=container>
 <strong>Diana & Christian</strong>
-<span class="itineraryTime">Antigua, Guatemala · July 25, 2026</span>
+<span class=itineraryTime>Antigua, Guatemala · July 25, 2026</span>
 </div>
 </footer>
 </main>
@@ -1410,375 +705,25 @@ Thank You
 <div class=modalBody><img id=modalImg src></div>
 </div>
 </div>
-
-
-  <!-- SECRET VIDEO EASTER EGG -->
-<div id="videoModal" class="videoPopup">
-
-  <button id="videoCloseBtn" class="videoClose">×</button>
-
-  <video id="easterVideo" controls preload="metadata" playsinline webkit-playsinline>
-    <source src="assets/images/CD1_CanelaAntigua.mp4" type="video/mp4">
-  </video>
-
+<div id=videoModal class=videoPopup>
+<button id=videoCloseBtn class=videoClose>×</button>
+<video id=easterVideo controls preload=metadata playsinline webkit-playsinline>
+<source src=assets/images/CD1_CanelaAntigua.mp4 type=video/mp4>
+</video>
 </div>
-
-
-  
-<script>const SETTINGS={eventISO:"2026-07-25T16:00:00-06:00",heroImages:
-  
-["assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.png","assets/images/CD1_Wedding_Beach_Ocean_Kiss-min.png","assets/images/CD1_Beach_Ocean_Look_Back-min.png","assets/images/CD1_Wedding_Beach_Sitting_Portrait-min.jpeg","assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg","assets/images/CD1_Wedding_Beach_Dunes_Standing-min-min.jpeg"]};function tick(){const diff=Math.max(0,new Date(SETTINGS.eventISO).getTime()-Date.now());document.getElementById("cdDays").textContent=Math.floor(diff/(1000*60*60*24));document.getElementById("cdHours").textContent=String(Math.floor((diff/(1000*60*60))%24)).padStart(2,'0');document.getElementById("cdMins").textContent=String(Math.floor((diff/(1000*60))%60)).padStart(2,'0');document.getElementById("cdSecs").textContent=String(Math.floor((diff/1000)%60)).padStart(2,'0');}
+<script>const SETTINGS={eventISO:"2026-07-25T16:00:00-06:00",heroImages:["assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.png","assets/images/CD1_Wedding_Beach_Ocean_Kiss-min.png","assets/images/CD1_Beach_Ocean_Look_Back-min.png","assets/images/CD1_Wedding_Beach_Sitting_Portrait-min.jpeg","assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg","assets/images/CD1_Wedding_Beach_Dunes_Standing-min-min.jpeg"]};function tick(){const diff=Math.max(0,new Date(SETTINGS.eventISO).getTime()-Date.now());document.getElementById("cdDays").textContent=Math.floor(diff/(1000*60*60*24));document.getElementById("cdHours").textContent=String(Math.floor((diff/(1000*60*60))%24)).padStart(2,'0');document.getElementById("cdMins").textContent=String(Math.floor((diff/(1000*60))%60)).padStart(2,'0');document.getElementById("cdSecs").textContent=String(Math.floor((diff/1000)%60)).padStart(2,'0');}
 setInterval(tick,1000);tick();const header=document.getElementById("siteHeader");window.addEventListener("scroll",()=>{header.classList.toggle("solid",window.scrollY>50);},{passive:true});const heroBg=document.getElementById("heroBg");let hIdx=0;heroBg.style.backgroundImage=`url("${SETTINGS.heroImages[0]}")`;function rotateHero(delay){setTimeout(()=>{hIdx=(hIdx+1)%SETTINGS.heroImages.length;heroBg.style.opacity=0.5;setTimeout(()=>{heroBg.style.backgroundImage=`url("${SETTINGS.heroImages[hIdx]}")`;heroBg.style.opacity=1;},800);rotateHero(7000);},delay);}
-rotateHero(10000);const galleryGrid=document.getElementById("galleryGrid");const prevBtn=document.getElementById("galleryPrev");const nextBtn=document.getElementById("galleryNext");const modal=document.getElementById("modal");const modalImg=document.getElementById("modalImg");
-  
-  const galleryImages=[
-                       // GALLERY BATCH 0
-                        "assets/images/CD1_PalmLeafPortrait.PNG",
-                        "assets/images/CD1_GardenPathWalk.jpg",
-                        "assets/images/CD1_JungleKissLift.JPG",
-    
-                        "assets/images/CD1_OrchidWallEmbrace.JPG",
-                        "assets/images/CD1_RedBridgeEmbrace.JPG",
-                        "assets/images/CD1_RedBridgeStroll.JPG",
-    
-                        "assets/images/CD1_StoneBenchGazebo.JPG",
-                        "assets/images/CD1_TropicalCarry.JPG",
-                        "assets/images/CD1_TropicalLift.jpg",
-    
-                        "assets/images/CD1_FloralArchway.JPG",
-                        "assets/images/CD1_RainbowEucalyptus.JPG",
-                        "assets/images/CD1_WaterfrontKiss.jpg",
-    
-                        "assets/images/CD1_FountainKiss.JPG",
-                       // GALLERY BATCH 1
-                      "assets/images/CD1_JustMarriedBalloons.jpg",
-                       "assets/images/CD1_StaircaseKiss.jpg",
-                       "assets/images/CD1_ReceptionTableDinner.jpg",
-                       // GALLERY BATCH 2
-                       "assets/images/CD1_CakeCuttingFlash.jpg",
-                       "assets/images/CD1_CakeCuttingLaughs.jpg",
-                       // GALLERY BATCH 3
-                       "assets/images/CD1_Courthouse_Candid_Climbing_Stairs_Together-min.jpeg",
-                       "assets/images/CD1_Courthouse_Candid_Walking_Hand_in_Hand-min.jpeg",
-                       "assets/images/CD1_Courthouse_Evening_Portrait_Indoor_Tiles-min.JPG",
-                       // GALLERY BATCH 4
-                       "assets/images/CD1_Wedding_Beach_Dunes_Standing-min.jpeg",
-                       "assets/images/CD1_Wedding_Beach_Ocean_Kiss-min.png",
-                       "assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.png",
-                       // GALLERY BATCH 5
-                       "assets/images/CD1_Wedding_Beach_Sitting_Kiss-min.jpeg",
-                       "assets/images/CD1_Wedding_Beach_Sitting_Portrait-min.jpeg",
-                       "assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg",
-                       // GALLERY BATCH 6
-                       "assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg",
-                       "assets/images/CD1_Proposal_Action_The_Jump-min.jpg",
-                       "assets/images/CD1_Proposal_Celebration_Hug-min.jpg",
-                       // GALLERY BATCH 7
-                       "assets/images/CD1_Proposal_Celebration_Cheek_Kiss-min.jpg",
-                       "assets/images/CD1_Engagement_Fall_Trees_Walk-min.JPEG",
-                       "assets/images/CD1_Engagement_Gondola_Bride_Ring_Reveal-min.JPG",
-                       // GALLERY BATCH 8
-                       "assets/images/CD1_Engagement_Gondola_Groom_Portrait-min.JPG",
-                       "assets/images/CD1_Engagement_Overlook_Selfie-min.JPG",
-                       "assets/images/CD1_Engagement_Snow_Mountain_Kiss-min.JPG",
-                       // GALLERY BATCH 9
-                       "assets/images/CD1_Engagement_Snow_Mountain_Wide-min.JPG",
-                       "assets/images/CD1_Engagement_Travel_Canal_Portrait-min.JPG",
-                       "assets/images/CD1_Engagement_Travel_Night_Selfie-min.JPG",
-                       // GALLERY BATCH 10
-                       "assets/images/CD1_Engagement_Travel_Street_Kiss-min.JPG",
-                       "assets/images/CD1_LakeMountainSelfie.jpg",
-                       "assets/images/CD1_Engagement_Market_Casual_Portrait-min-min.JPG",
-                       // GALLERY BATCH 11
-                       "assets/images/CD1_WaterfrontSunset.png",
-                       "assets/images/CD1_CentralParkBench.png",
-                       // GALLERY BATCH 12
-                       // GALLERY BATCH 13
-                       // GALLERY BATCH 14
-                       "assets/images/CD1_Throwback_HighSchool_Promposal-min.jpeg"];
-  
-  
-  
-  
-  
-  const batchSize=3;let galleryIndex=0;function renderGallery(){galleryGrid.classList.add("fade-out");setTimeout(()=>{galleryGrid.innerHTML="";const batch=galleryImages.slice(galleryIndex,galleryIndex+batchSize);batch.forEach(src=>{const tile=document.createElement("div");tile.className="tile";const img=document.createElement("img");img.src=src;img.loading="lazy";tile.appendChild(img);tile.onclick=()=>{modalImg.src=src;modal.classList.add("open");};galleryGrid.appendChild(tile);});galleryGrid.classList.remove("fade-out");galleryGrid.classList.add("fade-in");},250);}
+rotateHero(10000);const galleryGrid=document.getElementById("galleryGrid");const prevBtn=document.getElementById("galleryPrev");const nextBtn=document.getElementById("galleryNext");const modal=document.getElementById("modal");const modalImg=document.getElementById("modalImg");const galleryImages=["assets/images/CD1_PalmLeafPortrait.PNG","assets/images/CD1_GardenPathWalk.jpg","assets/images/CD1_JungleKissLift.JPG","assets/images/CD1_OrchidWallEmbrace.JPG","assets/images/CD1_RedBridgeEmbrace.JPG","assets/images/CD1_RedBridgeStroll.JPG","assets/images/CD1_StoneBenchGazebo.JPG","assets/images/CD1_TropicalCarry.JPG","assets/images/CD1_TropicalLift.jpg","assets/images/CD1_FloralArchway.JPG","assets/images/CD1_RainbowEucalyptus.JPG","assets/images/CD1_WaterfrontKiss.jpg","assets/images/CD1_FountainKiss.JPG","assets/images/CD1_JustMarriedBalloons.jpg","assets/images/CD1_StaircaseKiss.jpg","assets/images/CD1_ReceptionTableDinner.jpg","assets/images/CD1_CakeCuttingFlash.jpg","assets/images/CD1_CakeCuttingLaughs.jpg","assets/images/CD1_Courthouse_Candid_Climbing_Stairs_Together-min.jpeg","assets/images/CD1_Courthouse_Candid_Walking_Hand_in_Hand-min.jpeg","assets/images/CD1_Courthouse_Evening_Portrait_Indoor_Tiles-min.JPG","assets/images/CD1_Wedding_Beach_Dunes_Standing-min.jpeg","assets/images/CD1_Wedding_Beach_Ocean_Kiss-min.png","assets/images/CD1_Wedding_Beach_Ocean_Selfie-min.png","assets/images/CD1_Wedding_Beach_Sitting_Kiss-min.jpeg","assets/images/CD1_Wedding_Beach_Sitting_Portrait-min.jpeg","assets/images/CD1_Wedding_Portrait_Archway_Hug-min.jpeg","assets/images/CD1_Proposal_Moment_On_One_Knee-min.jpg","assets/images/CD1_Proposal_Action_The_Jump-min.jpg","assets/images/CD1_Proposal_Celebration_Hug-min.jpg","assets/images/CD1_Proposal_Celebration_Cheek_Kiss-min.jpg","assets/images/CD1_Engagement_Fall_Trees_Walk-min.JPEG","assets/images/CD1_Engagement_Gondola_Bride_Ring_Reveal-min.JPG","assets/images/CD1_Engagement_Gondola_Groom_Portrait-min.JPG","assets/images/CD1_Engagement_Overlook_Selfie-min.JPG","assets/images/CD1_Engagement_Snow_Mountain_Kiss-min.JPG","assets/images/CD1_Engagement_Snow_Mountain_Wide-min.JPG","assets/images/CD1_Engagement_Travel_Canal_Portrait-min.JPG","assets/images/CD1_Engagement_Travel_Night_Selfie-min.JPG","assets/images/CD1_Engagement_Travel_Street_Kiss-min.JPG","assets/images/CD1_LakeMountainSelfie.jpg","assets/images/CD1_Engagement_Market_Casual_Portrait-min-min.JPG","assets/images/CD1_WaterfrontSunset.png","assets/images/CD1_CentralParkBench.png","assets/images/CD1_Throwback_HighSchool_Promposal-min.jpeg"];const batchSize=3;let galleryIndex=0;function renderGallery(){galleryGrid.classList.add("fade-out");setTimeout(()=>{galleryGrid.innerHTML="";const batch=galleryImages.slice(galleryIndex,galleryIndex+batchSize);batch.forEach(src=>{const tile=document.createElement("div");tile.className="tile";const img=document.createElement("img");img.src=src;img.loading="lazy";tile.appendChild(img);tile.onclick=()=>{modalImg.src=src;modal.classList.add("open");};galleryGrid.appendChild(tile);});galleryGrid.classList.remove("fade-out");galleryGrid.classList.add("fade-in");},250);}
 nextBtn.onclick=()=>{galleryIndex+=batchSize;if(galleryIndex>=galleryImages.length){galleryIndex=0;}
 renderGallery();};prevBtn.onclick=()=>{galleryIndex-=batchSize;if(galleryIndex<0){galleryIndex=galleryImages.length-batchSize;}
 renderGallery();};let touchStartX=0;let touchEndX=0;galleryGrid.addEventListener("touchstart",e=>{touchStartX=e.changedTouches[0].screenX;},{passive:true});galleryGrid.addEventListener("touchend",e=>{if(modal.classList.contains("open"))return;touchEndX=e.changedTouches[0].screenX;const threshold=50;if(touchStartX-touchEndX>threshold){galleryIndex+=batchSize;if(galleryIndex>=galleryImages.length){galleryIndex=0;}
 renderGallery();}
 if(touchEndX-touchStartX>threshold){galleryIndex-=batchSize;if(galleryIndex<0){galleryIndex=galleryImages.length-batchSize;}
-renderGallery();}});renderGallery();document.getElementById("modalClose").onclick=()=>modal.classList.remove("open");modal.onclick=(e)=>{if(e.target===modal)modal.classList.remove("open");};document.querySelectorAll(".slideshow").forEach(slideshow=>{const slides=slideshow.querySelector(".slides");const images=slides.children;let index=0;const update=()=>{slides.style.transform=`translateX(-${index*100}%)`;};slideshow.querySelector(".next").onclick=()=>{index=(index+1)%images.length;update();};slideshow.querySelector(".prev").onclick=()=>{index=(index-1+images.length)%images.length;update();};});document.querySelectorAll(".fadeStack").forEach(stack=>{const images=stack.querySelectorAll("img");let index=0;setInterval(()=>{images[index].classList.remove("active");index=(index+1)%images.length;images[index].classList.add("active");},5000);});
-  
- 
-const rsvpForm = document.getElementById("rsvpForm");
-const thankYouMessage = document.getElementById("thankYouMessage");
-const thankYouText = document.getElementById("thankYouText");
-
-const attendingSelect = document.getElementById("attendingSelect");
-const guestCount = document.getElementById("guestCount");
-const guestNamesContainer = document.getElementById("guestNamesContainer");
-const partySizePreview = document.getElementById("partySizePreview");
-const submitBtn = document.getElementById("submitBtn");
-const partySizeField = document.getElementById("partySizeField");
-
-
-// --------------------
-// RSVP SUBMIT HANDLER
-// --------------------
-
-rsvpForm.addEventListener("submit", async function (e) {
-  e.preventDefault();
-
-  submitBtn.disabled = true;
-
-  // COMBINE GUEST NAMES
-  const guestInputs = guestNamesContainer.querySelectorAll("input");
-  const names = [];
-
-  guestInputs.forEach(input => {
-    if (input.value.trim() !== "") {
-      names.push(input.value.trim());
-    }
-  });
-
-  document.getElementById("guestNamesCombined").value = names.join(", ");
-
-  // CONTROL EMAIL SENDING
-  if (attendingSelect.value === "Yes") {
-    document.getElementById("sendConfirmation").value = "yes";
-  } 
-
-  else {
-  document.getElementById("sendConfirmation").value = "no";
-}
-  
-  const formData = new FormData(rsvpForm);
-
-  const response = await fetch(rsvpForm.action, {
-    method: "POST",
-    body: formData,
-    headers: { "Accept": "application/json" }
-  });
-
- if (response.ok) {
-
-  const attending = attendingSelect.value;
-
-  // SEND EMAILJS CONFIRMATION ONLY IF ATTENDING YES
-  if (attending === "Yes") {
-
-    const templateParams = {
-      name: rsvpForm.querySelector('input[name="name"]').value,
-      email: rsvpForm.querySelector('input[name="email"]').value,
-      attending: attendingSelect.value,
-      guests: guestCount.value || 0,
-      party_size: partySizeField.value,
-      guest_names_combined: document.getElementById("guestNamesCombined").value
-    };
-
-try {
-  await emailjs.send(
-    "service_jdf8abn",
-    "template_lzt0kvl",
-    templateParams
-  );
-
-  console.log("EmailJS confirmation sent");
-
-} catch (error) {
-  console.error("EmailJS error:", error);
-}
-
-
-  }
-
-  rsvpForm.style.display = "none";
-  thankYouMessage.style.display = "block";
-
-  if (attending === "Yes") {
-    thankYouText.textContent =
-      "We’re so happy you’ll be joining us. We can’t wait to celebrate together in Antigua.";
-  } else {
-    thankYouText.textContent =
-      "Thank you for letting us know. You’ll be missed, and we truly appreciate your response.";
-  }
-
-}
-
-});
-
-
-
-// --------------------
-// RSVP FORM LOGIC
-// --------------------
-
-attendingSelect.addEventListener("change", () => {
-
-  if (attendingSelect.value === "No") {
-
-    guestCount.style.display = "none";
-    guestCount.value = "";
-
-    guestNamesContainer.style.display = "none";
-    guestNamesContainer.innerHTML = "";
-
-    partySizePreview.style.display = "none";
-    partySizeField.value = 1;
-
-    submitBtn.disabled = false;
-
-  } else {
-
-    guestCount.style.display = "block";
-    partySizePreview.style.display = "none";
-  }
-});
-
-
-guestCount.addEventListener("change", () => {
-
-  const count = parseInt(guestCount.value);
-
-  guestNamesContainer.innerHTML = "";
-
-  const totalParty = 1 + count;
-  partySizeField.value = totalParty;
-
-  if (!isNaN(count)) {
-    partySizePreview.style.display = "block";
-    partySizePreview.textContent = `Total Party Size: ${totalParty}`;
-  }
-
-  if (count > 0) {
-
-    guestNamesContainer.style.display = "block";
-    submitBtn.disabled = true;
-
-    for (let i = 1; i <= count; i++) {
-
-      const input = document.createElement("input");
-
-      input.type = "text";
-      input.name = `guest_${i}_name`;
-      input.placeholder = `Guest ${i} Full Name`;
-      input.required = true;
-      input.style.marginTop = "18px";
-
-      input.addEventListener("input", validateGuestInputs);
-
-      guestNamesContainer.appendChild(input);
-    }
-
-  } else {
-
-    guestNamesContainer.style.display = "none";
-    submitBtn.disabled = false;
-  }
-});
-
-
-function validateGuestInputs() {
-
-  const inputs = guestNamesContainer.querySelectorAll("input");
-  let allFilled = true;
-
-  inputs.forEach(input => {
-    if (input.value.trim() === "") {
-      allFilled = false;
-    }
-  });
-
-  submitBtn.disabled = !allFilled;
-}
-
-
-
-// --------------------
-// EASTER EGG CLICK + MOBILE LONG PRESS
-// --------------------
-
-let eggClicks = 0;
-let eggTimer;
-
-const eggTrigger = document.getElementById("easterEggTrigger");
-const eggModal = document.getElementById("videoModal");
-const eggVideo = document.getElementById("easterVideo");
-  const videoCloseBtn = document.getElementById("videoCloseBtn");
-
-
-if (eggTrigger && eggModal && eggVideo) {
-
-  // DESKTOP: 5-click trigger
-  eggTrigger.addEventListener("click", () => {
-
-    eggClicks++;
-
-    clearTimeout(eggTimer);
-
-    eggTimer = setTimeout(() => {
-      eggClicks = 0;
-    }, 1200);
-
-if (eggClicks >= 5) {
-
-     eggModal.style.display = "flex";
-document.body.style.overflow = "hidden";
-
-eggVideo.currentTime = 0;
-eggVideo.load();
-eggVideo.play();
-
-
-      eggClicks = 0;
-    }
-
-  });
-
-
-
-
-
-// CLOSE WITH X BUTTON
-videoCloseBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-
-  eggVideo.pause();
-  eggVideo.currentTime = 0;
-
-  eggModal.style.display = "none";
-  document.body.style.overflow = "";
-
-  eggClicks = 0;
-  clearTimeout(eggTimer);
-
-});
-
-// CLOSE WHEN CLICKING BACKDROP
-eggModal.addEventListener("click", (e) => {
-
-  if (e.target === eggModal) {
-
-    eggVideo.pause();
-    eggVideo.currentTime = 0;
-
-    eggModal.style.display = "none";
-    document.body.style.overflow = "";
-
-    eggClicks = 0;
-    clearTimeout(eggTimer);
-
-  }
-
-});
-
-}
-
-</script>
-
-
-
-
-  
+renderGallery();}});renderGallery();document.getElementById("modalClose").onclick=()=>modal.classList.remove("open");modal.onclick=(e)=>{if(e.target===modal)modal.classList.remove("open");};document.querySelectorAll(".slideshow").forEach(slideshow=>{const slides=slideshow.querySelector(".slides");const images=slides.children;let index=0;const update=()=>{slides.style.transform=`translateX(-${index*100}%)`;};slideshow.querySelector(".next").onclick=()=>{index=(index+1)%images.length;update();};slideshow.querySelector(".prev").onclick=()=>{index=(index-1+images.length)%images.length;update();};});document.querySelectorAll(".fadeStack").forEach(stack=>{const images=stack.querySelectorAll("img");let index=0;setInterval(()=>{images[index].classList.remove("active");index=(index+1)%images.length;images[index].classList.add("active");},5000);});const rsvpForm=document.getElementById("rsvpForm");const thankYouMessage=document.getElementById("thankYouMessage");const thankYouText=document.getElementById("thankYouText");const attendingSelect=document.getElementById("attendingSelect");const guestCount=document.getElementById("guestCount");const guestNamesContainer=document.getElementById("guestNamesContainer");const partySizePreview=document.getElementById("partySizePreview");const submitBtn=document.getElementById("submitBtn");const partySizeField=document.getElementById("partySizeField");rsvpForm.addEventListener("submit",async function(e){e.preventDefault();submitBtn.disabled=true;const guestInputs=guestNamesContainer.querySelectorAll("input");const names=[];guestInputs.forEach(input=>{if(input.value.trim()!==""){names.push(input.value.trim());}});document.getElementById("guestNamesCombined").value=names.join(", ");if(attendingSelect.value==="Yes"){document.getElementById("sendConfirmation").value="yes";}
+else{document.getElementById("sendConfirmation").value="no";}
+const formData=new FormData(rsvpForm);const response=await fetch(rsvpForm.action,{method:"POST",body:formData,headers:{"Accept":"application/json"}});if(response.ok){const attending=attendingSelect.value;if(attending==="Yes"){const templateParams={name:rsvpForm.querySelector('input[name="name"]').value,email:rsvpForm.querySelector('input[name="email"]').value,attending:attendingSelect.value,guests:guestCount.value||0,party_size:partySizeField.value,guest_names_combined:document.getElementById("guestNamesCombined").value};try{await emailjs.send("service_jdf8abn","template_lzt0kvl",templateParams);console.log("EmailJS confirmation sent");}catch(error){console.error("EmailJS error:",error);}}
+rsvpForm.style.display="none";thankYouMessage.style.display="block";if(attending==="Yes"){thankYouText.textContent="We’re so happy you’ll be joining us. We can’t wait to celebrate together in Antigua.";}else{thankYouText.textContent="Thank you for letting us know. You’ll be missed, and we truly appreciate your response.";}}});attendingSelect.addEventListener("change",()=>{if(attendingSelect.value==="No"){guestCount.style.display="none";guestCount.value="";guestNamesContainer.style.display="none";guestNamesContainer.innerHTML="";partySizePreview.style.display="none";partySizeField.value=1;submitBtn.disabled=false;}else{guestCount.style.display="block";partySizePreview.style.display="none";}});guestCount.addEventListener("change",()=>{const count=parseInt(guestCount.value);guestNamesContainer.innerHTML="";const totalParty=1+count;partySizeField.value=totalParty;if(!isNaN(count)){partySizePreview.style.display="block";partySizePreview.textContent=`Total Party Size:${totalParty}`;}
+if(count>0){guestNamesContainer.style.display="block";submitBtn.disabled=true;for(let i=1;i<=count;i++){const input=document.createElement("input");input.type="text";input.name=`guest_${i}_name`;input.placeholder=`Guest ${i}Full Name`;input.required=true;input.style.marginTop="18px";input.addEventListener("input",validateGuestInputs);guestNamesContainer.appendChild(input);}}else{guestNamesContainer.style.display="none";submitBtn.disabled=false;}});function validateGuestInputs(){const inputs=guestNamesContainer.querySelectorAll("input");let allFilled=true;inputs.forEach(input=>{if(input.value.trim()===""){allFilled=false;}});submitBtn.disabled=!allFilled;}
+let eggClicks=0;let eggTimer;const eggTrigger=document.getElementById("easterEggTrigger");const eggModal=document.getElementById("videoModal");const eggVideo=document.getElementById("easterVideo");const videoCloseBtn=document.getElementById("videoCloseBtn");if(eggTrigger&&eggModal&&eggVideo){eggTrigger.addEventListener("click",()=>{eggClicks++;clearTimeout(eggTimer);eggTimer=setTimeout(()=>{eggClicks=0;},1200);if(eggClicks>=5){eggModal.style.display="flex";document.body.style.overflow="hidden";eggVideo.currentTime=0;eggVideo.load();eggVideo.play();eggClicks=0;}});videoCloseBtn.addEventListener("click",(e)=>{e.stopPropagation();eggVideo.pause();eggVideo.currentTime=0;eggModal.style.display="none";document.body.style.overflow="";eggClicks=0;clearTimeout(eggTimer);});eggModal.addEventListener("click",(e)=>{if(e.target===eggModal){eggVideo.pause();eggVideo.currentTime=0;eggModal.style.display="none";document.body.style.overflow="";eggClicks=0;clearTimeout(eggTimer);}});}</script>
 </body>
 </html>
