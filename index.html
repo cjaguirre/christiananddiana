@@ -18,18 +18,19 @@
 
 /* RSVP dropdown fix */
 select {
-  font-family: "Baskervville", serif;
-  font-size: 14px;
-  letter-spacing: 0.1em;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.02em;
   line-height: 1.8;
-  padding: 18px 0;
-  font-variant-numeric: lining-nums;
+  padding: 18px 4px;
+  font-variant-numeric: tabular-nums;
 }
 
 select option {
-  font-family: "Baskervville", serif;
+  font-family: "Inter", sans-serif;
   font-size: 15px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
 }
 
 
@@ -799,7 +800,7 @@ renderGallery();}});renderGallery();document.getElementById("modalClose").onclic
 else{document.getElementById("sendConfirmation").value="no";}
 const formData=new FormData(rsvpForm);const response=await fetch(rsvpForm.action,{method:"POST",body:formData,headers:{"Accept":"application/json"}});if(response.ok){const attending=attendingSelect.value;if(attending==="Yes"){const templateParams={name:rsvpForm.querySelector('input[name="name"]').value,email:rsvpForm.querySelector('input[name="email"]').value,attending:attendingSelect.value,guests:guestCount.value||0,party_size:partySizeField.value,guest_names_combined:document.getElementById("guestNamesCombined").value};try{await emailjs.send("service_jdf8abn","template_lzt0kvl",templateParams);console.log("EmailJS confirmation sent");}catch(error){console.error("EmailJS error:",error);}}
 rsvpForm.style.display="none";thankYouMessage.style.display="block";if(attending==="Yes"){thankYouText.textContent="We’re so happy you’ll be joining us. We can’t wait to celebrate together in Antigua.";}else{thankYouText.textContent="Thank you for letting us know. You’ll be missed, and we truly appreciate your response.";}}});attendingSelect.addEventListener("change",()=>{if(attendingSelect.value==="No"){guestCount.style.display="none";guestCount.value="";guestNamesContainer.style.display="none";guestNamesContainer.innerHTML="";partySizePreview.style.display="none";partySizeField.value=1;submitBtn.disabled=false;}else{guestCount.style.display="block";partySizePreview.style.display="none";}});guestCount.addEventListener("change",()=>{const count=parseInt(guestCount.value);guestNamesContainer.innerHTML="";const totalParty=1+count;partySizeField.value=totalParty;if(!isNaN(count)){partySizePreview.style.display="block";partySizePreview.textContent=`Total Party Size:${totalParty}`;}
-if(count>0){guestNamesContainer.style.display="block";submitBtn.disabled=true;for(let i=1;i<=count;i++){const input=document.createElement("input");input.type="text";input.name=`guest_${i}_name`;input.placeholder=`Guest ${i}Full Name`;input.required=true;input.style.marginTop="18px";input.addEventListener("input",validateGuestInputs);guestNamesContainer.appendChild(input);}}else{guestNamesContainer.style.display="none";submitBtn.disabled=false;}});function validateGuestInputs(){const inputs=guestNamesContainer.querySelectorAll("input");let allFilled=true;inputs.forEach(input=>{if(input.value.trim()===""){allFilled=false;}});submitBtn.disabled=!allFilled;}
+if(count>0){guestNamesContainer.style.display="block";submitBtn.disabled=true;for(let i=1;i<=count;i++){const input=document.createElement("input");input.type="text";input.name=`guest_${i}_name`;input.placeholder=`Guest ${i} Full Name`;input.required=true;input.style.marginTop="18px";input.addEventListener("input",validateGuestInputs);guestNamesContainer.appendChild(input);}}else{guestNamesContainer.style.display="none";submitBtn.disabled=false;}});function validateGuestInputs(){const inputs=guestNamesContainer.querySelectorAll("input");let allFilled=true;inputs.forEach(input=>{if(input.value.trim()===""){allFilled=false;}});submitBtn.disabled=!allFilled;}
 let eggClicks=0;let eggTimer;const eggTrigger=document.getElementById("easterEggTrigger");const eggModal=document.getElementById("videoModal");const eggVideo=document.getElementById("easterVideo");const videoCloseBtn=document.getElementById("videoCloseBtn");if(eggTrigger&&eggModal&&eggVideo){eggTrigger.addEventListener("click",()=>{eggClicks++;clearTimeout(eggTimer);eggTimer=setTimeout(()=>{eggClicks=0;},1200);if(eggClicks>=5){eggModal.style.display="flex";document.body.style.overflow="hidden";eggVideo.currentTime=0;eggVideo.load();eggVideo.play();eggClicks=0;}});videoCloseBtn.addEventListener("click",(e)=>{e.stopPropagation();eggVideo.pause();eggVideo.currentTime=0;eggModal.style.display="none";document.body.style.overflow="";eggClicks=0;clearTimeout(eggTimer);});eggModal.addEventListener("click",(e)=>{if(e.target===eggModal){eggVideo.pause();eggVideo.currentTime=0;eggModal.style.display="none";document.body.style.overflow="";eggClicks=0;clearTimeout(eggTimer);}});}</script>
 </body>
 </html>
