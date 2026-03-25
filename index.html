@@ -18,19 +18,29 @@
 
 /* RSVP dropdown fix */
 select {
-  font-family: "Inter", sans-serif;
-  font-size: 15px;
-  letter-spacing: 0.02em;
+  font-family: "Baskervville", serif;
+  font-size: 14px;
+  letter-spacing: 0.08em;
   line-height: 1.8;
-  padding: 18px 4px;
+  padding: 18px 0;
+  color: var(--text);
+
+  /* important */
   font-variant-numeric: tabular-nums;
+
+  /* remove default browser styling inconsistencies */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
 }
 
+/* dropdown options */
 select option {
-  font-family: "Inter", sans-serif;
-  font-size: 15px;
-  letter-spacing: 0;
-  font-variant-numeric: tabular-nums;
+  font-family: "Baskervville", serif;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  color: #000;
 }
 
 
