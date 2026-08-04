@@ -18,6 +18,87 @@
 
 
 
+
+.weddingMemoriesInner {
+  width: min(1100px, calc(100% - 48px));
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.weddingVideoStack {
+  width: min(900px, 100%);
+  margin: 55px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+.weddingVideoPlaceholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--sand);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 30px;
+}
+
+.weddingVideoPlaceholder .smallMeta {
+  margin: 0;
+}
+
+.videoPlaceholderIcon {
+  width: 54px;
+  height: 54px;
+  border: 1px solid var(--muted2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4px;
+  font-size: 17px;
+  color: var(--muted2);
+}
+
+.weddingPhotoGallery {
+  margin-top: 110px;
+}
+
+.weddingGalleryControls {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+#weddingGalleryGrid {
+  justify-content: center;
+}
+
+.weddingWebsiteCredit {
+  margin-top: 55px;
+}
+
+@media (max-width: 768px) {
+  .weddingVideoStack {
+    margin-top: 42px;
+    gap: 24px;
+  }
+
+  .weddingPhotoGallery {
+    margin-top: 80px;
+  }
+
+  #weddingGalleryPrev,
+  #weddingGalleryNext {
+    display: none;
+  }
+}
+  
 </style>
 </head>
 <body>
@@ -59,9 +140,9 @@
   
 <section class="section center celebration" id="wedding">
 
-  <div class="container celebrationInner">
+  <div class="container weddingMemoriesInner">
 
-    <span class="kicker celebrationKicker">We Made It Official</span>
+    <span class="kicker celebrationKicker">Wedding Memories</span>
 
     <h2 class="h2 celebrationDate">July 25, 2026</h2>
 
@@ -72,16 +153,44 @@
     <div class="celebrationRule"></div>
 
     <p class="copy celebrationCopy">
-      One unforgettable weekend, one beautiful city, and all of our favorite people in one place.
-      Thank you to everyone who traveled near and far to celebrate with us and made the day feel
-      even more special than we imagined.
+      New videos and photographs from the wedding weekend will be shared here.
     </p>
 
-    <p class="smallMeta" style="margin-top:22px">
-      The wedding may be over, but the memories live on.
-    </p>
+    <div class="weddingVideoStack">
 
-    <p class="smallMeta" style="margin-top:22px">
+      <div class="weddingVideoPlaceholder">
+        <div class="videoPlaceholderIcon">▶</div>
+        <p class="smallMeta">Wedding Video Coming Soon</p>
+      </div>
+
+      <div class="weddingVideoPlaceholder">
+        <div class="videoPlaceholderIcon">▶</div>
+        <p class="smallMeta">Wedding Video Coming Soon</p>
+      </div>
+
+    </div>
+
+    <div class="weddingPhotoGallery">
+
+      <span class="kicker">Wedding Photographs</span>
+
+      <h2 class="h2">Gallery</h2>
+
+      <div class="weddingGalleryControls">
+        <button class="pill" id="weddingGalleryPrev" type="button">
+          Prev
+        </button>
+
+        <button class="pill" id="weddingGalleryNext" type="button">
+          Next
+        </button>
+      </div>
+
+      <div class="gallery" id="weddingGalleryGrid"></div>
+
+    </div>
+
+    <p class="smallMeta weddingWebsiteCredit">
       A very special thank you to
       <span id="easterEggTrigger">Christian Joel Aguirre</span>
       for bringing our dream website to life. We love you!
