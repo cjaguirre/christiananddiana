@@ -33,6 +33,31 @@
   gap: 34px;
 }
 
+.weddingVideoItem {
+  width: 100%;
+}
+
+.weddingVideoTitle {
+  margin: 0 0 14px;
+  text-align: center;
+}
+
+.weddingVideoEmbed {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.weddingVideoEmbed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .weddingVideoPlaceholder {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -152,23 +177,45 @@
 
     <div class="celebrationRule"></div>
 
-    <p class="copy celebrationCopy">
-      New videos and photographs from the wedding weekend will be shared here.
+<p class="copy celebrationCopy">
+  Watch our wedding films and revisit the memories from our weekend in Antigua.
+</p>
+
+<div class="weddingVideoStack">
+
+  <div class="weddingVideoItem">
+    <p class="smallMeta weddingVideoTitle">
+      Diana & Christian — Our Story
     </p>
 
-    <div class="weddingVideoStack">
-
-      <div class="weddingVideoPlaceholder">
-        <div class="videoPlaceholderIcon">▶</div>
-        <p class="smallMeta">Wedding Video Coming Soon</p>
-      </div>
-
-      <div class="weddingVideoPlaceholder">
-        <div class="videoPlaceholderIcon">▶</div>
-        <p class="smallMeta">Wedding Video Coming Soon</p>
-      </div>
-
+    <div class="weddingVideoEmbed">
+      <iframe
+        src="https://www.youtube.com/embed/j-T6Gz0Y3yY"
+        title="Diana and Christian — Our Story"
+          loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
     </div>
+  </div>
+
+  <div class="weddingVideoItem">
+    <p class="smallMeta weddingVideoTitle">
+      Diana & Christian — Wedding Wishes
+    </p>
+
+    <div class="weddingVideoEmbed">
+      <iframe
+        src="https://www.youtube.com/embed/PDfv80FeMC8"
+        title="Diana and Christian — Wedding Wishes"
+          loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+</div>
 
     <div class="weddingPhotoGallery">
 
